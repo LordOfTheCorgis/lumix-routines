@@ -39,3 +39,41 @@ against these (see "do this today").
 Open `lumixsolutions.org/pricing` side-by-side with BisectHosting's and RocketNode's FiveM pages and check three things: (a) is there a visible discount code, (b) what's the effective $/GB and is there a slot cap, (c) is DDoS protection quantified anywhere. Note any "no" — feeds directly into Tuesday's site-copy review.
 
 ---
+
+## 2026-07-20 (Monday, same-day re-check) — Competitor Pricing & Plans
+
+**Note:** This run fired a second time on the same calendar day as the baseline
+above (hours apart). Nothing material changes on competitor pricing pages in
+that window, so this entry is intentionally short — spot-checks only, no
+repeat of the full snapshot.
+
+- **`lumixsolutions.org` is still unreachable to automated fetch tools** —
+  same known issue as the baseline run (bot/CDN protection resets the TLS
+  handshake before any content loads; confirmed via WebFetch and raw curl
+  through the proxy, both blocked at the TLS layer). Not new, but still
+  unresolved — see escalation note below since it blocks every future
+  Tuesday copy-review and every "check our own pricing" step until someone
+  fetches it manually or allowlists this tooling.
+- **RocketNode's DDoS figure re-checked and confirmed accurate**: the FiveM
+  product page itself only surfaces "2 Tbps" (a single scrubbing-center
+  figure), but their dedicated DDoS page and site-wide messaging confirm the
+  headline "17 Tbps" total capacity cited in the baseline still stands — no
+  correction needed to Monday's finding #3.
+- **RocketNode also runs an active sitewide promo** ("Summer Sale," up to
+  25% off, running through Sep 25) plus multiple standing coupon codes
+  (`25OFF`, others). Baseline's finding #1 listed Shockbyte/Apex/ZAP as the
+  competitors with visible codes; RocketNode should be added to that list —
+  it's now confirmed 5/5 of the competitors checked run a visible discount
+  mechanism. This strengthens (doesn't change) baseline finding #1; no new
+  action needed beyond what's already logged.
+
+**Escalation:** None yet — the site-fetch-blocked issue is still under a day
+old (first observed this morning). Per the 7-day rule, this only gets
+escalated as a standing blocker if it's still blocking automated review by
+2026-07-27.
+
+No new findings above the 3 already logged this morning. No action items
+beyond the existing "do this today" from the baseline entry, which is still
+outstanding.
+
+---
