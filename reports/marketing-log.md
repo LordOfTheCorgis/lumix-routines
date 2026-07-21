@@ -77,3 +77,58 @@ beyond the existing "do this today" from the baseline entry, which is still
 outstanding.
 
 ---
+
+## 2026-07-21 (Tuesday) — Website Copy
+
+**Note:** `lumixsolutions.org` is reachable to fetch tools again as of this
+run — the 403/TLS block noted in both Monday entries is resolved. This is
+the first run to actually see our own site copy, so treat the findings
+below as a first-pass baseline for the copy track, not a re-check.
+
+**Pages reviewed:** homepage, `/services`, `/contact`, `/spotlight`
+(`/pricing` and `/game-hosting` both 404 — no dedicated pages exist).
+
+### Findings (max 3)
+
+1. **Minecraft and Terraria are not named anywhere on the marketing site.**
+   The homepage banners and `/spotlight` mention FiveM and "bot hosting" by
+   name, but the `/services` page — the only page describing game hosting —
+   reduces everything to one vague line: "Optimized game server
+   infrastructure with low-latency networking and DDoS protection included.
+   Support for all major titles." Two of Lumix's four core product lines
+   (per this routine's own scope: FiveM, Minecraft, Terraria, Node/Python
+   bot hosting) are invisible to a prospect skimming the site or a search
+   engine indexing it.
+   → *Action:* Replace "Support for all major titles" on `/services` with
+   an explicit list: "FiveM, Minecraft, Terraria, and Node.js/Python bot
+   hosting." One sentence, no redesign needed.
+
+2. **No price is visible anywhere on the public site.** `/pricing` 404s,
+   and every "View Plans" CTA on `/services` routes straight to the billing
+   portal (`billing.lumixsolutions.org`), which requires account setup
+   before showing a single number. This is a harder version of the friction
+   flagged in Monday's report (competitors we checked all show $/GB or
+   $/slot on the marketing page itself, no login required).
+   → *Action:* Add a minimal pricing block to `/services` — even just
+   "Starting at $X/GB" per game type — so a prospect can compare cost
+   before creating a billing account.
+
+3. **Inconsistent naming for the same product: "bot hosting" vs.
+   "Application Hosting."** The homepage banner reads "Expanded bot hosting
+   capacity — more space, better isolation, smoother deployments," but
+   `/services` describes the identical Node.js/Python/Docker offering under
+   the header "Application Hosting" with no mention of "bot" at all.
+   Prospects searching for (or asking Discord about) "bot hosting" won't
+   obviously connect it to the "Application Hosting" plan listing.
+   → *Action:* Rename or subhead the `/services` "Application Hosting"
+   section to lead with "Bot & Application Hosting" so it matches the term
+   Lumix already uses in its own promo banners and community.
+
+### Do this today (<1 hour)
+Edit the one line on `/services` that currently reads "Support for all
+major titles" to explicitly name FiveM, Minecraft, Terraria, and
+Node.js/Python bot hosting. Highest-leverage single-line fix — it's the
+only place on the site that's supposed to describe the full product
+lineup, and right now it describes none of it by name.
+
+---
