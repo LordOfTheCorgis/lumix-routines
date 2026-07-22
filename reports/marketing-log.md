@@ -132,3 +132,77 @@ only place on the site that's supposed to describe the full product
 lineup, and right now it describes none of it by name.
 
 ---
+
+## 2026-07-22 (Wednesday) — Competitor UX Deep-Dive: BisectHosting
+
+**Note:** First Wednesday run — no prior UX-track entry to rotate from, so
+this establishes the baseline competitor for this track (next rotation
+should pick a different one, e.g. Shockbyte or RocketNode — Shockbyte's
+order page returned HTTP 403 to fetch tools this run and couldn't be
+reviewed). Compared BisectHosting's Minecraft signup→deploy flow against
+Lumix's homepage → `billing.lumixsolutions.org` flow (fetched live, plus
+raw HTML pulled directly to confirm what's server-rendered vs. not).
+
+**Flows observed:**
+- **BisectHosting:** landing page → "Choose a Plan" (1 click) → a 4-step
+  guided wizard: (1) game install/modpack + expected player count, (2)
+  server location chosen from a map with latency shown per region, (3)
+  billing cycle with a promo-code field, (4) optional addons. Every step
+  ties to a concrete number (player count, ms latency, price). Account
+  creation happens after, at checkout.
+- **Lumix:** homepage "Deploy Now" (1 click) → `billing.lumixsolutions.org`,
+  which shows four bare tier names (Starter, Pro, Elite, Titan — confirmed
+  server-rendered in the raw HTML, not a fetch-tool artifact) with no
+  wizard, no location/latency picker, and no price attached to any tier in
+  that view. The user has to already know which tier maps to their game
+  and player count and self-navigate from there.
+
+### Findings (max 3)
+
+1. **BisectHosting turns plan selection into a guided, numbers-first
+   wizard; Lumix hands the user a flat list of tier names with no
+   guidance.** This is the concrete "2 clicks vs. 5" gap: on Bisect, one
+   click (player count) narrows the whole decision; on Lumix, a prospect
+   has to already know that, say, "Elite" fits a 20-slot FiveM box before
+   they can even start.
+   → *Action:* Build (or even just mock up) a 2-3 question picker —
+   "Which game? How many players?" — on the marketing site or portal
+   landing that routes straight to the matching pre-filled plan, instead
+   of dropping users onto the raw Starter/Pro/Elite/Titan list.
+
+2. **No interactive location/latency picker exists anywhere in the Lumix
+   flow.** The homepage only states "Miami, Dallas" as plain text; there's
+   no way for a prospect to see expected ping before buying. BisectHosting
+   makes this an explicit wizard step with a map and per-region latency
+   estimates — a real decision factor for FiveM/Minecraft communities
+   picking based on player geography.
+   → *Action:* Add a simple static line near plan selection (e.g. "US
+   East — Miami: best for players in the Eastern/Southern US") as a
+   low-effort first pass; a live latency tester can come later.
+
+3. **Lumix's own speed/trust claim ("online in under 60 seconds") lives
+   only on the homepage banner, disconnected from the billing portal where
+   the actual purchase decision happens.** BisectHosting's equivalent
+   claim ("full access as soon as payment clears") sits right at the
+   wizard's final step, next to the buy action — reinforcing confidence at
+   the exact moment of hesitation. Lumix's claim never reaches that
+   moment.
+   → *Action:* Duplicate the existing "under 60 seconds" copy (already
+   written, no new claim needed) onto the billing portal landing page,
+   near the plan tiers / buy button.
+
+**Relation to prior findings:** Confirms (does not newly report) Tuesday's
+finding #2 that no price is visible pre-account — raw HTML pull today
+shows the billing portal's tier names are server-rendered but truly carry
+no price anywhere in the markup, not just a fetch-tool gap. Still under
+the 7-day escalation threshold (2 days old); no action needed beyond
+Tuesday's existing item.
+
+### Do this today (<1 hour)
+Copy the existing "servers online in under 60 seconds" line from the
+homepage banner onto the `billing.lumixsolutions.org` landing page, placed
+near the Starter/Pro/Elite/Titan tier list. No new copywriting required —
+just relocating a claim that already exists to the page where the
+purchase decision is actually made.
+
+---
