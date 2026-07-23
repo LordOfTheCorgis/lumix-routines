@@ -206,3 +206,63 @@ just relocating a claim that already exists to the page where the
 purchase decision is actually made.
 
 ---
+
+## 2026-07-23 (Thursday) — SEO & Keywords
+
+**Note:** `/services` (reviewed in Tuesday's copy pass) now 404s — the site
+appears to have been restructured since Tuesday. Homepage now also lists
+Palworld and BeamMP as hosting options, which weren't mentioned in any prior
+run. Flagging as a site change for Tuesday's next copy-review rotation to
+pick up; not itself an SEO finding. `/game-hosting` still 404s (same as
+Monday).
+
+**Method:** Pulled homepage + `/spotlight` (title tags, meta description,
+headings), then searched the actual queries a prospect would type —
+"fivem server hosting," "cheap minecraft server hosting," "terraria server
+hosting," "discord bot hosting node.js python" — to see which competitor
+pages/URLs show up and how they're titled.
+
+### Findings (max 3)
+
+1. **Every page's `<title>` tag is keyword-empty.** Homepage title is
+   "Lumix | Lumix Solutions LLC"; `/spotlight` is "Spotlight | Lumix
+   Solutions LLC." Neither contains a single hosting or game keyword. Every
+   competitor ranking in this run's searches leads with the keyword in the
+   title itself: "FiveM Server Hosting | Shockbyte," "Terraria Server
+   Hosting | 24/7 Support | BisectHosting," "FiveM Server Hosting |
+   RocketNode." Title tag is the single heaviest on-page ranking signal —
+   right now Lumix's title could describe any company in any industry.
+   → *Action:* Rewrite the homepage `<title>` to something like "Lumix
+   Solutions | FiveM, Minecraft & Terraria Server Hosting + Bot Hosting."
+   One tag, no redesign.
+
+2. **No meta description exists on any page checked** (homepage,
+   `/spotlight` — same absence Google's own crawler would see). Without
+   one, Google auto-generates the search snippet from body text, which for
+   Lumix's homepage is a vague engineering tagline ("Infrastructure built
+   by engineers") rather than a keyword-rich, click-worthy summary.
+   → *Action:* Add a one-line meta description per page, e.g. homepage:
+   "FiveM, Minecraft, Terraria, and Discord bot hosting with DDoS
+   protection and sub-10ms latency. Deploy in under 60 seconds."
+
+3. **No dedicated landing page targets any single high-intent keyword.**
+   Every competitor found in this run's searches has its own URL per game —
+   `shockbyte.com/games/fivem-server-hosting`, `bisecthosting.com/terraria-
+   server-hosting`, `rocketnode.com/game-server-hosting/fivem`. Lumix has
+   no equivalent: `/services` and `/game-hosting` both 404, and everything
+   lives on one homepage that can't simultaneously rank for "fivem server
+   hosting," "minecraft server hosting," and "discord bot hosting" as
+   separate searches. This is the structural reason Lumix won't surface for
+   any of these terms regardless of title/meta fixes above.
+   → *Action:* Stand up one dedicated page per core product (FiveM,
+   Minecraft, Terraria, Bot Hosting) at a keyword-matching URL, even as a
+   thin first pass (specs + price + CTA) — this is a bigger lift than
+   today's items, worth scoping as its own task.
+
+### Do this today (<1 hour)
+Rewrite the homepage `<title>` tag from "Lumix | Lumix Solutions LLC" to a
+keyword-inclusive version, e.g. "Lumix Solutions | FiveM, Minecraft &
+Terraria Server Hosting + Bot Hosting." Single highest-leverage SEO fix
+available in under an hour — every competitor checked already does this.
+
+---
