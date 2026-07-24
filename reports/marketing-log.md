@@ -266,3 +266,74 @@ Terraria Server Hosting + Bot Hosting." Single highest-leverage SEO fix
 available in under an hour — every competitor checked already does this.
 
 ---
+
+## 2026-07-24 (Friday) — Social & Community
+
+**Note:** First Friday run for this track — no prior entry to rotate from,
+so everything below is a first-pass baseline, not a re-check. Lumix's own
+footer links five social channels (Discord, TikTok, YouTube, X, Instagram —
+confirmed live via homepage fetch), which is more than most competitors
+checked expose in one place. The gap found this run is not "we're missing
+channels," it's that the channels don't appear to be doing anything.
+
+**Method:** Searched for competitor TikTok/YouTube/Discord content
+(BisectHosting, Shockbyte, RocketNode) and cross-checked engagement
+patterns against Lumix's own linked accounts (`tiktok.com/@lumix.solutions`,
+`youtube.com/@officiallumixsolutions`, `x.com/LumixSolutions`,
+`instagram.com/lumixsolutionsllc`).
+
+### Findings (max 3)
+
+1. **Lumix's TikTok and YouTube accounts return no discoverable content,
+   while every competitor checked has a real, indexed content trail.**
+   BisectHosting has an active `#bisecthosting` TikTok tag with tutorial
+   videos ("How to Setup a Server in Bisect Hosting," "How to Use Bisect
+   Hosting Server") pulling real engagement. Shockbyte runs a dedicated
+   YouTube Tutorial channel, split off from its main channel specifically
+   to centralize support content. Targeted searches for Lumix's exact
+   handles (`@lumix.solutions`, `@officiallumixsolutions`) surfaced nothing
+   — no videos, no follower signal, nothing indexed. (Caveat: TikTok/X
+   blocked this run's fetch tools from rendering profile pages directly —
+   X returned 402, Instagram 429 — so this is an indirect signal via
+   search, not a confirmed follower/post count. Someone with account
+   access should log in and confirm directly.)
+   → *Action:* Have someone log into the Lumix TikTok and YouTube accounts
+   directly and check post count/dates. If they're empty or dormant, either
+   commit to a minimal weekly cadence or pull the dead-looking links from
+   the footer — a linked-but-empty account reads worse to a prospect than
+   no link at all.
+
+2. **The competitor content that actually works is community-sourced, not
+   brand-produced.** RocketNode's own marketing blog states its FiveM
+   promotion strategy explicitly: "encourage your community to share
+   gameplay clips" on TikTok/YouTube Shorts, plus Discord-hosted Q&As and
+   contests to keep servers active between posts. BisectHosting's real
+   TikTok output is plain tutorial/UGC-style clips, not polished ads. Lumix
+   has an active, Discord-centered community (per this routine's own
+   framing) that isn't being tapped for any of this.
+   → *Action:* Post a standing call in Discord inviting FiveM/Minecraft
+   server owners hosted on Lumix to share clips or screenshots of their
+   servers, with the best ones reposted to Lumix's own (currently idle)
+   TikTok/YouTube. Zero production cost — it reuses content the community
+   is already generating.
+
+3. **Lumix's Discord support answers are an untapped tutorial-content
+   source.** Shockbyte's split-off Tutorial channel exists because
+   "how do I configure X" content is exactly what search and TikTok
+   surface competitors for (see finding 1's exact tutorial titles). Lumix's
+   support channel almost certainly fields the same recurring questions —
+   FiveM artifact updates, Minecraft server IP setup, bot deployment — but
+   none of those answers exist anywhere as short-form video.
+   → *Action:* Pick the single most-repeated support question from the
+   last month of Discord history and record a 30-60 second screen capture
+   answering it, posted to TikTok/YouTube Shorts. Repeatable format once
+   proven — turns support labor Lumix is already paying for into content.
+
+### Do this today (<1 hour)
+Post one pinned message in Discord (#general or #support) asking members
+to share their best Lumix-hosted server clip or screenshot for a chance to
+be featured on Lumix's TikTok/YouTube. No production work required, and it
+immediately gives the two dormant-looking accounts flagged in finding 1
+something real to post.
+
+---
