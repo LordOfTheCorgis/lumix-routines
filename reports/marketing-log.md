@@ -337,3 +337,54 @@ immediately gives the two dormant-looking accounts flagged in finding 1
 something real to post.
 
 ---
+
+## 2026-07-25 (Saturday) — Off-Rotation Check-In
+
+**Note:** The day-of-week rotation defined for this routine only covers
+Monday–Friday; the underlying schedule fires daily (confirmed: cron
+`30 14 * * *`, no weekday restriction), so this run landed on an
+unassigned day. Rather than force a full deep-dive under a track that
+doesn't apply to Saturday, this was a lightweight check for anything
+new or changed since Friday — one did turn up, below.
+
+### Findings (max 3)
+
+1. **Pricing is now live on the Lumix homepage — Tuesday's finding #2
+   ("no price visible anywhere on the public site") appears resolved.**
+   Current homepage pricing: FiveM $8.99/mo, Minecraft $14.99/mo,
+   Palworld $9.99/mo, BeamMP $5.99/mo, Terraria $5.00/mo. This is the
+   first run able to compare Lumix's actual numbers against Monday's
+   competitor snapshot rather than recommending pricing be added in the
+   abstract.
+   → *Action:* No further action on visibility itself. Next Tuesday's
+   copy review should confirm the price block persists and check
+   whether it also appears on `/services` (or wherever that page has
+   moved to, per Thursday's note that `/services` now 404s).
+
+2. **Minecraft's $14.99/mo entry price looks high against Monday's
+   competitor benchmarks, but can't be confirmed without the spec
+   behind it.** Shockbyte and Apex both anchor Minecraft around
+   $2.50–3.75/GB (e.g. Apex 2GB = $7.49). If Lumix's $14.99 entry tier
+   is 1–2GB, that's roughly 2–4x the competitor $/GB rate; if it's a
+   larger allocation (4GB+), it may be in line or cheaper. The headline
+   price alone doesn't say which.
+   → *Action:* Pull the RAM/slot spec for the $14.99 Minecraft tier
+   from the billing portal and compute effective $/GB against Monday's
+   competitor table.
+
+3. **Monday's finding #1 (no visible evergreen discount code) is still
+   unresolved as of today** — the current homepage pricing block shows
+   no promo code or sale banner, same as the baseline. This is 5 days
+   old; not yet at the 7-day escalation threshold, but it will cross
+   that line at the next Monday run (2026-07-27) if still unfixed then.
+   → *Action:* No new action beyond the existing Monday item — flagging
+   as "approaching escalation" so next Monday's run knows to escalate
+   rather than re-log it fresh if it's still missing.
+
+### Do this today (<1 hour)
+Open the billing portal and note the RAM/slot allocation for the
+$14.99/mo Minecraft tier and the $8.99/mo FiveM tier. Two numbers,
+directly resolves finding #2 above and turns Monday's competitor
+$/GB table from a one-sided comparison into a real one.
+
+---
