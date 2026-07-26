@@ -388,3 +388,72 @@ directly resolves finding #2 above and turns Monday's competitor
 $/GB table from a one-sided comparison into a real one.
 
 ---
+
+## 2026-07-26 (Sunday) — Off-Rotation Check-In
+
+**Note:** Second unassigned-weekday run (rotation only covers Mon–Fri,
+cron fires daily). Checked homepage, `/games`, and `billing.lumixsolutions.org`
+for anything new or changed since Saturday, and tried to close out
+Saturday's open action item.
+
+### Findings (max 3)
+
+1. **A meta description now exists sitewide, but it's the same vague
+   engineering tagline Thursday's finding #2 warned would show up as the
+   default snippet — the fix didn't add keywords, it just formalized the
+   problem.** Homepage `<meta name="description">` (confirmed via raw HTML
+   pull) reads: "Infrastructure built by engineers. Node.js servers, game
+   services, voice infrastructure, and enterprise DDoS protection." No
+   game names, no "hosting," no price/speed hook — same gap Thursday
+   flagged, just now locked into the actual meta tag instead of being
+   Google's fallback guess.
+   → *Action:* Replace the meta description with the version already
+   drafted in Thursday's log: "FiveM, Minecraft, Terraria, and Discord bot
+   hosting with DDoS protection and sub-10ms latency. Deploy in under 60
+   seconds." One tag, copy-paste from last Thursday's entry.
+
+2. **Homepage `<title>` is still "Lumix | Lumix Solutions LLC"** —
+   unchanged since Thursday's finding #1 (now 3 days old). The site
+   restructure noted Thursday (`/services` → `/games`) is confirmed
+   complete: nav is now Games / Partners / Staff / Status / Contact /
+   Careers, with pricing folded into `/games` rather than a separate
+   page. That consolidation makes Thursday's finding #3 (no dedicated
+   per-keyword landing page) more locked-in, not less — there's now one
+   page (`/games`) trying to rank for FiveM, Minecraft, Terraria, Palworld,
+   and BeamMP simultaneously.
+   → *Action:* Same one-line fix as Thursday, still outstanding — rewrite
+   the `<title>` tag. Not yet at 7-day escalation (hits that Thursday
+   7/30), but two site edits have shipped since this was flagged (pricing,
+   meta description) and the title tag wasn't touched — worth a direct
+   nudge rather than just re-logging.
+
+3. **Saturday's "do this today" (pull RAM/slot spec for the $14.99
+   Minecraft and $8.99 FiveM tiers) could not be completed from outside —
+   confirmed structurally, not just missed.** Fetched `/games` and
+   `billing.lumixsolutions.org` directly: neither page lists RAM, CPU, or
+   slot counts anywhere for any tier — only tier names ("Starter,"
+   "Elite," "Titan"), price, and generic feature bullets (DDoS protection,
+   instant deployment, backups, mod support, 24/7 support). This isn't a
+   fetch-tool gap like Monday's 403 — the spec data simply isn't rendered
+   on any public-facing page, which means Monday's competitor $/GB
+   comparison can't be completed without someone with portal/account
+   access pulling the number directly.
+   → *Action:* Escalate Saturday's item from "pull two numbers" to "the
+   numbers aren't public" — whoever has portal access should check
+   whether tier specs are shown post-login, and if not, that's a UX gap
+   worth its own finding (a prospect can't self-serve "how much RAM do I
+   get" pre-purchase either).
+
+**Escalation status:** Monday's finding #1 (no evergreen discount code) is
+now 6 days old, still unresolved as of this run (`/games` and billing
+portal both re-checked, no code/banner). Per the 7-day rule this crosses
+the threshold at tomorrow's Monday run (2026-07-27) — flagging here so
+tomorrow's entry escalates rather than re-logs it as new.
+
+### Do this today (<1 hour)
+Swap the homepage meta description for Thursday's already-drafted,
+keyword-rich version. It's a copy-paste of existing text into a tag that
+now exists but currently holds the wrong content — lowest-effort fix on
+the board this run.
+
+---
