@@ -457,3 +457,71 @@ now exists but currently holds the wrong content — lowest-effort fix on
 the board this run.
 
 ---
+
+## 2026-07-27 (Monday) — Competitor Pricing & Plans (Week 2)
+
+**Note:** One week to the day since the 2026-07-20 baseline. Re-fetched
+Lumix's homepage and `/games` directly, plus fresh searches on all five
+baseline competitors (BisectHosting, Shockbyte, Apex Hosting, ZAP-Hosting,
+RocketNode). Nothing material changed on the competitor side this week —
+all five still run active discount codes and the same pricing structure
+observed 2026-07-20. The story this run is that all three baseline
+findings are now exactly 7 days old and confirmed still unresolved on
+Lumix's side, crossing this routine's escalation threshold simultaneously.
+
+### Findings (max 3) — all escalated (7+ days unresolved)
+
+1. **ESCALATION — still no evergreen discount code, 7 days unresolved.**
+   Fresh fetch of the Lumix homepage and `/games` today shows no code,
+   voucher, or sale banner anywhere (same as the 2026-07-25 and 2026-07-26
+   check-ins). Meanwhile all 5 competitors checked confirmed still active:
+   BisectHosting has 8+ live codes (up to 50% off), Shockbyte's `SHOCK10`/
+   `TWITTER25` are still live, Apex's `APEX25` is still live, ZAP's ~20%
+   voucher is still live, and RocketNode's "Summer Sale" (up to 25% off,
+   through Sep 25) is still running. This is now a full week with zero
+   movement on the single most consistent conversion pattern across the
+   category.
+   → *Action:* This needs to stop being a routine finding and become a
+   direct ask to whoever owns pricing/marketing: pick one evergreen code
+   (e.g. `LUMIX10`) and ship it to `/games` + pin it in Discord this week.
+   If there's a reason it hasn't happened (payment processor limitation,
+   against current pricing strategy, etc.), that reason itself is worth
+   surfacing so this stops re-appearing as an open item.
+
+2. **ESCALATION — FiveM entry-price gap vs. RocketNode, 7 days
+   unresolved, and the audit needed to close it is structurally blocked.**
+   RocketNode's FiveM entry is still $6.50/mo against Lumix's $8.99/mo.
+   Baseline asked for Lumix's effective $/GB to be computed and compared —
+   but today's fetch of `/games` confirms (again, same as Sunday's finding
+   #3) that no RAM/slot spec is shown publicly for any Lumix tier. Whoever
+   owns this can't complete the audit from outside; it needs portal access.
+   → *Action:* Someone with billing-portal access should pull the RAM/slot
+   allocation behind the $8.99 FiveM tier and compute $/GB against
+   RocketNode's and BisectHosting's published rates. Until that number
+   exists, Lumix can't tell whether $8.99 is a real gap or a fair price for
+   more resources — it's currently just a headline-number comparison.
+
+3. **ESCALATION — DDoS protection still not quantified, 7 days
+   unresolved.** Lumix's homepage and `/games` both still describe only
+   "enterprise DDoS protection" / "DDoS protection included," no capacity
+   number. RocketNode's "17 Tbps" headline was re-confirmed active again
+   this week, and ZAP continues to lead with its own hard number as a
+   Cfx.re-partner trust signal. This is the one baseline finding that's
+   pure copy — no audit or portal access needed to fix.
+   → *Action:* Get the actual mitigation capacity (Tbps or Gbps) from
+   Lumix's network/infra provider and add one line to `/games`: e.g.
+   "DDoS protection up to X Tbps." Lowest-effort of the three escalations.
+
+**Why all three at once:** the baseline and this run are both Mondays,
+exactly 7 days apart, so all three findings from 2026-07-20 crossed the
+escalation threshold on the same day. This isn't new discovery — it's the
+routine's own 7-day rule firing for the first time since this track
+started.
+
+### Do this today (<1 hour)
+Of the three, #3 is the only one with zero dependencies (no portal access,
+no pricing-strategy decision) — get the DDoS mitigation capacity number
+from infra and add "DDoS protection up to X Tbps" to `/games`. Ships today
+with no one else needed to unblock it.
+
+---
