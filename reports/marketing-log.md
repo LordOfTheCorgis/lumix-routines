@@ -525,3 +525,81 @@ from infra and add "DDoS protection up to X Tbps" to `/games`. Ships today
 with no one else needed to unblock it.
 
 ---
+
+## 2026-07-28 (Tuesday) — Website Copy (Week 2)
+
+**Note:** One week since the 2026-07-21 baseline. Re-fetched homepage,
+`/games`, `/contact`, and `/partners` (site nav is now Home / Game Hosting /
+Partners / Staff / Careers / Status / Contact / Panel / Billing Portal —
+`/services` is fully gone, consistent with the restructure Thursday and
+Sunday both flagged).
+
+**Resolved since baseline:** All three 07-21 findings now appear fixed.
+(1) Minecraft and Terraria are both named and priced on `/games`, alongside
+Palworld and BeamMP. (2) Pricing is live sitewide (confirmed again — FiveM
+$8.99, Minecraft $14.99, Palworld $9.99, BeamMP $5.99, Terraria $5.00).
+(3) The "bot hosting" vs. "Application Hosting" naming clash is moot — see
+finding 1 below, the section itself is gone, not just renamed. **Also
+closing out Monday's 7-day-escalated finding #3**: DDoS protection is now
+quantified — a stats block on the homepage and `/games` reads "99.99% SLA
+Uptime," "10+ Tbps Mitigated," "<10 ms Latency," "12 PoPs Locations." That
+escalation can drop off the list.
+
+### Findings (max 3)
+
+1. **Bot/Application hosting — one of Lumix's four core product lines — has
+   no product listing, description, or price anywhere on `/games`.** The
+   only mention left sitewide is a banner line, "Expanded bot hosting
+   capacity — more space, better isolation, smoother deployments," which
+   reads as a changelog update, not an offering. There's no way to
+   configure or buy Node.js/Python bot hosting from the marketing site at
+   all — this is worse than the naming inconsistency flagged 07-21, where
+   the product at least had its own section under a confusing label.
+   → *Action:* Add a Bot Hosting card to `/games` alongside FiveM/Minecraft/
+   Palworld/BeamMP/Terraria, with a starting price and a "Configure" CTA,
+   matching the format already used for the other five products.
+
+2. **The FiveM scarcity claim has no number behind it.** Both `/games` and
+   `/partners` repeat, verbatim: "Limited FiveM servers stock available —
+   intentionally capped to maintain performance and reliability." No cap
+   size, no remaining count, no timeframe — it's the exact "claim with no
+   proof" pattern this review track exists to catch, just applied to
+   urgency/scarcity instead of a quality adjective like "premium." As
+   written, a prospect can't tell if 2 slots are left or 200.
+   → *Action:* Either publish the actual cap number ("capped at N servers
+   per region this month") or drop the scarcity framing — an unquantified
+   "limited stock" claim reads as filler, not urgency.
+
+3. **CTA labels are inconsistent across pages for what appear to be the
+   same two actions.** Across homepage, `/games`, and `/contact`, six
+   distinct CTA strings do the work of what's really "go configure a
+   plan" and "talk to a human": "Build Your Server," "Browse Games,"
+   "Configure," "View Full Catalog," "Contact Sales," and "Talk to an
+   engineer" (the last two both route to the same sales contact, per
+   `/contact`). No single primary CTA is used twice in the same wording,
+   which makes it harder for a returning visitor to recognize the button
+   they want.
+   → *Action:* Standardize on one CTA per action — e.g. "Configure" for
+   plan setup (drop "Build Your Server" / "Browse Games" / "View Full
+   Catalog" as page-specific synonyms) and "Talk to an engineer" for
+   sales contact (drop "Contact Sales"). Pure copy/label change, no new
+   pages.
+
+### Do this today (<1 hour)
+Pick one CTA wording for the sales-contact action and use it everywhere
+that action appears — collapse "Contact Sales" into "Talk to an engineer"
+(the more distinctive of the two) on the homepage and any other page still
+using the generic version. Lowest-effort fix on today's board; the other
+two findings need either a new price/spec or a business decision.
+
+**Escalation status:** Monday's finding #1 (no evergreen discount code for
+Lumix's own hosting plans) is now 8 days unresolved — still no code or
+banner on `/games` or the homepage. Note: the Partners page does show a
+promo code (`LSXEM`, 15% off), but it's a third-party partner's discount
+(Elite Modification livery/EUP services), not a Lumix hosting code — it
+doesn't resolve this finding, and could actually confuse a prospect
+scanning the site for a Lumix-specific code. Monday's finding #2 (FiveM
+$/GB audit vs. RocketNode) remains blocked on portal access to tier specs,
+unchanged since last week.
+
+---
