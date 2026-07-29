@@ -603,3 +603,93 @@ $/GB audit vs. RocketNode) remains blocked on portal access to tier specs,
 unchanged since last week.
 
 ---
+
+## 2026-07-29 (Wednesday) — Competitor UX Deep-Dive: RocketNode
+
+**Note:** Second UX-track entry — rotating off BisectHosting (07-22) per
+that entry's own note. Picked RocketNode over Shockbyte (whose order page
+403'd fetch tools on 07-22). Compared RocketNode's FiveM signup→deploy flow
+against Lumix's own `/games/fivem` flow — and in the process found Lumix's
+flow has changed substantially since the 07-22 baseline, which is itself
+this run's biggest finding.
+
+**Flows observed:**
+- **RocketNode:** FiveM page → "Deploy FiveM Server" → a 5-step wizard:
+  (1) plan tier with RAM/price shown (Starter 2GB=$6.50 up to God
+  32GB=$98.50), (2) location (7 regions: Ashburn, Dallas, Salt Lake City,
+  London, Singapore, Sydney + one more, each with a named DDoS provider),
+  (3) backup slots and transfer assistance, (4) billing cycle
+  (monthly→annual, up to 20% off), (5) add-ons (dedicated IP, paid
+  individualized support hour). A "Try your 1 Day Free Trial" CTA sits
+  right beside the main deploy button. Est. 8-12 total interactions to a
+  completed order.
+- **Lumix (`/games/fivem`):** now a 3-step wizard (01 Plan → 02 Location →
+  03 Billing Cycle) with full CPU/RAM/NVMe/database specs per tier
+  (Starter $8.99 = 2 vCores/2GB/35GB NVMe up to Ultimate $52.99 =
+  6 vCores/16GB/175GB NVMe), all "Unmetered player slots." "Deploy Server"
+  routes to `billing.lumixsolutions.org` with the configuration pre-filled
+  into a cart. No free trial offer anywhere in the flow.
+
+**This resolves two previously open items — noting for the record, not as
+new findings:** (1) 07-22's core UX gap ("Bisect wizard vs. Lumix flat tier
+list") no longer applies — Lumix has its own guided wizard now. (2) The
+07-26/07-27 blocker on Monday's FiveM $/GB audit ("spec data simply isn't
+rendered on any public-facing page") is resolved — RAM/CPU/storage specs
+are now public on `/games/fivem`. See finding 2 below for the audit this
+unblocks.
+
+### Findings (max 3)
+
+1. **Lumix's location picker offers only one real choice, while the site's
+   headline claim is "12 PoPs."** The `/games/fivem` wizard's step 2 lists
+   exactly two locations: Miami, FL ("Currently sold out") and Ashburn, VA
+   (available). RocketNode's equivalent step lists 7 live, selectable
+   regions. Homepage and `/games` both still advertise "12 PoPs Locations"
+   as a trust stat (confirmed present again this run), but a prospect who
+   clicks through to actually configure a FiveM server hits a sold-out
+   option and exactly one live alternative — a direct contradiction between
+   the marketing claim and the purchasable flow, surfaced specifically by
+   walking the flow rather than reading the homepage stat in isolation.
+   → *Action:* Either open ordering on more of the 12 claimed PoPs so the
+   wizard reflects the stat, or caveat the stat near the wizard itself
+   (e.g. "additional regions rolling out") so it doesn't read as
+   overstated to someone mid-purchase.
+
+2. **FiveM entry-tier $/GB audit (Monday's blocked escalation) is now
+   computable, and confirms Lumix is priced above RocketNode at the
+   equivalent spec.** Lumix Starter: $8.99/mo for 2GB RAM = $4.50/GB.
+   RocketNode Starter: $6.50/mo for 2GB RAM = $3.25/GB. Lumix is ~38%
+   more expensive per GB of RAM at the matching entry tier. Lumix's NVMe
+   allocation (35GB at Starter) is a possible offsetting differentiator —
+   RocketNode's plan page doesn't surface a comparable storage number — but
+   nothing on `/games/fivem` currently calls that out.
+   → *Action:* This closes out Monday's "blocked, needs portal access"
+   status with a real number — worth flagging directly to whoever owns
+   FiveM pricing. If the gap is intentional, add one line to `/games/fivem`
+   leading with the NVMe/CPU allocation advantage instead of letting RAM
+   alone invite the price comparison.
+
+3. **RocketNode offers a free trial directly next to its purchase CTA;
+   Lumix's flow has no trial or money-back offer anywhere from homepage
+   through checkout.** "Try your 1 Day Free Trial" sits beside RocketNode's
+   "Deploy FiveM Server" button — a zero-commitment way to de-risk the
+   exact moment of purchase hesitation. Nothing equivalent exists on
+   Lumix's homepage, `/games`, or `/games/fivem`.
+   → *Action:* Add a short trial or a "not satisfied in 24 hours, full
+   refund" line next to the "Deploy Server" CTA on `/games/fivem` (and
+   ideally the other game pages) — doesn't require a new product, just a
+   guarantee/trial policy and one line of copy at the decision point.
+
+### Do this today (<1 hour)
+Add one line of copy next to the sold-out Miami option in the
+`/games/fivem` location step — e.g. "Miami: sold out — Ashburn recommended
+for East Coast players" — so a prospect mid-configuration sees a clear
+next step instead of a dead-looking option with a "12 PoPs" claim
+contradicting it one step later.
+
+**Escalation status:** Monday's finding #1 (no evergreen discount code) is
+now 9 days unresolved — no code or banner on `/games`, `/games/fivem`, or
+the homepage as of this run. Monday's finding #2 (FiveM $/GB audit) is
+resolved above, not escalated further.
+
+---
