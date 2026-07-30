@@ -693,3 +693,91 @@ the homepage as of this run. Monday's finding #2 (FiveM $/GB audit) is
 resolved above, not escalated further.
 
 ---
+
+## 2026-07-30 (Thursday) — SEO & Keywords (Week 2)
+
+**Note:** One week since the 2026-07-23 baseline. Re-fetched raw HTML
+(title/meta tags) for the homepage, `/games/`, and all five per-game pages
+(`/games/fivem/`, `/games/minecraft/`, `/games/palworld/`,
+`/games/beammp/`, `/games/terraria/`), plus `robots.txt` and
+`sitemap-0.xml`. **Baseline finding #3 (no dedicated per-keyword landing
+page) is now fully resolved** — this is the headline change since last
+Thursday: all five games have their own URL, each with a unique,
+keyword-rich `<title>` (e.g. "Minecraft Server Hosting | Lumix Solutions
+LLC," "FiveM Server Hosting | Lumix Solutions LLC") and a genuinely
+specific meta description (not boilerplate — e.g. FiveM's reads "Unmetered
+slots, dedicated vCores, and NVMe storage on RAID 1..."). All five are
+correctly listed in `sitemap-0.xml` and `robots.txt` allows full indexing.
+This closes the structural gap Thursday's baseline said blocked ranking
+"regardless of title/meta fixes."
+
+### Findings (max 3)
+
+1. **ESCALATION — homepage `<title>` and meta description are still
+   exactly what they were on 07-23, now 7 days unresolved.** Raw HTML
+   confirms both today: title is still "Lumix | Lumix Solutions LLC," meta
+   description is still "Infrastructure built by engineers. Node.js
+   servers, game services, voice infrastructure, and enterprise DDoS
+   protection." Neither contains a hosting or game keyword. This is no
+   longer a capability question — the team clearly can write strong,
+   specific title/meta copy, since all five new per-game pages prove it
+   this same week — it's specifically the homepage tag that keeps getting
+   skipped despite being logged as a one-line fix four runs running
+   (07-23, 07-26, 07-28, 07-29).
+   → *Action:* Copy the pattern already proven on the game pages directly
+   onto the homepage: title → "Lumix Solutions | FiveM, Minecraft,
+   Terraria & Bot Hosting"; meta → "FiveM, Minecraft, Terraria, and
+   Discord bot hosting with DDoS protection and sub-10ms latency. Deploy
+   in under 60 seconds." Two tags, no redesign, same task as last week.
+
+2. **NEW — Bot/Application hosting is now the only one of Lumix's four
+   core product lines with zero SEO footprint**, now that the five games
+   all have dedicated pages. No `/games/bot`, `/games/apps`, or equivalent
+   URL exists (checked and confirmed 404 across likely paths); it's absent
+   from `sitemap-0.xml`; and it never appears in any page `<title>` or meta
+   description sitewide. Meanwhile this run's search for "discord bot
+   hosting node.js python" surfaces real, ranking competitors — YorkHost,
+   EmpowerServers, XeroHost, Wispbyte — each with a page built specifically
+   around that phrase. This is the SEO-specific edge of the product-listing
+   gap Tuesday's copy review (07-28) already flagged; it means Lumix is
+   invisible to search for one full quarter of its own product line while
+   the other three now rank on dedicated pages.
+   → *Action:* Once a Bot Hosting product page exists (per Tuesday's
+   07-28 action item), give it the same treatment as the five game pages:
+   a keyword title ("Node.js & Python Bot Hosting | Lumix Solutions"), a
+   specific meta description, and an entry in the sitemap. This can ship
+   as one PR alongside Tuesday's page-creation work rather than as a
+   separate task.
+
+3. **NEW — the five new per-game pages carry price and spec data but no
+   Product/Offer structured data (schema.org), so none are eligible for
+   price-in-snippet rich results.** Checked the JSON-LD on all five pages
+   (`/games/fivem/`, `/minecraft/`, `/palworld/`, `/beammp/`,
+   `/terraria/`): each ships only the same sitewide `Organization` and
+   `WebSite` blocks — no `Product`, `Offer`, or `priceRange` markup, despite
+   each page displaying a clear starting price ($8.99, $14.99, $9.99,
+   $5.99, $5.00). Price-conscious searches like "cheap minecraft server
+   hosting" (checked this run) return results where budget-focused
+   competitors can qualify for a price-annotated snippet; Lumix's pages
+   currently can't, even though the underlying price data already exists
+   on-page.
+   → *Action:* Add a `Product` + `Offer` JSON-LD block to each of the five
+   game page templates, pulling the price that's already rendered on the
+   page. One shared template change (not five one-offs), since all five
+   pages share the same layout.
+
+### Do this today (<1 hour)
+Fix the homepage `<title>` and meta description now — this is the same
+single-page, two-tag edit that's been sitting in this log since 07-23 and
+crosses the 7-day escalation line today. Use the copy already drafted in
+finding #1 above; no new writing required, just applying it.
+
+**Escalation status:** Baseline finding #1 (homepage title) is now 7 days
+unresolved as of today — escalated in finding #1 above. Baseline finding
+#2 (homepage meta description, same underlying page) is folded into the
+same escalation since both tags live on the same unedited page. Monday's
+evergreen-discount-code finding is separately tracked on the pricing track
+and remains open per Wednesday's (07-29) entry; not re-logged here since
+this is the SEO track.
+
+---
