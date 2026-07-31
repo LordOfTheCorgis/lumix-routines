@@ -781,3 +781,78 @@ and remains open per Wednesday's (07-29) entry; not re-logged here since
 this is the SEO track.
 
 ---
+
+## 2026-07-31 (Friday) — Social & Community (Week 2)
+
+**Note:** One week since the 2026-07-24 baseline. Re-checked the homepage
+footer (all five social links unchanged: TikTok `@lumix.solutions`, YouTube
+`@officiallumixsolutions`, X `@LumixSolutions`, Instagram
+`@lumixsolutionsllc`, Discord invite), re-searched Lumix's TikTok/YouTube
+handles, and for the first time pulled Lumix's actual Discord member count
+via the invite API rather than relying on search alone. Also checked three
+competitors' current social output (BisectHosting, Shockbyte, Apex Hosting,
+RocketNode) for anything new since last Friday.
+
+### Findings (max 3)
+
+1. **ESCALATION — Lumix's YouTube channel is no longer just "no
+   discoverable content," it now 404s outright, 7 days unresolved.** Last
+   Friday's finding was an indirect signal (targeted searches for
+   `@officiallumixsolutions` surfaced nothing, with a caveat that fetch
+   tools were partially blocked). This run fetched
+   `youtube.com/@officiallumixsolutions` directly — hard HTTP 404, not a
+   loading/blocking issue — and confirmed via a fresh search that no
+   channel by that name is indexed anywhere. TikTok's `@lumix.solutions`
+   still isn't blocked but also still returns zero indexed content, same
+   as baseline. The footer links to this YouTube handle from the live
+   site, meaning a prospect who clicks it today hits a dead page.
+   → *Action:* Someone with account access needs to confirm today whether
+   the YouTube channel was deleted, renamed, or never existed under that
+   handle. If it's gone, pull the dead link from the footer immediately —
+   a 404 from a company's own footer is worse than the "empty account"
+   problem flagged last week. If it was renamed, update the footer link to
+   the correct handle.
+
+2. **NEW — Lumix's own Discord, measured directly for the first time
+   (128 members, 24 online via the invite API), is a real but small
+   community next to what competitors report investing in theirs.**
+   RocketNode's own announcements describe their Discord (10,595 members)
+   as central to "hearing direct feedback on their products" — the exact
+   community-sourced content flywheel last Friday's finding #2 recommended
+   Lumix tap into. Lumix's ~19% online/member ratio suggests genuine
+   engagement, not a dead server — the gap is size and content output, not
+   activity, which supports going after last week's "repost community
+   clips" idea rather than a bigger structural fix.
+   → *Action:* No new action beyond last week's still-open item (pin a
+   Discord call for community clips/screenshots to repost on TikTok/
+   YouTube) — this number is a baseline to track against once that starts,
+   not a new task.
+
+3. **NEW — Apex Hosting runs a recurring, low-cost content-and-acquisition
+   engine timed to this exact calendar window that Lumix has no
+   equivalent of.** Apex's "6th Annual Minecraft Scholarship" ($2,000,
+   essay-based, open now) lands right before back-to-school season and
+   pairs with a `STUDENT` discount code — it generates entrant
+   essays/shares every August at minimal production cost and gives Apex a
+   recurring seasonal story instead of one-off promos. Lumix has no
+   seasonal or recurring community event of any kind on the books.
+   → *Action:* Not a $2,000-scholarship-sized ask, but worth a scaled-down
+   version this August: a Discord-only "best back-to-school server setup"
+   contest (e.g. a free month of hosting as the prize) — cheap, timely,
+   and reuses the same community-content mechanism as finding 2's open
+   item instead of requiring a new initiative.
+
+### Do this today (<1 hour)
+Log into the YouTube account and confirm whether
+`@officiallumixsolutions` still exists. If it's gone, delete that footer
+link now — it's an active broken link on the live site, not a
+future-facing recommendation like the other items today.
+
+**Escalation status:** Friday baseline finding #1 (dormant TikTok/YouTube)
+is now 7 days unresolved and escalated above with a stronger signal (hard
+404 on YouTube, not just an unindexed search). Last Friday's "do this
+today" (pin a Discord community-clips call) could not be verified from
+outside Discord this run — carrying forward as still-open rather than
+re-logging as new.
+
+---
