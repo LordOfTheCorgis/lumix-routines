@@ -856,3 +856,70 @@ outside Discord this run — carrying forward as still-open rather than
 re-logging as new.
 
 ---
+
+## 2026-08-01 (Saturday) — Off-Rotation Check-In
+
+**Note:** Third unassigned-weekday run (rotation covers Mon–Fri only, cron
+fires daily). Re-fetched the homepage and `/games/` directly (raw HTML,
+not cached) to check anything new or changed since Friday's report, and to
+re-verify the log's oldest open items.
+
+### Findings (max 3)
+
+1. **ESCALATION — homepage `<title>` and meta description are still
+   completely unchanged, and this is now the most overdue item in the
+   entire log.** Raw HTML confirmed again today: title is still "Lumix |
+   Lumix Solutions LLC," meta description is still "Infrastructure built
+   by engineers. Node.js servers, game services, voice infrastructure, and
+   enterprise DDoS protection." First flagged 2026-07-23, formally
+   escalated at the 7-day mark on 2026-07-30 — it is now 9 days past that
+   escalation (13 days total) with zero change, despite exact ready-to-
+   paste replacement copy having been provided twice in this log
+   (07-23 and again 07-30). Every other page on the site (`/games/` and
+   all five per-game pages) has a proper keyword title — this is now
+   specifically and only the homepage tag that keeps getting skipped.
+   → *Action:* This should stop being treated as a routine finding. Flag
+   directly to whoever has CMS/deploy access that a two-line copy-paste
+   fix has been sitting untouched for 13 days: title →
+   "Lumix Solutions | FiveM, Minecraft, Terraria & Bot Hosting"; meta →
+   "FiveM, Minecraft, Terraria, and Discord bot hosting with DDoS
+   protection and sub-10ms latency. Deploy in under 60 seconds."
+
+2. **NEW — a "Coming Soon" section has appeared on `/games/` listing four
+   unreleased titles: ARK: Survival Ascended, Rust, Arma Reforger, and
+   Squad.** Not present in any prior run's fetch of this page (last
+   checked 07-30 for SEO, 07-31 for the games list). No dates, pricing, or
+   dedicated URLs exist yet for any of the four — this is a teaser only.
+   Thursday's SEO track (07-23, 07-30) established that Lumix's dedicated
+   per-game pages are what actually let it rank, and that each existing
+   page only started drawing search traffic once it shipped with its own
+   keyword-matched URL and title.
+   → *Action:* Worth reserving the SEO lead time now rather than at
+   launch — stub out `/games/ark-survival-ascended`, `/games/rust`,
+   `/games/arma-reforger`, and `/games/squad` (even a simple "notify me"
+   page per title) so each has time to get indexed before the product
+   itself ships, instead of starting from zero SEO on launch day the way
+   the original five titles did.
+
+3. **Evergreen discount code is still missing, now 12 days unresolved.**
+   Re-checked both the homepage and `/games/` directly today — no code,
+   voucher, or sale banner on either, same as every check since the
+   2026-07-20 baseline (escalated 07-27 at 7 days). No change to report
+   beyond the day count; carrying forward, not re-analyzing, since
+   Monday's pricing-track re-check is the right place for a fresh look at
+   this.
+
+### Do this today (<1 hour)
+Ship finding #1's homepage title and meta description fix. It is the
+single most overdue item in this entire log — 13 days old, flagged twice
+with copy already written and ready to paste, zero dependencies, and the
+one item that's been "one line away" the longest.
+
+**Escalation status:** Homepage title/meta (finding #1) crosses from
+"escalated" to "long-overdue" today — 9 days past its own escalation
+point. Evergreen discount code (finding #3) is now 12 days unresolved,
+approaching two weeks. YouTube's hard 404 (escalated 07-31) re-confirmed
+still broken today via direct fetch — not re-listed as a full finding
+since status is unchanged from Friday, but still live and unresolved.
+
+---
