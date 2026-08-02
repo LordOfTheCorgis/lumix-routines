@@ -923,3 +923,78 @@ still broken today via direct fetch — not re-listed as a full finding
 since status is unchanged from Friday, but still live and unresolved.
 
 ---
+
+## 2026-08-02 (Sunday) — Off-Rotation Check-In
+
+**Note:** Fourth unassigned-weekday run (rotation covers Mon–Fri only,
+cron fires daily). Re-fetched the homepage raw HTML, `/games/`, and
+`youtube.com/@officiallumixsolutions` directly to check for movement on
+the log's longest-running open items since yesterday's report.
+
+### Findings (max 3)
+
+1. **The homepage `<title>` tag finally changed for the first time since
+   this finding opened on 2026-07-23 (13 days, 5 prior mentions) — but the
+   fix is partial and introduces a new inconsistency.** Raw HTML confirms
+   today's title is now `Game Server & VPS Hosting | Lumix Solutions`,
+   replacing the old generic "Lumix | Lumix Solutions LLC." That's
+   genuine progress: it now contains "Hosting" and reads like a real
+   company description. But it doesn't match the copy this log has
+   recommended five times ("FiveM, Minecraft, Terraria & Bot Hosting") —
+   it names no specific game — and the meta description right next to it
+   is byte-for-byte unchanged: still "Infrastructure built by engineers.
+   Node.js servers, game services, voice infrastructure, and enterprise
+   DDoS protection," still zero keywords. Whoever edited the title didn't
+   use the drafted copy sitting in this log and left the paired meta tag
+   untouched.
+   → *Action:* Finish the job with the already-drafted meta description
+   ("FiveM, Minecraft, Terraria, and Discord bot hosting with DDoS
+   protection and sub-10ms latency. Deploy in under 60 seconds.") — same
+   one-line copy-paste that's been ready since 07-23.
+
+2. **NEW — the new title's "VPS Hosting" claim has zero backing anywhere
+   else on the site.** Checked homepage body copy, nav (Home / Game
+   Hosting / Partners / Staff / Careers / Status / Contact / Billing
+   Portal / Panel), banners, and `/games/` (5 live games + 4 Coming Soon
+   teasers) — "VPS" appears nowhere except that one title tag. This is
+   the same pattern flagged 07-29 with the "12 PoPs" vs. 2-location
+   wizard mismatch: a claim added to trust-signal copy that the rest of
+   the site doesn't support yet. A prospect who searches "VPS hosting,"
+   clicks through on that exact title, and lands on a page with no VPS
+   product, price, or mention anywhere bounces immediately.
+   → *Action:* Either drop "VPS" from the title until a real VPS product
+   page exists, or — if VPS hosting is actually launching — this is worth
+   surfacing directly rather than waiting for Thursday's SEO rotation,
+   since right now it's a keyword with nothing behind it.
+
+3. **Evergreen discount code gap is now 13 days unresolved, one day short
+   of two full weeks.** Re-checked homepage and `/games/` directly today —
+   still no code, voucher, or sale banner on either, unchanged since the
+   2026-07-20 baseline and the 07-27 escalation. No new analysis needed;
+   flagging the day count since Monday's pricing re-check (which lands
+   exactly on day 14) is the right place to decide whether this needs to
+   escalate beyond a routine log entry.
+
+**Resolved/unchanged since yesterday:** Yesterday's "Coming Soon" section
+(ARK: Survival Ascended, Rust, Arma Reforger, Squad) is unchanged — same
+four titles, still no dates or pricing, not re-reported as new.
+`youtube.com/@officiallumixsolutions` re-confirmed hard 404 again today —
+still broken, still unresolved since 07-31, not re-listed as a full
+finding since nothing changed.
+
+### Do this today (<1 hour)
+Paste the already-drafted meta description onto the homepage — it's the
+second half of finding #1 and the only piece of that 13-day-old fix still
+outstanding. Copy is ready, zero new writing: "FiveM, Minecraft, Terraria,
+and Discord bot hosting with DDoS protection and sub-10ms latency. Deploy
+in under 60 seconds."
+
+**Escalation status:** Homepage title (finding #1, original half) is
+resolved as of today after 13 days — first movement since 07-23. Meta
+description (the other half of the same original finding) remains
+unresolved, now also 13 days old, carried forward under finding #1 rather
+than re-opened as separate. Evergreen discount code is 13 days unresolved,
+crossing 14 (two weeks) at tomorrow's Monday pricing re-check. YouTube's
+404 remains unresolved, unchanged since 07-31.
+
+---
