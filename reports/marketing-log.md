@@ -998,3 +998,81 @@ crossing 14 (two weeks) at tomorrow's Monday pricing re-check. YouTube's
 404 remains unresolved, unchanged since 07-31.
 
 ---
+
+## 2026-08-03 (Monday) — Competitor Pricing & Plans (Week 3)
+
+**Note:** Re-fetched Lumix's homepage, `/games/`, and `/games/fivem` directly,
+plus fresh checks on RocketNode's and BisectHosting's live FiveM/Minecraft
+pricing pages and searches on ZAP-Hosting. No structural changes on the
+competitor side this week — same five providers, same pricing tiers as the
+07-20 baseline and 07-27 re-check. The story this run is the discount-code
+gap crossing a two-week milestone, plus a new angle on why the gap compounds
+right now.
+
+### Findings (max 3)
+
+1. **ESCALATION — evergreen discount code gap is now 14 days unresolved,
+   a full two weeks with zero movement.** Re-confirmed today via direct
+   fetch of the homepage and `/games/fivem`: still no code, voucher, or sale
+   banner anywhere on Lumix's site. Meanwhile every competitor checked this
+   run still runs one: RocketNode's FiveM page shows an active "Summer Sale
+   — Up to 25% Off" banner plus a "1 Day Free Trial" CTA; BisectHosting's
+   Minecraft page shows the same "Summer Sale — Up to 25% Off" plus
+   quarterly/semi-annual/annual billing discounts up to 20%; ZAP-Hosting's
+   permanent 20%-off voucher is still live per this week's search. This has
+   now been logged as open on five straight Monday-or-later checks
+   (07-20, 07-25, 07-26, 07-27, 08-01, 08-02, and today) with the same
+   concrete action attached each time.
+   → *Action:* This needs an explicit answer, not another log line — ask
+   whoever owns pricing directly: is there a blocker (payment processor,
+   margin, pricing-strategy call) to shipping one evergreen code (e.g.
+   `LUMIX10`)? If yes, log that reason so this stops re-appearing weekly;
+   if no, ship it this week — it's the single most consistent, lowest-effort
+   conversion lever every competitor in this category already uses.
+
+2. **NEW — Lumix's own multi-month billing discounts cap lower than every
+   competitor checked this run, compounding the code gap.** Lumix's
+   `/games/fivem` billing-cycle discounts top out at 10% (biennial/
+   triennial only; quarterly and annual are both 5%). RocketNode offers
+   5% quarterly but 12% semi-annual and 20% annual; BisectHosting offers
+   10% quarterly, 15% semi-annual, and 20% annual. A prospect comparing
+   Lumix and RocketNode side by side at the 1-year commitment sees a 20%
+   discount at RocketNode against 5% at Lumix — a gap that exists purely
+   in the commitment-discount structure, separate from and additional to
+   the missing evergreen code in finding 1.
+   → *Action:* Worth a quick gut-check with whoever owns pricing: is a 20%
+   annual discount (matching category norm) actually a margin problem, or
+   just something that hasn't been revisited since the tiers were set?
+   Even matching the 20% annual figure alone (leaving quarterly/semi-annual
+   as-is) would close the most visible part of this gap.
+
+3. **NEW — RocketNode's active sale widens the already-known FiveM
+   entry-price gap to over 50% for the length of the promo.** The 07-29
+   audit established Lumix's Starter ($8.99/2GB = $4.50/GB) runs ~38% above
+   RocketNode's Starter ($6.50/2GB = $3.25/GB) at list price. With
+   RocketNode's "Summer Sale — Up to 25% Off" now confirmed live on the
+   FiveM page itself (not just sitewide), a prospect who applies that
+   discount pays as little as ~$4.88/mo for the same 2GB tier — Lumix would
+   need to be priced roughly 84% higher than that sale price for the same
+   spec. This is a live, time-bound gap, not just the static comparison
+   already on record.
+   → *Action:* No pricing change needed to act on this today — see "do this
+   today" below for the copy-only mitigation.
+
+### Do this today (<1 hour)
+Add one line near the Starter tier on `/games/fivem` calling out Lumix's
+NVMe/vCore allocation advantage (35GB NVMe / 2 dedicated vCores at Starter,
+vs. RocketNode's page not surfacing a comparable storage number) — e.g.
+"More dedicated compute & NVMe storage per dollar." This doesn't require a
+pricing decision from anyone else and directly blunts finding 3's
+raw-price comparison while RocketNode's sale is active, unlike findings 1
+and 2 which need an owner decision.
+
+**Escalation status:** Evergreen discount code (finding 1) crosses two full
+weeks unresolved today — flagged as needing a direct decision rather than
+continued routine logging. Homepage meta description (open since 07-23,
+last touched partially on 08-02) and the YouTube hard 404 (open since
+07-31) are unchanged since yesterday's check-in; not re-listed since
+nothing moved and neither falls on today's pricing track.
+
+---
