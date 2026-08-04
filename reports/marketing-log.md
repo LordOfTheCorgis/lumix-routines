@@ -1076,3 +1076,84 @@ last touched partially on 08-02) and the YouTube hard 404 (open since
 nothing moved and neither falls on today's pricing track.
 
 ---
+
+## 2026-08-04 (Tuesday) — Website Copy (Week 3)
+
+**Note:** One week since the 2026-07-28 baseline. Re-fetched the homepage,
+`/games/`, and `/contact` directly. Nothing on the copy track has changed
+since 07-28 — all three baseline findings are confirmed still present,
+unchanged, exactly 7 days later. No new pages, sections, or copy rewrites
+appeared this week outside what Monday's and Sunday's off-track runs
+already logged (title tag change, Coming Soon section — neither touched by
+this run).
+
+### Findings (max 3) — all escalated (7 days unresolved)
+
+1. **ESCALATION — Bot/Application hosting still has no product listing,
+   description, or price anywhere on `/games/`, 7 days unresolved.**
+   Re-fetched `/games/` today: five live product cards (FiveM, Minecraft,
+   Palworld, BeamMP, Terraria) plus four "Coming Soon" teasers (ARK, Rust,
+   Arma Reforger, Squad) — bot hosting appears in neither list. The only
+   sitewide mention remains the homepage banner line, "Expanded bot hosting
+   capacity — more space, better isolation, smoother deployments," which
+   still reads as a changelog note, not something a prospect can configure
+   or buy. One of Lumix's four core product lines remains completely
+   absent from the page that lists every other product.
+   → *Action:* Add a Bot Hosting card to `/games/` in the same
+   name/price/spec/CTA format as the other five products. This has now
+   been logged unchanged for a full week — worth a direct check with
+   whoever owns the `/games/` catalog on whether it's blocked or just not
+   yet scheduled.
+
+2. **ESCALATION — FiveM scarcity claim still has no number behind it, 7
+   days unresolved.** Both the homepage and `/games/` still repeat,
+   verbatim: "Limited FiveM servers stock available - intentionally capped
+   to maintain performance and reliability." No cap size, no remaining
+   count, no timeframe — unchanged word-for-word from 07-28. This is still
+   the exact "claim with no proof" pattern this track exists to catch.
+   → *Action:* Publish the actual cap number or drop the scarcity framing.
+   Unchanged from last week's recommendation — still a single-line fix,
+   still not shipped.
+
+3. **ESCALATION — CTA naming inconsistency is confirmed unresolved and now
+   has a third variant, not just two.** 07-28 flagged six inconsistent
+   strings across homepage/`/games/`/`/contact` for two actions ("configure
+   a plan" and "talk to a human"). Today's direct fetch of `/contact`
+   shows that page doesn't use either "Contact Sales" or "Talk to an
+   engineer" (both still present elsewhere, per today's homepage and
+   `/games/` fetch) — it presents raw "General Inquiries" / "Technical
+   Support" email links instead, plus the billing portal and Discord
+   links, with no button labeled for sales contact at all. A prospect
+   following "Contact Sales" from the homepage lands on a page that never
+   uses that phrase or an equivalent CTA.
+   → *Action:* Same fix as 07-28 — standardize on one label for the sales-
+   contact action sitewide, and make sure `/contact` itself actually
+   surfaces that label near the relevant email/link rather than leaving it
+   unlabeled.
+
+**Also observed (not counted against the max-3, folds into item 2's
+"claim with no proof" pattern):** the homepage's "What we do" section
+reads, verbatim: "Reliable compute, game server hosting, voice
+infrastructure, and enterprise-grade DDoS protection. No buzzwords, just
+infrastructure that works." — the sentence claiming "no buzzwords" sits
+directly after the word "enterprise-grade," one of the vaguest terms in
+the whole site. This is new this run (not present in any prior fetch's
+extracted headline copy) and is the single easiest fix on today's board —
+see "do this today."
+
+### Do this today (<1 hour)
+On the homepage "What we do" section, replace "enterprise-grade DDoS
+protection" with a concrete figure — the site already has one ("10+ Tbps
+mitigated," per the homepage's own stats block a few lines away) — so the
+sentence reads something like "...and DDoS protection mitigating 10+
+Tbps. No buzzwords, just infrastructure that works." Removes a claim that
+directly undercuts the sentence right after it, and reuses a number
+that's already published elsewhere on the same page.
+
+**Escalation status:** All three copy-track findings from 07-28 cross the
+7-day threshold today and are escalated above. Evergreen discount code
+(pricing track, 15 days unresolved as of yesterday) and the YouTube hard
+404 (social track, open since 07-31) are unchanged and not falling on
+today's track; not re-listed.
+
+---
