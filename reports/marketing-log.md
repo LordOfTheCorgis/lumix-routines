@@ -1157,3 +1157,108 @@ that's already published elsewhere on the same page.
 today's track; not re-listed.
 
 ---
+
+## 2026-08-05 (Wednesday) — Competitor UX Deep-Dive: Apex Hosting
+
+**Note:** Third UX-track entry, rotating to Apex Hosting (previously only
+seen in this log via pricing/promo mentions on 07-20, 07-27, 07-31 —
+never its own UX-track subject). Shockbyte was the next-in-line candidate
+per 07-22's note, but its main site and order page both returned HTTP 403
+to fetch tools again this run (same block hit on 07-22 — two runs in a
+row now). Apex's own pages also blocked direct fetch (403/503 across
+homepage, pricing, and getting-started), so Apex's flow and specs below
+are reconstructed from search-indexed content (Apex's own pricing page
+text as indexed, plus independent review sites) rather than a live
+render — flagging the method since it's weaker than the direct-fetch
+comparisons done for BisectHosting (07-22) and RocketNode (07-29).
+Lumix's own `/games/fivem` flow was fetched live and directly for
+comparison, exactly one week after the 07-29 baseline.
+
+**Flows observed:**
+- **Apex Hosting:** Pricing page lists 9 Minecraft RAM tiers (1GB=$4.49
+  up to 15GB=$79.99), each with **unlimited storage on every tier** —
+  storage isn't a decision variable at all, unlike Lumix's per-tier NVMe
+  allocations. Order flow per Apex's own docs and independent reviews:
+  pricing page → "Order Now" → a configure screen (add-ons like Dedicated
+  IP or Premium Support) → order review screen → billing/payment details
+  → "Complete Order," with account creation folded into that final
+  billing step (same deferred-signup pattern BisectHosting used). Apex
+  operates **18 real datacenters across 6 continents** (confirmed via
+  multiple independent sources: 6 in the US plus Canada, Brazil, UK,
+  France, Poland, Germany, Israel, Russia, China, Singapore, Australia,
+  Turkey) — a live promo code `APEX25` (25% off first invoice, +10%
+  extra for quarterly) is already tracked on the pricing track.
+- **Lumix (`/games/fivem`):** Unchanged from the 07-29 baseline — still a
+  3-step wizard (Plan → Location → Billing Cycle). Location step still
+  lists exactly two datacenters: Miami, FL ("Sold Out — Out of
+  capacity") and Ashburn, VA. No free trial or discount code field
+  anywhere in the flow (re-confirmed live today). Homepage stats block
+  still reads "12 PoPs" locations, unchanged.
+
+### Findings (max 3)
+
+1. **ESCALATION — the "12 PoPs" homepage claim vs. the wizard's actual
+   2-location (1 sold out) reality is now 7 days unresolved, and this
+   week's comparison competitor sharpens the gap rather than closing it.**
+   First flagged 07-29 as an internal contradiction on Lumix's own site;
+   re-confirmed live today via direct fetch — same two locations, same
+   Miami "Sold Out" state, same unchanged "12 PoPs" stat block. Apex
+   Hosting, this run's comparison competitor, genuinely operates 18
+   datacenters across 6 continents — meaning the category norm this
+   claim is implicitly competing against isn't hypothetical, it's a real,
+   live, larger footprint at a competitor Lumix is priced near.
+   → *Action:* Same fix proposed 07-29, now overdue: either open ordering
+   on more of the 12 claimed PoPs so the wizard matches the stat, or
+   change the homepage stat itself to something accurate right now (e.g.
+   "2 Locations — more rolling out") until it does. A false-sounding trust
+   stat on the homepage is a sharper risk than the wizard-level mismatch
+   alone.
+
+2. **ESCALATION — no free trial, guarantee, or discount code exists
+   anywhere in Lumix's purchase flow, 7 days unresolved.** First flagged
+   07-29 against RocketNode's "1 Day Free Trial" CTA; re-confirmed today
+   via direct fetch of both `/games/fivem` and the homepage — no trial,
+   refund policy, or code field on either. Apex's flow adds a second data
+   point in the same direction: its `APEX25` promo is applied inline
+   during the billing step of checkout, meaning two of the three
+   competitors reviewed on this UX track now (RocketNode, Apex) surface a
+   de-risking or discount mechanism at the exact purchase moment, and
+   Lumix's flow still surfaces neither.
+   → *Action:* Unchanged from 07-29 — add a short trial or a "not
+   satisfied in 24 hours, full refund" line next to the "Deploy Server"
+   CTA. This is separate from (but reinforces) the still-open evergreen
+   discount code finding tracked on the pricing track.
+
+3. **NEW — Apex removes storage as a decision variable entirely; Lumix
+   makes a prospect pick a specific storage number at every tier.** Every
+   Apex Minecraft plan, from the $4.49 1GB tier to the $79.99 15GB tier,
+   includes unlimited storage — one less axis a prospect has to reason
+   about when comparing tiers. Lumix's FiveM wizard instead pairs RAM
+   with a specific NVMe figure per tier (35GB at Starter up to 175GB at
+   Ultimate per the 07-29 baseline, reconfirmed today), meaning a
+   prospect has to evaluate two correlated numbers (RAM and storage)
+   instead of one. This isn't necessarily wrong — more storage at higher
+   tiers is a legitimate differentiator — but it adds a decision step
+   Apex's flow skips entirely.
+   → *Action:* Low-effort test: add a line under the plan tiers noting
+   the practical implication of the NVMe allocation (e.g. "35GB — enough
+   for FiveM base install + typical resource/script pack"), so the
+   storage number means something to a prospect instead of being a raw
+   figure they have to size themselves.
+
+### Do this today (<1 hour)
+Change the homepage stats block's "12 PoPs" figure to reflect what's
+actually purchasable today — e.g. "2 Locations (more rolling out)" — or
+add a footnote/tooltip. This is a smaller copy edit than shipping new
+datacenters, closes the sharpest version of finding 1, and is more urgent
+than the original 07-29 suggestion (a line near the wizard) since the
+false-sounding claim lives on the homepage, not just inside the
+configurator.
+
+**Escalation status:** Both 07-29 UX-track findings (12 PoPs vs. 2-location
+wizard; no trial/guarantee in the flow) cross 7 days unresolved today and
+are escalated above. Evergreen discount code (pricing track, 15+ days
+unresolved) and the YouTube hard 404 (social track, open since 07-31) are
+unchanged and not re-listed since neither falls on today's track.
+
+---
