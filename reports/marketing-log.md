@@ -1262,3 +1262,90 @@ unresolved) and the YouTube hard 404 (social track, open since 07-31) are
 unchanged and not re-listed since neither falls on today's track.
 
 ---
+
+## 2026-08-06 (Thursday) — SEO & Keywords (Week 3)
+
+**Note:** One week since the 2026-07-30 entry. Pulled raw HTML directly
+(title/meta/JSON-LD) for the homepage, `/games/`, `/games/fivem/`,
+`/games/minecraft/`, `/games/terraria/`, plus `sitemap-0.xml`, and checked
+likely bot-hosting URLs (`/games/bot/`, `/games/bot-hosting/`,
+`/games/application/`, `/games/apps/`, `/games/nodejs/`, `/games/node/` —
+all still 404). Also ran fresh generic-keyword searches ("fivem server
+hosting," "cheap minecraft server hosting," "discord bot hosting node.js
+python") to see whether the new per-game pages have started surfacing for
+unbranded queries yet. All three findings below are escalations of
+already-logged items, not new discoveries — nothing changed structurally
+on the SEO track this week beyond the day-count.
+
+### Findings (max 3) — all escalated (7+ days unresolved)
+
+1. **ESCALATION — homepage meta description is now 14 days unresolved,
+   the oldest continuously-open item in this entire log.** Raw HTML
+   confirms today it is still byte-for-byte the same text flagged on
+   07-23: "Infrastructure built by engineers. Node.js servers, game
+   services, voice infrastructure, and enterprise DDoS protection." No
+   game name, no "hosting," no price/speed hook. The homepage `<title>`
+   was partially fixed on 08-02 (now "Game Server & VPS Hosting | Lumix
+   Solutions") but whoever made that edit didn't touch the paired meta tag
+   sitting right next to it, even though the exact replacement copy has
+   been sitting ready-to-paste in this log since 07-23 and been
+   re-mentioned five times since (07-26, 07-28, 07-29, 07-30, 08-02).
+   → *Action:* Paste the already-drafted description: "FiveM, Minecraft,
+   Terraria, and Discord bot hosting with DDoS protection and sub-10ms
+   latency. Deploy in under 60 seconds." Zero new writing, one tag, two
+   weeks overdue.
+
+2. **ESCALATION — Bot/Application hosting still has zero SEO footprint, 7
+   days unresolved.** Re-confirmed today: no `/games/bot/`,
+   `/games/bot-hosting/`, `/games/application/`, `/games/apps/`,
+   `/games/nodejs/`, or `/games/node/` exists (all checked, all 404);
+   `sitemap-0.xml` lists 12 URLs total and still contains no bot-hosting
+   entry; the string "bot hosting" appears sitewide only inside the same
+   changelog-style banner line flagged 07-28 and 07-30. Generic search for
+   "discord bot hosting node.js python" this run surfaces real competitors
+   (HYEHOST, LordHosting, OuiHeberg, Kuberns) with dedicated pages —
+   lumixsolutions.org does not appear anywhere in those results. This is
+   the same product-listing gap Tuesday's copy track has open (still
+   unresolved as of 08-04); the SEO consequence compounds every week it
+   stays unshipped.
+   → *Action:* Unchanged from 07-30 — once a Bot Hosting product page
+   exists, give it the same title/meta/sitemap treatment as the five game
+   pages. Worth flagging as blocked-on-the-same-thing to whoever owns both
+   the Tuesday and Thursday tracks' open items, since it's one build, not
+   two separate asks.
+
+3. **ESCALATION — game pages still carry no Product/Offer structured
+   data, 7 days unresolved.** Checked JSON-LD on `/games/fivem/`,
+   `/games/minecraft/`, and `/games/terraria/` directly today: each ships
+   only `Organization` and `WebSite` blocks, identical to 07-30 — no
+   `Product`, `Offer`, or `priceRange` markup despite every page rendering
+   a clear price ($8.99, $14.99, $5.00). No progress since last week's
+   finding.
+   → *Action:* Unchanged from 07-30 — add a shared `Product`+`Offer`
+   JSON-LD block to the game-page template, pulling the price already
+   rendered on-page. One template change covers all five (soon six-plus)
+   game pages.
+
+**Also observed (not a new finding, context only):** unbranded searches
+this run ("fivem server hosting," "cheap minecraft server hosting") still
+do not surface any `lumixsolutions.org` result — only branded queries
+("lumix solutions fivem hosting") return the site. Expected this early
+(the per-game pages are ~1 week old), not yet actionable, but worth
+checking again in another week or two to see whether the title/meta work
+already shipped is translating into unbranded ranking.
+
+### Do this today (<1 hour)
+Paste the already-drafted homepage meta description (finding #1) — this is
+the same one-line copy-paste that has been sitting in this log since
+07-23, now 14 days old and the single most overdue item on record. Copy:
+"FiveM, Minecraft, Terraria, and Discord bot hosting with DDoS protection
+and sub-10ms latency. Deploy in under 60 seconds."
+
+**Escalation status:** Bot-hosting SEO gap and missing Product/Offer
+schema (both first logged 07-30) cross 7 days unresolved today and are
+escalated above for the first time. Homepage meta description crosses 14
+days today (7 days past its own 07-30 escalation). Evergreen discount code
+(pricing track) and YouTube 404 (social track) are unchanged and not
+re-listed since neither falls on today's track.
+
+---
