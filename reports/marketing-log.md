@@ -1349,3 +1349,73 @@ days today (7 days past its own 07-30 escalation). Evergreen discount code
 re-listed since neither falls on today's track.
 
 ---
+
+## 2026-08-07 (Friday) — Social & Community (Week 3)
+
+**Note:** Two weeks since the 07-24 baseline, one week since the 07-31
+hard-404 escalation. Re-fetched the homepage footer (all five social links
+unchanged), re-checked `youtube.com/@officiallumixsolutions` directly,
+re-pulled Lumix's Discord member count via the invite API (same invite,
+`uaNYBJQtvn`), re-searched for any indexed TikTok content, and checked
+whether either competitor content item flagged last week (RocketNode's
+community-clip strategy, Apex's back-to-school scholarship) has moved.
+
+### Findings (max 3)
+
+1. **ESCALATION — YouTube footer link is still a hard 404, now 7 days
+   unresolved as a confirmed dead link (21 days since first flagged as
+   dormant on 07-24).** Direct fetch of
+   `youtube.com/@officiallumixsolutions` today returns the same HTTP 404
+   confirmed last Friday — no rename, no restoration. This is now the
+   second consecutive weekly check with zero movement on last week's "do
+   this today" (log in and confirm/fix), and it remains a broken link
+   live in the site's own footer.
+   → *Action:* Since this has gone two full weeks with no visible change,
+   treat it as not going to get fixed by another reminder alone — either
+   someone confirms today whether the account is recoverable, or the
+   footer link should just be removed this week pending a real relaunch.
+   A dead link in month two looks worse than no YouTube icon at all.
+
+2. **NEW — Discord membership is flat week-over-week (128→130 members,
+   presence 24→19) despite two straight Fridays recommending a
+   community-clips call-to-action.** If that pinned ask went up, it isn't
+   showing in growth or in the online count, which actually dipped. This
+   is the first real signal (not just "still open") that either the
+   action wasn't taken or isn't moving the number by itself.
+   → *Action:* Confirm directly whether the Discord community-clips post
+   from either prior week's "do this today" was actually published. If it
+   was and members are still flat, the ask needs a concrete incentive
+   (see finding 3) rather than just a pinned message — reposting a few
+   clips to the dormant TikTok/YouTube is what was supposed to close the
+   loop, and that hasn't happened either per finding 1.
+
+3. **NEW — the back-to-school marketing window flagged last week is now
+   closing, and a second competitor is inside it.** Apex's Minecraft
+   Scholarship closed its submission window in late July with winners
+   drawn in early August — that seasonal moment is now essentially over
+   for Apex. Meanwhile BisectHosting is currently running a live "Student
+   Discount — 10% off all hosting plans" promo (confirmed via August 2026
+   coupon listings), explicitly riding the same back-to-school timing.
+   Last week's suggested scaled-down Discord contest is still unstarted,
+   and the seasonal relevance that makes it timely (not just a generic
+   contest) has maybe 1-2 weeks left before "back to school" stops being
+   a live hook.
+   → *Action:* If the Discord back-to-school contest from last week's
+   report is going to happen, this week is the last realistic window —
+   launch it now rather than carrying it forward a third week.
+
+### Do this today (<1 hour)
+Post the Discord back-to-school contest call now (e.g. "best back-to-school
+server setup," free month of hosting as the prize) — it's the one item on
+this list that gets materially less valuable the longer it waits, since the
+seasonal hook closes in the next 1-2 weeks and BisectHosting/Apex are both
+already inside it.
+
+**Escalation status:** YouTube 404 (first flagged 07-24, hard-404 confirmed
+07-31) crosses its second consecutive unresolved week today and is
+escalated above with a stronger recommendation (remove the link, not just
+"check it"). Discord community-clips ask (open since 07-24) is not
+escalated on its own but is reframed above now that a week of flat
+membership data suggests the ask alone isn't sufficient.
+
+---
