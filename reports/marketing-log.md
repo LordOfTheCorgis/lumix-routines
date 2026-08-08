@@ -1419,3 +1419,73 @@ escalated on its own but is reframed above now that a week of flat
 membership data suggests the ask alone isn't sufficient.
 
 ---
+
+## 2026-08-08 (Saturday) — Off-Rotation Check-In
+
+**Note:** Fifth unassigned-weekday run (rotation covers Mon–Fri only, cron
+fires daily). Re-fetched raw HTML for the homepage, `/games/`, and
+`/games/fivem/` directly, re-checked `youtube.com/@officiallumixsolutions`,
+and re-pulled the Discord invite API to check for movement since Friday's
+report.
+
+### Findings (max 3)
+
+1. **NEW — the `/games/fivem/` page now contradicts itself in real time:
+   its own scrolling ticker banner claims Miami is live while the location
+   picker two scrolls down still marks it sold out.** Raw HTML confirms a
+   ticker item reading "Miami datacenters are now live - choose your
+   region for lower latency" cycling on the exact same page where the
+   location step still shows "Miami, FL — Sold Out — Out of capacity" next
+   to Ashburn as the only available region (unchanged since 07-29). This
+   is a sharper version of the "12 PoPs" mismatch this log has tracked
+   since 07-29/08-05 — that one required comparing a homepage stat against
+   a different page's wizard; this is the same page telling a prospect in
+   one breath to "choose your region" for Miami and blocking that exact
+   choice in the next.
+   → *Action:* Either update or remove the "Miami datacenters are now
+   live" ticker line until Miami capacity actually reopens, or change its
+   wording to something accurate (e.g. "Ashburn now live — Miami capacity
+   full"). This is separate from, and more urgent than, the standing "12
+   PoPs vs. 2 locations" homepage-stat finding, since this one actively
+   misdirects a prospect mid-purchase rather than just overstating a trust
+   stat elsewhere on the site.
+
+2. **Evergreen discount code gap is now 19 days unresolved** (baseline
+   07-20, escalated 07-27 at 7 days, flagged as needing a direct owner
+   decision 08-03 at 14 days). Re-confirmed today via raw HTML on the
+   homepage, `/games/`, and `/games/fivem/` — still no code, voucher, or
+   sale banner anywhere. No new analysis; carrying the day count forward
+   for Monday's pricing-track re-check, which is the right place for this
+   to get a real decision rather than another log line.
+
+3. **Homepage meta description is now 16 days unresolved** — still
+   byte-for-byte "Infrastructure built by engineers. Node.js servers, game
+   services, voice infrastructure, and enterprise DDoS protection" (raw
+   HTML re-confirmed today). The homepage `<title>` half of this same
+   finding was fixed 08-02; the meta description half has had ready-to-
+   paste replacement copy sitting in this log since 07-23 and has now been
+   re-mentioned in nine separate entries without being touched.
+
+**Unchanged since Friday (not re-listed as findings):**
+`youtube.com/@officiallumixsolutions` still hard-404s. Discord membership
+is flat (129 members, 21 online, vs. Friday's 130/19) — consistent with
+Friday's finding that the community-clips ask alone isn't moving the
+number. The homepage's "enterprise-grade... No buzzwords" line (08-04's
+"do this today") and the FiveM Starter NVMe/vCore callout (08-03's "do
+this today") are both also still unshipped, but neither is new this run.
+
+### Do this today (<1 hour)
+Fix or remove the "Miami datacenters are now live - choose your region for
+lower latency" ticker banner on `/games/fivem/` — it's actively telling a
+prospect to pick a location the same page's wizard has marked sold out.
+Highest-leverage item today: it's a live, self-contradicting statement on
+the exact page where a purchase decision gets made, not a slow-burn
+backlog item like the other two findings above.
+
+**Escalation status:** Evergreen discount code (pricing track) crosses 19
+days unresolved today. Homepage meta description (SEO/copy track) crosses
+16 days unresolved today. Neither is newly escalated this run — both were
+already past threshold — carried forward with updated day counts ahead of
+Monday's pricing re-check.
+
+---
