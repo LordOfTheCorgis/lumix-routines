@@ -1489,3 +1489,71 @@ already past threshold — carried forward with updated day counts ahead of
 Monday's pricing re-check.
 
 ---
+
+## 2026-08-09 (Sunday) — Off-Rotation Check-In
+
+**Note:** Sixth unassigned-weekday run (rotation covers Mon–Fri only, cron
+fires daily). Re-fetched raw HTML for the homepage and `/games/fivem/`
+directly, re-checked `youtube.com/@officiallumixsolutions`, and re-pulled
+the Discord invite API to check for movement since Saturday's report.
+Nothing structurally new this run — this is a quiet continuation day, day
+counts only.
+
+### Findings (max 3)
+
+1. **Saturday's Miami ticker/wizard contradiction is confirmed still live,
+   unfixed one day after being flagged as the "do this today" item.** Raw
+   HTML re-pull of the homepage and `/games/fivem/` today shows the ticker
+   still cycling "Miami datacenters are now live - choose your region for
+   lower latency" while the location step on the same FiveM page still
+   marks Miami, FL as "Sold Out — Out of capacity" with Ashburn, VA as the
+   only available region — byte-for-byte the same contradiction reported
+   08-08. Not yet at the 7-day escalation threshold (1 day old), but it's
+   the one open item on the board that was explicitly called zero-effort
+   and highest-leverage yesterday and still hasn't moved.
+   → *Action:* Same fix as yesterday — update or remove the "Miami
+   datacenters are now live" ticker line until Miami capacity actually
+   reopens, or reword it to something accurate (e.g. "Ashburn now live —
+   Miami capacity full").
+
+2. **Evergreen discount code gap is now 20 days unresolved** (baseline
+   07-20, escalated 07-27 at 7 days, flagged as needing a direct owner
+   decision 08-03 at 14 days). Re-confirmed today via raw HTML on the
+   homepage and `/games/fivem/` — still no code, voucher, or sale banner
+   anywhere. This is now the single oldest continuously-open item in the
+   entire log, just under three full weeks with zero visible movement or
+   an on-record reason why. No new analysis; carrying the day count
+   forward for tomorrow's Monday pricing-track re-check.
+
+3. **Homepage meta description is now 17 days unresolved** — still
+   byte-for-byte "Infrastructure built by engineers. Node.js servers, game
+   services, voice infrastructure, and enterprise DDoS protection" (raw
+   HTML re-confirmed today). Ready-to-paste replacement copy has been
+   sitting in this log since 07-23 and has now been re-mentioned in ten
+   separate entries without being touched.
+
+**Unchanged since Saturday (not re-listed as findings):**
+`youtube.com/@officiallumixsolutions` still hard-404s, footer link
+unchanged. Discord membership is flat (129 members, 18 online, vs.
+Saturday's 129/21) — consistent with the flat trend noted 08-07/08-08. The
+homepage hero's "enterprise-grade DDoS protection. No buzzwords, just
+infrastructure that works" self-contradiction (08-04's "do this today") is
+also still unshipped — re-confirmed present in today's raw HTML — now 5
+days old, not yet at the 7-day threshold but worth watching for Tuesday's
+copy-track re-check.
+
+### Do this today (<1 hour)
+Same as yesterday, still outstanding: fix or remove the "Miami datacenters
+are now live - choose your region for lower latency" ticker banner on the
+homepage and `/games/fivem/`. It's a live, self-contradicting statement on
+the exact page where a purchase decision gets made — a full day older than
+when it was first flagged as the single highest-leverage item on the
+board, with zero dependencies blocking it.
+
+**Escalation status:** Evergreen discount code (pricing track) crosses 20
+days unresolved today. Homepage meta description (SEO/copy track) crosses
+17 days unresolved today. Neither is newly escalated this run — both were
+already past threshold — carried forward with updated day counts ahead of
+tomorrow's Monday pricing re-check (Week 4).
+
+---
