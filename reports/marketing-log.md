@@ -1557,3 +1557,85 @@ already past threshold — carried forward with updated day counts ahead of
 tomorrow's Monday pricing re-check (Week 4).
 
 ---
+
+## 2026-08-10 (Monday) — Competitor Pricing & Plans (Week 4)
+
+**Note:** Three weeks since the 07-20 baseline. Re-fetched Lumix's homepage
+and `/games/fivem` directly (raw content, not cached). RocketNode and
+BisectHosting fetched live and directly; Apex, ZAP-Hosting, and Shockbyte
+all blocked direct fetch again this run (403/404, consistent with prior
+weeks' intermittent blocks), so those three were re-confirmed via search
+instead. No structural change on the competitor side this week — same
+five providers, same tier structures and discount mechanics observed on
+07-20, 07-27, and 08-03. The story this run is the discount-code gap
+crossing three full weeks with no owner decision on record, and the
+billing-cycle-discount gap (new 08-03) crossing its first 7-day threshold
+today.
+
+### Findings (max 3)
+
+1. **ESCALATION — evergreen discount code gap is now 21 days unresolved,
+   three full weeks, with no decision on record since 08-03 explicitly
+   asked for one.** Re-confirmed today via direct fetch: still no code,
+   voucher, or sale banner anywhere on the homepage or `/games/fivem`.
+   Meanwhile all five competitors checked this run still run active
+   discount mechanisms: ZAP-Hosting's permanent 20%-off voucher (code
+   `Keishin-a-8710`) is still live; Apex's `APEX25` (25% off first
+   invoice, all billing cycles) still verified working; Shockbyte has
+   multiple live codes (`LAUNCH` 25% off any plan, `SHOCK10` 10% off for
+   life); RocketNode's "Summer Sale — Up to 25% Off" is confirmed still
+   running through Sep 25; BisectHosting's billing-cycle discounts (10%
+   quarterly / 15% semi-annual / 20% annual) are unchanged. This is now
+   the ninth straight check (07-20, 07-25 through 08-09, and today) with
+   the same finding and the same requested action.
+   → *Action:* This should not appear as a tenth log line next Monday.
+   Whoever owns pricing needs to give a yes-or-no answer this week: either
+   there's a real blocker (payment processor, margin, strategy) worth
+   recording so this stops re-surfacing, or `LUMIX10` (or equivalent)
+   ships to `/games/` and gets pinned in Discord.
+
+2. **ESCALATION — Lumix's billing-cycle discount ceiling crosses 7 days
+   unresolved today, first flagged as a new gap 08-03.** Re-fetched
+   `/games/fivem` today: still 5% quarterly, 5% semi-annual, 5% annual,
+   10% biennial/triennial only — byte-for-byte unchanged from 08-03.
+   RocketNode's FiveM page, re-confirmed today: 5% quarterly, 12%
+   semi-annual, 20% annual. BisectHosting, re-confirmed today: 10%
+   quarterly, 15% semi-annual, 20% annual. At the one-year commitment
+   point — the most common comparison a prospect makes — Lumix offers 5%
+   against a 20% category norm at both competitors checked directly this
+   run.
+   → *Action:* Same ask as 08-03, now overdue for a response: confirm
+   whether a 20% annual discount is a real margin problem or just an
+   unrevisited number. Matching the annual figure alone (leaving
+   quarterly/semi-annual as-is) would close the most visible part of this
+   gap without touching the evergreen-code question in finding 1.
+
+3. **RocketNode's FiveM tiers and specs are confirmed byte-for-byte
+   unchanged since the 07-29 audit (Starter $6.50/2GB = $3.25/GB up to
+   God $98.50/32GB), and its "Summer Sale" has a known end date (Sep 25)
+   that's still six weeks out.** This means the ~38% list-price gap and
+   the deeper sale-driven gap flagged 08-03 aren't closing on their own
+   anytime soon — this is a stable, multi-week pricing pressure point,
+   not a short-lived promo Lumix can simply wait out.
+   → *Action:* No new action beyond finding 1 and 2 — noting the timeline
+   so it's clear this isn't a "check back in a week" situation on the
+   competitor side.
+
+### Do this today (<1 hour)
+Ship the FiveM Starter NVMe/vCore differentiation line drafted 08-03
+("More dedicated compute & NVMe storage per dollar," near the Starter
+tier on `/games/fivem`) — it's the one pricing-track action item on the
+board with zero dependencies while findings 1 and 2 both need an owner
+decision. It's been sitting unshipped for a full week; today crosses that
+threshold too.
+
+**Escalation status:** Evergreen discount code (finding 1) crosses 21 days
+(three weeks) unresolved today — the oldest continuously-open item in the
+entire log. Billing-cycle discount ceiling (finding 2) crosses its first
+7-day escalation today. Off-track items unchanged since yesterday, not
+re-listed: homepage meta description (SEO/copy track) is 18 days
+unresolved; the Miami ticker/wizard contradiction (first flagged 08-08) is
+now 3 days old, still unfixed, not yet at the 7-day threshold; YouTube's
+hard 404 (social track) remains unresolved since 07-31.
+
+---
