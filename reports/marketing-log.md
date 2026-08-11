@@ -1639,3 +1639,89 @@ now 3 days old, still unfixed, not yet at the 7-day threshold; YouTube's
 hard 404 (social track) remains unresolved since 07-31.
 
 ---
+
+## 2026-08-11 (Tuesday) — Website Copy (Week 4)
+
+**Note:** One week since the 08-04 entry, three weeks since the 07-21
+baseline. Re-fetched the homepage, `/games/`, `/games/fivem`, and `/contact`
+directly (plus a raw HTML pull of the homepage `<head>` to cross-check
+title/meta, which sits on the SEO track but is relevant context here).
+
+**Resolved since 08-04:** The homepage "What we do" section has been
+rewritten. The old text — "Reliable compute, game server hosting, voice
+infrastructure, and enterprise-grade DDoS protection. No buzzwords, just
+infrastructure that works." — is gone. It now reads: "Lumix Solutions
+provides infrastructure services for businesses and developers who need
+reliability without the corporate overhead. We specialize in Node.js
+application hosting, game server infrastructure, voice communication
+servers, and DDoS mitigation." This closes 08-04's "do this today" item
+(the "enterprise-grade... no buzzwords" self-contradiction) — but see
+finding 1 below, the replacement isn't clean either.
+
+### Findings (max 3)
+
+1. **NEW — the rewritten hero copy fixed one vague claim but introduced
+   another: "reliability without the corporate overhead" has no referent.**
+   "Corporate overhead" is never defined or contrasted anywhere else on the
+   site — there's no "here's what we cut" list, no pricing/support-speed
+   comparison, nothing that tells a prospect what "corporate overhead"
+   would have looked like. It reads as the same genre of unproven claim
+   the old "no buzzwords" line was, just relocated to a different sentence
+   in the same paragraph.
+   → *Action:* Replace with something concrete Lumix can actually back up —
+   e.g. if support response time or a flat org structure is the real
+   differentiator, say that number/fact directly instead of "without the
+   corporate overhead."
+
+2. **NEW — the homepage ticker now includes a claim with zero proof
+   attached: "Production and development are better than ever - faster
+   builds, cleaner systems, and improved stability."** "Better than ever"
+   has no baseline (better than what — last month? last year?) and none of
+   "faster," "cleaner," or "improved" are attached to a number. This is the
+   exact pattern this track exists to catch (per 07-21's original framing:
+   claims like "premium" with nothing backing them), just showing up in the
+   ticker rotation rather than the hero this time.
+   → *Action:* Either attach a real number (e.g. "builds Nx faster since
+   [date/change]") or cut the line — a vague self-congratulatory claim in a
+   ticker that also carries real operational info (Miami capacity, bot
+   hosting capacity) dilutes the ticker's credibility for the claims that
+   *do* matter.
+
+3. **ESCALATION — Bot/Application hosting still has no product listing on
+   `/games/`, now 14 days unresolved (first flagged 07-28).** Re-fetched
+   `/games/` today: same five product cards (FiveM, Minecraft, Palworld,
+   BeamMP, Terraria) plus the same four Coming Soon teasers — no Bot
+   Hosting card in either list. The only sitewide mentions remain ticker/
+   banner lines ("Expanded bot hosting capacity...") and, as of this week's
+   hero rewrite, the phrase "Node.js application hosting" in the "What we
+   do" paragraph — still nowhere a prospect can see a price, spec, or CTA
+   for it. Two full weeks with no visible movement on a fix this log has
+   now logged four times (07-28, 07-30, 08-04, 08-06 on the SEO track).
+   → *Action:* This has been "no update" for a full month combined across
+   tracks — worth a direct, non-routine ask to whoever owns the `/games/`
+   catalog: is a Bot Hosting card blocked on something (pricing not
+   finalized, product not ready) or just not scheduled? If blocked, that
+   reason is worth recording so this stops re-appearing weekly.
+
+### Do this today (<1 hour)
+Cut or fix the ticker line "Production and development are better than
+ever - faster builds, cleaner systems, and improved stability" (finding 2)
+— it's the single unproven claim on the site with no dependency on anyone
+else's decision (unlike findings 1 and 3, which need a copywriting call or
+a product-catalog owner). Lowest-effort fix on today's board.
+
+**Escalation status:** Bot/Application hosting listing gap (finding 3)
+crosses 14 days unresolved today. Also still open, not re-listed since
+unchanged from last check and off today's track: FiveM scarcity claim with
+no cap number (first flagged 07-28, 14 days) and CTA naming inconsistency
+("Contact Sales" on the homepage still doesn't match any label on
+`/contact`, first flagged 07-28, 14 days) — both confirmed still present in
+today's fetch, carrying forward rather than re-analyzed since neither
+changed. Evergreen discount code (pricing track) is unchanged at 22 days.
+Homepage meta description (SEO track) is unchanged, still the same
+"Infrastructure built by engineers..." text, now 19 days unresolved — raw
+HTML re-confirmed today. Miami ticker/wizard contradiction (off-track, first
+flagged 08-08) is unchanged, now 4 days old, not yet at the 7-day
+threshold.
+
+---
