@@ -1725,3 +1725,99 @@ flagged 08-08) is unchanged, now 4 days old, not yet at the 7-day
 threshold.
 
 ---
+
+## 2026-08-12 (Wednesday) — Competitor UX Deep-Dive: ZAP-Hosting
+
+**Note:** Fourth UX-track entry, rotating to ZAP-Hosting (tracked on the
+pricing track since 07-20 but never its own UX-track subject). Shockbyte
+was attempted again first — its order/knowledgebase pages returned HTTP 403
+to fetch tools for a third consecutive attempt (07-22, 08-05's note, and
+again today), so it's being skipped again this cycle. ZAP's dedicated
+`rent-a-fivem-server` page was fetched live for comparison. While pulling
+Lumix's own `/games/fivem` for the comparison, this run found a
+substantially more urgent problem than any competitor gap — see finding 1.
+
+**Flows observed:**
+- **ZAP-Hosting:** FiveM page lists 8 selectable regions (Dallas, Los
+  Angeles, and Ashburn in the US; Frankfurt/Eygelshoven, Germany; Montreal;
+  Singapore; Sydney; London), starting at $9.08/mo, headlined "Online in 5
+  minutes." No location shown as sold out or unavailable.
+- **Lumix (`/games/fivem` and `/games/minecraft`, both re-fetched live
+  today):** Both pages' location step now show **Miami, FL and Ashburn,
+  VA — the site's only two datacenters — as "Sold Out — Out of capacity —
+  no new deployments."** The wizard states outright: "Every region is at
+  capacity right now, so this game cannot be deployed," and directs
+  prospects to "Ask in Discord for an ETA." There is currently no location
+  a new customer can select for either product.
+
+### Findings (max 3)
+
+1. **NEW, CRITICAL — Lumix's FiveM and Minecraft signup flows are
+   completely non-purchasable right now: zero deployable locations on
+   either product.** This is new since yesterday's check (08-11's entry,
+   and every prior check back to 08-08, described Ashburn as the one
+   available region with only Miami sold out). As of today's direct fetch,
+   Ashburn has also flipped to sold out on both `/games/fivem` and
+   `/games/minecraft` — the site's only two datacenters are both full, and
+   the wizard tells prospects outright the product "cannot be deployed,"
+   pointing them to Discord for an ETA instead of a self-service path.
+   Two of Lumix's four core product lines currently cannot be sold to a
+   new customer through the website at all, regardless of any copy or UX
+   fix — this is a revenue-blocking capacity outage, not a marketing
+   finding.
+   → *Action:* This needs to go to whoever owns infra/capacity today, not
+   wait for next week's log — confirm whether this is a real, hard sellout
+   or a stale/misconfigured capacity flag, and get a real ETA. Until
+   capacity reopens, the wizard's dead-end state should at minimum collect
+   an email/Discord handle for a waitlist instead of just "ask in
+   Discord" — right now an interested prospect who lands here has no way
+   to be recontacted when a slot opens.
+
+2. **The standing "Miami datacenters are now live" ticker claim (open since
+   08-08) is now actively false, not just contradictory.** The ticker on
+   `/games/fivem` still reads "Miami datacenters are now live - choose
+   your region for lower latency" — but as of finding 1, Miami is sold
+   out and so is the only other region, so there is no region to choose at
+   all. What was a same-page contradiction for the last 4 days is now a
+   claim with zero truth behind it during an active outage.
+   → *Action:* Pull this ticker line immediately (see "do this today") —
+   it's actively misleading a prospect into thinking a purchase path exists
+   when it doesn't, which is worse than the standing "12 PoPs" trust-stat
+   overstatement it was already flagged alongside.
+
+3. **ZAP-Hosting's FiveM flow offers 8 live, selectable regions across
+   three continents with a "5 minutes" speed claim front and center, the
+   sharpest version yet of the standing capacity/footprint gap this track
+   has tracked since 07-29 (RocketNode) and 08-05 (Apex).** Both prior
+   UX-track entries compared Lumix's claimed "12 PoPs" against a 2-location
+   reality; today's comparison competitor has more live, orderable regions
+   (8) than Lumix has datacenters at all (2), and right now Lumix has zero
+   usable ones. This isn't a "match the category norm" gap anymore — it's
+   the difference between a working purchase flow and a dead end.
+   → *Action:* Once finding 1 is resolved and capacity reopens, this is
+   the same recommendation as 07-29/08-05, now with more urgency: either
+   grow real capacity toward the claimed "12 PoPs," or stop claiming a
+   PoP count the live wizard can't currently back up in any way.
+
+### Do this today (<1 hour)
+Two things, both zero-dependency copy fixes: (1) remove or reword the
+"Miami datacenters are now live" ticker line on `/games/fivem` — it's now
+false, not just contradictory, per finding 2; (2) replace the wizard's
+dead-end "cannot be deployed... ask in Discord" state with a one-line
+capacity-waitlist form (even a mailto: or a Discord invite link framed as
+"get notified") so a prospect hitting the sold-out state today has
+somewhere to go besides leaving the site. Escalating the actual capacity
+shortage (finding 1) to infra/ops is the more important action but isn't a
+marketing-side task completable in an hour.
+
+**Escalation status:** Miami ticker/wizard contradiction (first flagged
+08-08) crosses 5 days today, now subsumed by and reported as part of
+findings 1–2 above rather than as a standalone re-log. Evergreen discount
+code (pricing track) is unchanged at 23 days. Homepage meta description
+(SEO track) is unchanged at 20 days. Bot/Application hosting listing gap
+(copy/SEO tracks) is unchanged at 15 days. Shockbyte remains blocked to
+fetch tools for a third straight UX-track attempt — worth trying a
+different access method (e.g. a non-automated manual check) if it's still
+blocked at the next rotation.
+
+---
