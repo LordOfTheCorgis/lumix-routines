@@ -1821,3 +1821,101 @@ different access method (e.g. a non-automated manual check) if it's still
 blocked at the next rotation.
 
 ---
+
+## 2026-08-13 (Thursday) — SEO & Keywords (Week 5)
+
+**Note:** One week since the 08-06 entry. Pulled raw HTML directly (title,
+meta description, JSON-LD) for the homepage, `/games/fivem/`,
+`/games/minecraft/`, and `/games/terraria/`; re-fetched `sitemap-0.xml`;
+re-checked the same six likely bot-hosting URLs (all still 404); and ran
+fresh unbranded searches ("fivem server hosting," "cheap minecraft server
+hosting," "discord bot hosting node.js python") plus a new `site:
+lumixsolutions.org` search to see what Google is actually showing
+searchers right now, not just what's live in the HTML.
+
+**Still active from yesterday's UX-track run, not re-analyzed here:** the
+08-12 finding that both of Lumix's datacenters (Miami and Ashburn) show
+"Sold Out — Out of capacity" on `/games/fivem/` — re-confirmed via raw
+HTML today, still true, now day 2. The homepage ticker still reads "Miami
+datacenters are now live - choose your region for lower latency," which
+remains actively false. This is a revenue-blocking capacity issue outside
+this track's scope to analyze further, but it directly undercuts today's
+SEO findings below (there's little point ranking for "fivem server
+hosting" if the page a searcher lands on can't sell them a server) — see
+escalation status.
+
+### Findings (max 3)
+
+1. **NEW — Google's live search results for the homepage still show the
+   pre-08-02 title, 11 days after the on-page tag changed.** A fresh
+   `site:lumixsolutions.org` search today returns the homepage with the
+   title "Lumix | Lumix Solutions LLC" — the original generic title this
+   track first flagged 07-23. The raw HTML confirms the live tag has read
+   "Game Server & VPS Hosting | Lumix Solutions" since 08-02, so the fix
+   genuinely shipped — but nothing in this log has checked whether Google
+   picked it up until today. It hasn't, 11 days later. The same search
+   shows `/games/` and `/games/terraria/` already indexed with their
+   correct, current titles, so indexing itself isn't broken sitewide —
+   specifically the homepage's cached snippet is stale. Anyone finding
+   Lumix by searching its own name right now still sees the keyword-empty
+   title this log has been trying to get fixed for three weeks.
+   → *Action:* Submit the homepage URL for re-indexing via Google Search
+   Console's URL Inspection tool (if no Search Console account exists,
+   that's a bigger gap worth its own note — this log has been assuming a
+   passive wait for re-crawl this whole time with no verification it's
+   happening at all).
+
+2. **ESCALATION — homepage meta description is now 21 days unresolved,
+   still the oldest continuously-open item in this log.** Raw HTML
+   confirms it is still byte-for-byte "Infrastructure built by engineers.
+   Node.js servers, game services, voice infrastructure, and enterprise
+   DDoS protection" — unchanged since 07-23, despite ready-to-paste
+   replacement copy sitting in this log for three weeks and being
+   re-mentioned in twelve separate entries. Combined with finding 1, this
+   means the homepage's actual search-facing footprint (both the live meta
+   tag and Google's cached title) is fully unfixed on every axis this
+   track measures.
+   → *Action:* Paste the already-drafted description: "FiveM, Minecraft,
+   Terraria, and Discord bot hosting with DDoS protection and sub-10ms
+   latency. Deploy in under 60 seconds." Same one-line fix logged since
+   07-23.
+
+3. **ESCALATION — Bot/Application hosting still has zero SEO footprint, now
+   14 days unresolved (second consecutive weekly escalation).** Re-checked
+   today: `sitemap-0.xml` now lists 18 URLs (up from 12 on 08-06 — new
+   entries are `/career/`, `/career/application/`, `/ccpa/`, `/changelog/`,
+   `/status/`, `/terms/`, none game- or keyword-related), still with no bot
+   hosting entry; the same six likely URLs (`/games/bot/`,
+   `/games/bot-hosting/`, `/games/application/`, `/games/apps/`,
+   `/games/nodejs/`, `/games/node/`) are all still 404. This week's fresh
+   search for "discord bot hosting node.js python" again surfaces only
+   competitors (YorkHost, LordHosting, XeroHost, ABR Hosting, Wispbyte) —
+   lumixsolutions.org appears nowhere. One of Lumix's four core product
+   lines remains invisible to search a full month after this gap was first
+   logged (07-28/07-30).
+   → *Action:* Unchanged — once a Bot Hosting product page exists (open on
+   the copy track since 07-28, now also 14+ days), give it the same
+   title/meta/sitemap treatment as the five game pages.
+
+### Do this today (<1 hour)
+Two small, connected actions on the homepage: (1) paste the already-drafted
+meta description (finding 2) — zero new writing, three weeks overdue; (2)
+immediately after, submit the homepage through Google Search Console's URL
+Inspection → "Request Indexing" so the title fix that shipped 08-02 and
+today's meta fix both actually reach Google's index instead of waiting on a
+passive re-crawl that hasn't happened in 11 days. Five minutes combined,
+directly closes findings 1 and 2 together.
+
+**Escalation status:** Homepage meta description (finding 2) crosses 21
+days unresolved today. Bot/Application hosting SEO gap (finding 3) crosses
+14 days, second escalation. Product/Offer JSON-LD schema gap (first flagged
+07-30, escalated 08-06) is unchanged — still no `Product`/`Offer` markup on
+`/games/fivem/`, `/games/minecraft/`, or `/games/terraria/` per today's raw
+HTML — now also 14 days, not re-analyzed in full since nothing moved.
+Evergreen discount code (pricing track) is unchanged at 24 days. **The
+capacity outage found 08-12 (both Miami and Ashburn sold out on FiveM,
+Minecraft affected too) is unresolved and now on day 2** — flagging again
+here since it directly undercuts this track's entire purpose and has not
+been logged as resolved on any track since it appeared.
+
+---
