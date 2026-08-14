@@ -1919,3 +1919,77 @@ here since it directly undercuts this track's entire purpose and has not
 been logged as resolved on any track since it appeared.
 
 ---
+
+## 2026-08-14 (Friday) — Social & Community (Week 4)
+
+**Note:** Three weeks since the 07-24 baseline. Re-fetched the homepage
+footer (all five social links unchanged), re-checked
+`youtube.com/@officiallumixsolutions` directly, re-pulled the Discord
+invite API (`uaNYBJQtvn`), re-fetched `/games/fivem` for ticker/capacity
+status, and searched for movement on last week's two open items: the
+back-to-school Discord contest and competitor back-to-school promos.
+
+### Findings (max 3)
+
+1. **ESCALATION — YouTube footer link is still a hard 404, now a full
+   month since first flagged (07-24) and the fourth consecutive Friday
+   with zero movement.** Direct fetch of
+   `youtube.com/@officiallumixsolutions` today returns the same HTTP 404
+   confirmed on 07-31, 08-07, and every check since. Three straight
+   "do this today" asks (07-31, 08-07, and implicitly since) to either
+   confirm/restore the account or pull the link have not been acted on.
+   → *Action:* Stop asking whoever owns the account to check it — just
+   remove the YouTube icon from the footer this week. A month-old dead
+   link in a hosting company's own footer is a worse trust signal than
+   having one fewer social icon, and this item has proven a reminder
+   alone won't fix it.
+
+2. **NEW — Discord membership shows its first real growth in three weeks
+   (130→133 members since last Friday), but there's no way to confirm
+   from outside whether the back-to-school contest that was supposed to
+   ship 08-07 ever launched.** Member count moved from 128 (07-31) to 130
+   (08-07) to 133 today — a modest but real +3 net gain after two
+   consecutive weeks of being flat or dipping (129/130 range, online
+   count oscillating 18-24). Presence is at 19 online, in the same range
+   as prior weeks. This is a positive signal, but 08-07's report said the
+   back-to-school seasonal window had "1-2 weeks left" and needed to
+   launch that week or lose relevance — today is exactly at that
+   boundary, and this run has no visibility into Discord message history
+   to confirm the contest was actually posted.
+   → *Action:* Confirm directly whether the back-to-school Discord post
+   went out. If it did, this growth may be early signal it's working —
+   worth a follow-up post pointing to any submissions before the window
+   fully closes. If it didn't go out, the seasonal hook is now gone;
+   don't carry it forward as a live action item next week.
+
+3. **The standing FiveM/Minecraft capacity outage (both Miami and Ashburn
+   sold out, first found 08-12) is still unresolved on day 3, and it
+   directly undercuts this week's core recommendation.** Re-fetched
+   `/games/fivem` today: both locations still read "Sold Out — Out of
+   capacity — no new deployments," and the ticker still claims "Miami
+   datacenters are now live - choose your region for lower latency" —
+   still false. This isn't a new finding (already logged 08-12, 08-13 on
+   other tracks), but it's directly relevant here: any push to grow
+   Discord/TikTok/YouTube engagement this week is driving prospects
+   toward a signup flow that currently can't sell FiveM or Minecraft to a
+   new customer at all.
+   → *Action:* Until capacity reopens, frame any community content
+   (including finding 2's contest) around existing customers only — e.g.
+   "show off your server" rather than anything implying new signups are
+   open — so social effort isn't spent driving prospects into a dead end.
+
+### Do this today (<1 hour)
+Remove the YouTube icon/link from the site footer (finding 1). It's been
+a confirmed dead link for a full month across four separate check-ins
+with no fix — the lowest-effort, zero-dependency action left on this
+item, and the one this log will stop re-logging if it's finally done.
+
+**Escalation status:** YouTube 404 (first flagged 07-24) crosses one full
+month unresolved today, its fourth consecutive weekly escalation. FiveM/
+Minecraft capacity outage (cross-track, first flagged 08-12) is unchanged
+on day 3 — re-flagged here due to direct relevance to this week's social
+findings, not re-analyzed. Evergreen discount code (pricing track) and
+homepage meta description (SEO track) are both unchanged since Thursday's
+check-in; not re-listed since neither falls on today's track.
+
+---
