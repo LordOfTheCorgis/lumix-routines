@@ -1993,3 +1993,77 @@ homepage meta description (SEO track) are both unchanged since Thursday's
 check-in; not re-listed since neither falls on today's track.
 
 ---
+
+## 2026-08-15 (Saturday) — Off-Rotation Check-In
+
+**Note:** Seventh unassigned-weekday run (rotation covers Mon–Fri only,
+cron fires daily). Re-fetched raw HTML for the homepage, `/games/fivem/`,
+and — for the first time this week — `/games/minecraft/` directly, to
+specifically check whether the 08-12 capacity outage (both flagged
+products) had moved. Also re-checked `youtube.com/@officiallumixsolutions`
+and the Discord invite API for movement since Friday's report.
+
+### Findings (max 3)
+
+1. **RESOLVED — the FiveM/Minecraft capacity outage first flagged 08-12 is
+   fixed as of today, on both affected products.** Raw HTML for both
+   `/games/fivem/` and `/games/minecraft/` now shows Miami, FL and
+   Ashburn, VA as selectable, unlabeled location options — no "Sold Out,"
+   "Out of capacity," or "no new deployments" text anywhere on either page
+   (confirmed by direct grep of the raw markup, not just a rendered read).
+   Miami is even the pre-selected default option on the FiveM builder. This
+   closes a critical, revenue-blocking finding that sat open for 3 days
+   across three log entries (08-12, 08-13, 08-14) and, as a side effect,
+   makes the "Miami datacenters are now live" ticker line accurate again —
+   it was flagged 08-12 as actively false during the outage, and is simply
+   true again now that capacity has reopened.
+   → *Action:* None needed on the capacity fix itself. Worth a one-line
+   confirmation from whoever owns infra that this was a real re-provision
+   (not a flag flipped back on stale capacity) so it doesn't silently
+   recur — otherwise no further tracking required on this track.
+
+2. **Evergreen discount code gap is now 26 days unresolved** (baseline
+   07-20, escalated 07-27 at 7 days, flagged as needing a direct owner
+   decision 08-03 at 14 days). Re-confirmed today via raw HTML on the
+   homepage and `/games/fivem/` — still no code, voucher, or sale banner
+   anywhere. This is now the single oldest continuously-open item in the
+   entire log, closing in on four full weeks with no on-record decision
+   either way. No new analysis; carrying the day count forward for
+   Monday's pricing-track re-check (Week 5).
+
+3. **The YouTube footer link is still live and still hard-404s, 22 days
+   after first flagged (07-24) and 8 days after the direct ask (08-14) to
+   simply remove it rather than keep asking someone to check the
+   account.** Direct fetch of `youtube.com/@officiallumixsolutions` today
+   returns the same 404 confirmed every check since 07-31. The footer on
+   today's homepage fetch still links to it. Four consecutive "do this
+   today" asks (07-31, 08-07, 08-14, and this one) have now targeted this
+   exact one-line fix without it shipping.
+   → *Action:* Same as last three runs — remove the YouTube icon/link from
+   the site footer. No dependency on anyone confirming account status
+   first; that ask has already gone unanswered for three weeks.
+
+**Unchanged since Friday (not re-listed as findings):** Homepage meta
+description is still byte-for-byte "Infrastructure built by engineers...,"
+now 23 days unresolved. Discord membership is flat (133 members, 17
+online, vs. Friday's 133/19) — no movement to report either way on the
+back-to-school contest's effect. No Bot Hosting card exists on `/games/`
+(unchanged, 18+ days). The "Limited FiveM servers stock available"
+scarcity-claim ticker line (no cap number, first flagged 07-28) is still
+present, unchanged.
+
+### Do this today (<1 hour)
+Remove the YouTube icon/link from the site footer (finding 3). It's the
+one item on today's board that's a pure zero-dependency copy/markup edit
+with three prior asks already on record — the capacity fix (finding 1)
+already shipped and the discount code (finding 2) needs an owner decision,
+not a marketing-side edit.
+
+**Escalation status:** Evergreen discount code (pricing track) crosses 26
+days unresolved today, still the oldest open item in the log. YouTube 404
+(social track) is unchanged at 22 days, now past its fourth consecutive
+"do this today" ask. Homepage meta description (SEO track) is unchanged at
+23 days. The FiveM/Minecraft capacity outage (cross-track, first flagged
+08-12) is resolved as of today — dropped from the escalation list.
+
+---
