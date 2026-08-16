@@ -2067,3 +2067,66 @@ days unresolved today, still the oldest open item in the log. YouTube 404
 08-12) is resolved as of today — dropped from the escalation list.
 
 ---
+
+## 2026-08-16 (Sunday) — Off-Rotation Check-In
+
+**Note:** Eighth unassigned-weekday run (rotation covers Mon–Fri only, cron
+fires daily). Re-fetched raw HTML for the homepage and `/games/fivem/`,
+re-checked `/games/` for the product catalog and Coming Soon section,
+re-checked `youtube.com/@officiallumixsolutions` directly, and re-pulled
+the Discord invite API. Nothing new or changed turned up this run — every
+open item is exactly where Saturday's check-in left it, one day older.
+
+### Findings (max 3)
+
+1. **Evergreen discount code gap is now 27 days unresolved** (baseline
+   07-20, escalated 07-27 at 7 days, flagged for a direct owner decision
+   08-03 at 14 days). Re-confirmed via raw HTML on the homepage and
+   `/games/fivem/` — still no code, voucher, or sale banner anywhere. Four
+   full weeks unresolved as of tomorrow. No new analysis; carrying forward
+   for Monday's pricing-track re-check (Week 6).
+
+2. **YouTube footer link is still a hard 404, now 23 days unresolved and
+   9 days past the direct ask (08-14) to simply remove it.** Direct fetch
+   of `youtube.com/@officiallumixsolutions` today returns the same 404
+   confirmed on every check since 07-31. The footer on today's homepage
+   fetch still links to it. Five consecutive "do this today" asks
+   (07-31, 08-07, 08-14, 08-15, and this one) have now targeted this exact
+   one-line fix without it shipping.
+   → *Action:* Same as the last four runs — remove the YouTube icon/link
+   from the site footer. No dependency on anyone confirming account status
+   first; that ask has gone unanswered for over three weeks.
+
+3. **Homepage meta description is unchanged, now 24 days unresolved.**
+   Raw HTML confirms it is still byte-for-byte "Infrastructure built by
+   engineers. Node.js servers, game services, voice infrastructure, and
+   enterprise DDoS protection" — unchanged since 07-23, despite ready-to-
+   paste replacement copy sitting in this log for over three weeks.
+   Homepage `<title>` remains "Game Server & VPS Hosting | Lumix
+   Solutions" (unchanged since 08-02, still missing specific game
+   keywords).
+
+**Unchanged since Saturday (not re-listed as findings):** The FiveM/
+Minecraft capacity fix (resolved 08-15) holds — both Miami and Ashburn
+remain selectable, unlabeled options on `/games/fivem/`, no "Sold Out"
+text present. Discord membership dipped slightly (132 members, 17 online,
+vs. Saturday's 133/17) — within normal day-to-day noise, not a trend.
+No Bot Hosting card exists on `/games/` (unchanged, 19+ days). The
+"Limited FiveM servers stock available" scarcity-claim ticker line (no cap
+number, first flagged 07-28) is still present, unchanged. The Coming Soon
+section (ARK: Survival Ascended, Rust, Arma Reforger, Squad) is unchanged
+from 08-01.
+
+### Do this today (<1 hour)
+Remove the YouTube icon/link from the site footer (finding 2). Zero
+dependencies, copy-paste-simple, and now the single most-repeated unmet
+ask in this log (five separate runs have flagged it as today's top
+zero-effort item).
+
+**Escalation status:** Evergreen discount code (pricing track) is at 27
+days, one day short of a full four weeks. YouTube 404 (social track) is at
+23 days. Homepage meta description (SEO track) is at 24 days. No item
+crossed a new escalation threshold today — all three are continuations of
+already-escalated findings, not new discoveries.
+
+---
