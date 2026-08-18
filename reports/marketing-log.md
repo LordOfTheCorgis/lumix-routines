@@ -2197,3 +2197,92 @@ YouTube 404 (social track) was at 23 days as of 08-16; homepage meta
 description (SEO/copy track) was at 24 days as of 08-16.
 
 ---
+
+## 2026-08-18 (Tuesday) — Website Copy (Week 5)
+
+**Note:** One week since the 08-11 entry. Re-fetched the homepage (raw HTML,
+not just rendered), `/games/`, and `/contact` directly to check the three
+08-11 findings for movement and confirm nothing new appeared on the pages
+this track covers.
+
+**Confirmed unchanged since 08-11 (verified via raw HTML, not just a
+rendered read):** The hero "What we do" copy is byte-for-byte identical —
+"Lumix Solutions provides infrastructure services for businesses and
+developers who need reliability without the corporate overhead. We
+specialize in Node.js application hosting, game server infrastructure,
+voice communication servers, and DDoS mitigation." The four ticker lines
+are unchanged. `/games/` still lists the same five priced product cards
+(FiveM, Minecraft, Palworld, BeamMP, Terraria) plus the same four Coming
+Soon teasers, no Bot Hosting card. One small, unprompted change: the old
+"Talk to an engineer" CTA string no longer appears anywhere on the
+homepage — only "Contact Sales" remains as the sales-contact CTA, which
+happens to resolve half of 07-28's CTA-naming-inconsistency finding on its
+own (not worth a new finding slot, but note it since that finding has been
+carried forward for three weeks).
+
+### Findings (max 3) — all escalated (7+ days unresolved)
+
+1. **ESCALATION — the "corporate overhead" claim (08-11's finding 1) hits
+   7 days unresolved today, still with no referent anywhere on the site.**
+   Raw HTML confirms the sentence is unchanged: "...reliability without the
+   corporate overhead." Checked the full homepage, `/games/`, and `/contact`
+   again for any list, comparison, or stat that defines what "corporate
+   overhead" means or what Lumix cut to avoid it — still nothing. This is
+   the same unproven-claim pattern this track has caught repeatedly
+   (07-21's "premium," 08-04's "no buzzwords / enterprise-grade"
+   self-contradiction) recurring in the same paragraph a second time.
+   → *Action:* Replace with a concrete, checkable fact — e.g. actual
+   support response time, a flat/small-team structure, or a specific
+   process Lumix skips that larger hosts don't — instead of the
+   undefined "corporate overhead" contrast.
+
+2. **ESCALATION — the ticker's unproven "better than ever" claim (08-11's
+   finding 2 and "do this today" item) hits 7 days unresolved, unfixed
+   despite being flagged as the single lowest-effort item on last week's
+   board.** Raw HTML confirms the exact line is still live: "Production and
+   development are better than ever - faster builds, cleaner systems, and
+   improved stability." No baseline, no number, sitting in the same ticker
+   rotation as real operational claims (Miami capacity, FiveM stock) that
+   this dilutes.
+   → *Action:* Same ask as last week, now overdue — either attach a real
+   number/date to the claim or delete the ticker line entirely. Zero
+   dependencies; this is a one-line content edit, not a design or product
+   decision.
+
+3. **ESCALATION — Bot/Application hosting listing gap hits 21 days
+   unresolved (first flagged 07-28, three prior escalations: 08-04, 08-06,
+   08-11).** `/games/` re-confirmed today: same five product cards, no Bot
+   Hosting card, no price, no CTA. The only sitewide mentions remain a
+   ticker line ("Expanded bot hosting capacity...") and the "Node.js
+   application hosting" phrase in the hero paragraph — still nowhere a
+   prospect can actually configure or price this product, which this
+   routine's own scope treats as one of Lumix's four core product lines.
+   → *Action:* This has now gone unaddressed across four consecutive
+   Tuesday copy-review entries and the SEO track in parallel — worth
+   treating as a standing, named backlog item rather than a recurring log
+   line: get a yes/no from whoever owns the `/games/` catalog on whether a
+   Bot Hosting card is blocked (pricing, product readiness) or simply
+   unscheduled, and record the answer so this stops re-appearing weekly
+   with no new information.
+
+### Do this today (<1 hour)
+Cut the ticker line "Production and development are better than ever -
+faster builds, cleaner systems, and improved stability" (finding 2). It's
+the same zero-dependency, no-decision-needed edit flagged as today's item
+exactly one week ago and still hasn't shipped — the fastest way to clear
+one of today's three findings outright.
+
+**Escalation status:** Findings 1 and 2 above both cross their first 7-day
+escalation today (both first flagged 08-11). Bot/Application hosting
+listing gap (finding 3) crosses 21 days, third escalation. Also still open,
+not re-listed as findings since unchanged and off today's specific checks:
+FiveM scarcity claim with no cap number (07-28, 21 days) and the remaining
+half of the CTA-naming inconsistency — "Configure" vs. "Build Your Server"
+vs. "Browse Games" vs. "View Full Catalog" for plan setup (07-28, 21 days,
+unaffected by today's "Talk to an engineer" removal, which only touched the
+sales-contact side of that finding). Evergreen discount code (pricing
+track) is at 29 days per yesterday's Monday entry, not re-checked here.
+Homepage meta description (SEO track) was at 24 days as of 08-16, not
+re-checked here since it's off today's track.
+
+---
