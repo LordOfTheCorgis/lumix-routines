@@ -2286,3 +2286,112 @@ Homepage meta description (SEO track) was at 24 days as of 08-16, not
 re-checked here since it's off today's track.
 
 ---
+
+## 2026-08-19 (Wednesday) — Competitor UX Deep-Dive: BisectHosting (Week 5)
+
+**Note:** Shockbyte was attempted first — `shockbyte.com` (root, `/hosting/minecraft`,
+and a knowledgebase order-flow article) returned HTTP 403 to fetch tools
+again today, a fourth consecutive blocked attempt (07-22, 08-05, 08-12, and
+now 08-19). Its own published order-flow knowledgebase article was reachable
+only via search-result excerpt, not direct fetch, so it's cited below as a
+secondary source, not verified live. Rotated back to BisectHosting instead —
+the longest-stale UX-track subject (last checked 07-22, the baseline entry)
+— and re-fetched `bisecthosting.com/minecraft-server-hosting` live, plus raw
+HTML for Lumix's `/games/fivem` and `/games/minecraft` (both now a real
+plan → location → billing-cycle configurator, not the bare tier list from
+07-22). Pulled the FiveM and Minecraft pricing JSON directly from the page
+markup to check per-cycle discount math exactly rather than reading rendered
+percentages.
+
+**Flows observed:**
+- **BisectHosting:** plan page → "Choose a Plan"/"HELP ME DECIDE" → guided
+  selector at `/selector`: game version, RAM tier, then a **21-location**
+  map-style picker ("Pick the best spot for you"), then modpack (2,300+
+  options or vanilla), then billing cycle (Monthly / Quarterly -10% /
+  Semi-annually -15% / Annually -20%, clean and monotonic), then optional
+  BisectBoost add-on. Checkout claims "full 24/7 access to your server as
+  soon as your payment clears."
+- **Lumix (`/games/fivem`, `/games/minecraft`):** both now a single-page
+  configurator — plan, then a 2-location picker (Miami, Ashburn — no
+  latency/ms data), then billing cycle — that hands off via a `Deploy
+  Server` button straight into a pre-filled WHMCS cart (`skipconfig=1`,
+  skipping the normal upsell/config-options page). This is a real,
+  unprompted improvement since the 07-22 baseline, which flagged Lumix as
+  having no wizard and no location picker at all — both gaps are now
+  closed in a reduced form (2 locations vs. Bisect's 21, no latency
+  estimates either way).
+
+### Findings (max 3)
+
+1. **CHANGED — Lumix's location step has gone from "doesn't exist" (07-22)
+   to "exists but offers only 2 of Bisect's 21 locations, still with no
+   latency/ms data."** This closes half of 07-22's finding 2 outright (a
+   picker now exists) but the underlying comparison gap persists in a
+   smaller, still-real form: a FiveM/Minecraft community picking a host by
+   expected player ping has nothing to go on beyond two US city names on
+   either site.
+   → *Action:* Original 07-22 recommendation still stands and is now
+   easier to scope down: add one static line per location ("Ashburn, VA —
+   best for Northeast US, Midwest, Canada, Europe" — this text already
+   exists as location-card subtext per today's fetch) directly into the
+   picker's visible copy rather than requiring a click to see it, and don't
+   treat 2-vs-21 as parity just because a picker UI now exists.
+
+2. **NEW — the "Annually" billing cycle is priced worse than "Semi-Annually"
+   on two specific SKUs: Advanced FiveM Server and the Minecraft "Standard"
+   plan (marked Most Popular).** Pulled from the live pricing JSON, not
+   rendered percentages: Advanced FiveM Server effective rate is
+   $25.00/mo at semi-annual, $26.00/mo at annual, back down to $25.00/mo at
+   biennial. Minecraft Standard is $26.00/mo semi-annual, $27.00/mo annual,
+   $26.00/mo biennial. On both SKUs, a customer committing to a full year
+   pays a **worse** rate than one committing to just six months — the
+   opposite of every other plan on both pages, which discount monotonically
+   with commitment length (confirmed by pulling all 7 tiers on each page).
+   This reads as a data-entry error on exactly two "Annually" cells, not a
+   pricing strategy — and it's actively discouraging the annual commitments
+   that are worth more to Lumix than semi-annual ones.
+   → *Action:* Flag to whoever owns the WHMCS product pricing config: fix
+   the Annually price on Advanced FiveM Server (pid 22) and Minecraft
+   Standard (pid 26) to land around the same ~7% curve as their neighbors
+   (roughly $291 and $312 respectively) instead of the current $311.99 /
+   $323.99.
+
+3. **NEW/REGRESSION — Lumix's concrete "servers online in under 60 seconds"
+   claim (present on the homepage as of 07-22, and the subject of that
+   entry's "do this today" recommendation to duplicate it onto checkout)
+   has been removed from the site entirely, not relocated.** Direct grep of
+   today's homepage and `/games/fivem` raw HTML finds zero instances of
+   "second" or "minute" anywhere; the only remaining speed claim is an
+   unbacked "Instant setup" bullet with no number. Meanwhile both of this
+   week's comparison points state something concrete: BisectHosting's
+   checkout says "full access as soon as your payment clears," and
+   Shockbyte's own order-flow knowledgebase article states servers are
+   "created automatically within 1–2 minutes." Lumix is now the vaguest of
+   the three on the one claim shown to matter most at the moment of
+   purchase.
+   → *Action:* Confirm today's actual average provisioning time with
+   whoever owns infra, then either restore a real number to the site (ideally
+   nearer the configurator, per 07-22's original recommendation, not just
+   the homepage) or drop "Instant setup" if no number can be backed up
+   anymore.
+
+### Do this today (<1 hour)
+Get the actual current provisioning time from infra (finding 3) — a single
+question, no research or design work on the requester's side — so the
+vague "Instant setup" bullet can either become a real, checkable number or
+get pulled. It's the one action here that doesn't wait on a pricing-config
+change (finding 2) or picker-UI work (finding 1).
+
+**Escalation status:** Shockbyte remains blocked to fetch tools for a
+fourth straight UX-track attempt (07-22, 08-05, 08-12, 08-19) — worth a
+manual (non-automated) check next time it comes up in rotation. Evergreen
+discount code (pricing track) is at roughly 30 days per Monday's entry, not
+re-checked here. Billing-cycle discount ceiling on Standard FiveM Server
+(pricing track, a separate low-ceiling issue from today's finding 2) is at
+roughly 16 days, not re-checked here. Bot/Application hosting listing gap
+(copy/SEO tracks) is at roughly 22 days, not re-checked here. Homepage meta
+description (SEO track) and YouTube 404 (social track) were last verified
+08-16 at 24 and 23 days respectively — roughly 27 and 26 days today,
+neither re-checked since they're off this track.
+
+---
