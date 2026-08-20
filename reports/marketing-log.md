@@ -2395,3 +2395,100 @@ description (SEO track) and YouTube 404 (social track) were last verified
 neither re-checked since they're off this track.
 
 ---
+
+## 2026-08-20 (Thursday) — SEO & Keywords (Week 6)
+
+**Note:** One week since the 08-13 entry. Pulled raw HTML (title, meta
+description, canonical, headings, JSON-LD) for the homepage, `/games/`, and
+all five per-game pages; re-fetched `robots.txt` and `sitemap-0.xml`;
+re-checked fifteen candidate URLs for bot hosting, VPS, and the four
+"Coming Soon" titles (all 404); ran a fresh `site:lumixsolutions.org`
+search plus an unbranded long-tail search. Sitemap is unchanged at 18 URLs
+since 08-13. This run measured two things this track had never checked
+before — on-page heading structure and FiveM framework-level keyword
+coverage — and both turned up something new.
+
+### Findings (max 3)
+
+1. **NEW — the FiveM page targets the head term and nothing below it: zero
+   mentions of QBCore, ESX, vRP, roleplay, or server.cfg anywhere in the
+   markup.** Direct grep of `/games/fivem/` raw HTML: "QBCore" 0, "ESX" 0,
+   "vRP" 0, "roleplay" 0, "framework" 0, "Cfx" 0 — "txAdmin" appears exactly
+   once. Meanwhile a fresh search for "qbcore server hosting" returns a full
+   page of hosts who built content specifically for it: ZAP-Hosting ships a
+   "FiveM servers with QBCore framework now available" page, Evolution Host
+   runs "FiveM Roleplay Server Hosting — Optimized for QBCore & ESX," and
+   Kinetic Hosting has a QBCore setup guide. This matters because nearly
+   every serious FiveM buyer is running a roleplay framework — they search
+   the framework name, not the generic term, and the generic term
+   ("fivem server hosting") is the most contested keyword in the category.
+   Lumix's page is competing only where competition is hardest and is absent
+   where intent is highest.
+   → *Action:* Add one short section to `/games/fivem/` naming the
+   frameworks the platform actually supports — e.g. "Runs QBCore, ESX, and
+   vRP out of the box, with txAdmin included on every plan" — and work
+   "roleplay" into the existing body copy. Pure copy, no new page needed.
+   If it draws traffic, a dedicated `/games/fivem/qbcore/` page is the
+   natural follow-up.
+
+2. **ESCALATION + NEW DETAIL — the homepage's three primary on-page signals
+   are all keyword-thin at once, and Google is still serving the pre-08-02
+   title 18 days after it changed.** Three things measured today: (a) the
+   meta description is byte-for-byte unchanged at 28 days — still
+   "Infrastructure built by engineers. Node.js servers, game services, voice
+   infrastructure, and enterprise DDoS protection"; (b) newly measured this
+   run, the homepage `<h1>` is "Infrastructure built by engineers" — no
+   hosting or game keyword, while every game page has a textbook H1 ("FiveM
+   Server Hosting," "Minecraft Server Hosting"); (c) a fresh
+   `site:lumixsolutions.org` search still returns the homepage titled
+   "Lumix | Lumix Solutions LLC" — the pre-08-02 title — meaning 08-13's
+   finding 1 is now 18 days stale and 7 days past the re-index ask, with no
+   evidence anyone submitted it. `/games/` and `/games/terraria/` are
+   indexed with their correct current titles, so crawling works sitewide;
+   it is specifically the homepage that is both unfixed on-page and stale
+   in the index.
+   → *Action:* Do all three in one pass: paste the already-drafted meta
+   description ("FiveM, Minecraft, Terraria, and Discord bot hosting with
+   DDoS protection and sub-10ms latency. Deploy in under 60 seconds."),
+   change the H1 to lead with what Lumix sells (e.g. "Game server and bot
+   hosting, built by engineers" — keeps the existing voice, adds the
+   keyword), then submit the homepage for re-indexing in Search Console. If
+   no Search Console property exists, say so — this log has assumed passive
+   re-crawl for 18 days with no verification it is happening.
+
+3. **ESCALATION — no `Product`/`Offer` structured data on any of the five
+   game pages, 21 days unresolved (second escalation).** Confirmed again
+   today by parsing JSON-LD on all five: every page ships only the sitewide
+   `Organization` and `WebSite` blocks, no `Product`, `Offer`, or
+   `priceRange` — despite each page rendering a clear starting price
+   ($8.99 FiveM, $14.99 Minecraft, $9.99 Palworld, $5.99 BeamMP, $5.00
+   Terraria) and full CPU/RAM/NVMe specs the markup could feed straight
+   into an `Offer`. Price-annotated snippets are exactly what wins
+   price-led searches like "cheap minecraft server hosting," and Lumix's
+   pages remain ineligible for them while holding all the data required.
+   → *Action:* Unchanged from 07-30 and 08-06 — one shared template change
+   (all five pages use the same layout), not five one-offs.
+
+### Do this today (<1 hour)
+Add the framework line to `/games/fivem/` (finding 1): name QBCore, ESX,
+vRP, and txAdmin in the page copy and work "roleplay" into the existing
+body text. It is the only item on today's board that is genuinely new, has
+zero dependencies on anyone else, and targets buyer intent no Lumix page
+currently reaches — the homepage fixes in finding 2 have been on this list
+for four weeks and need whoever holds CMS access, not another log line.
+
+**Escalation status:** Homepage meta description crosses 28 days (four full
+weeks) unresolved today — fourth consecutive weekly escalation on this
+track. Stale homepage title in Google's index (first flagged 08-13) crosses
+its first 7-day escalation today, folded into finding 2 since both are the
+same page. Product/Offer JSON-LD gap crosses 21 days, second escalation.
+**Bot/Application hosting SEO footprint is unchanged at 21 days** — the
+same six candidate URLs still 404, still absent from the sitemap, and the
+only sitewide mention is still the ticker line "Expanded bot hosting
+capacity"; not given a finding slot this week because nothing about it has
+changed since 08-13, but it remains open in parallel on the copy track. The
+four "Coming Soon" titles (ARK: SA, Rust, Arma Reforger, Squad, first
+flagged 08-01) still have no stub URLs — all four 404 today, 19 days after
+the recommendation to reserve indexing lead time. Off-track items not
+re-checked this run: evergreen discount code (pricing track, ~31 days as of
+Monday) and the YouTube 404 (social track, ~27 days as of 08-16).
