@@ -2492,3 +2492,70 @@ flagged 08-01) still have no stub URLs — all four 404 today, 19 days after
 the recommendation to reserve indexing lead time. Off-track items not
 re-checked this run: evergreen discount code (pricing track, ~31 days as of
 Monday) and the YouTube 404 (social track, ~27 days as of 08-16).
+
+---
+
+## 2026-08-21 (Friday) — Social & Community (Week 5)
+
+**Note:** One week since the 08-14 entry. Re-fetched the homepage footer
+(all five social links unchanged), fetched `youtube.com/@officiallumixsolutions`
+and `tiktok.com/@lumix.solutions` directly, re-pulled the Discord invite API
+(`uaNYBJQtvn`), and searched for any new competitor community content since
+last Friday.
+
+### Findings (max 3)
+
+1. **ESCALATION — YouTube footer link hits 28 days (four full weeks)
+   unresolved today, the seventh consecutive ask with zero action.** Direct
+   fetch of `youtube.com/@officiallumixsolutions` today returns the same
+   HTTP 404 confirmed on every check since 07-31. This is now the single
+   most-repeated "do this today" item in the entire log — 07-31, 08-07,
+   08-14, 08-15, 08-16, and this entry have all asked for the same one-line
+   fix (delete the footer link) and none has shipped. The fix requires no
+   research, no design decision, and no product/pricing tradeoff — it is
+   the lowest-effort open item on the board and also the oldest.
+   → *Action:* Stop logging this as a research finding — it's a known,
+   confirmed, zero-ambiguity fix that six prior asks haven't moved. Escalate
+   directly to whoever holds footer/CMS access as a standing to-do, not
+   another recurring line item, until it's actually removed.
+
+2. **NEW — last week's Discord growth ("first real growth in three weeks")
+   did not continue; membership is flat and presence is down.** Invite API
+   today: 135 members / 14 online, vs. 08-14's 133/19 and 08-16's 132/17.
+   Net member change over the full week is +2 (essentially flat after
+   08-14's +3 spike), and online presence has dropped roughly 26% from
+   08-14's reading. Combined with finding 3 below, there's no evidence any
+   community-facing content (contest, repost call, tutorial clip) has
+   actually gone out since this track first recommended one on 07-24 —
+   four straight Friday entries have proposed community content and none
+   has been confirmable from outside Discord.
+   → *Action:* Get a direct yes/no on whether the back-to-school contest
+   (recommended 07-31, status unconfirmed 08-14) or any other community
+   post has shipped. If nothing has gone out in four weeks, the gap isn't
+   which idea to run — it's that no one owns posting it. Assign a single
+   person to post the standing "share your server clip" call from 07-24's
+   original recommendation this week, even without a contest wrapper.
+
+3. **The back-to-school seasonal window flagged 07-31 (Apex's scholarship
+   promo, recommended as a scaled-down Lumix contest) has now closed
+   unused.** Most US schools are back in session by this date, and no
+   confirmation ever surfaced that Lumix's version launched (see finding 2).
+   This is the second time-bound recommendation from this track that
+   appears to have lapsed without shipping before its relevance window
+   closed — the first was the "empty account" fix window this track flagged
+   before YouTube went from dormant to a hard 404 between 07-24 and 07-31.
+   → *Action:* No recovery action for the missed window itself, but future
+   seasonal/timely recommendations from this track should get a specific
+   named owner and date at the point they're logged, not an open-ended
+   action item — otherwise they'll keep expiring the same way.
+
+### Do this today (<1 hour)
+Remove the YouTube icon/link from the site footer (finding 1). Seventh
+consecutive ask, zero dependencies, and now the oldest unresolved item of
+any kind in this log at 28 days.
+
+**Escalation status:** YouTube 404 (social track) crosses 28 days (four full
+weeks) unresolved today, its fifth consecutive Friday-or-off-rotation
+escalation. Evergreen discount code (pricing track) was at ~31 days as of
+Monday, not re-checked here. Homepage meta description (SEO track) crossed
+28 days as of Thursday, not re-checked here since it's off today's track.
