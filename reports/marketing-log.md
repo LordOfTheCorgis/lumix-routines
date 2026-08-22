@@ -2559,3 +2559,73 @@ weeks) unresolved today, its fifth consecutive Friday-or-off-rotation
 escalation. Evergreen discount code (pricing track) was at ~31 days as of
 Monday, not re-checked here. Homepage meta description (SEO track) crossed
 28 days as of Thursday, not re-checked here since it's off today's track.
+
+---
+
+## 2026-08-22 (Saturday) — Off-Rotation Check-In
+
+**Note:** Ninth unassigned-weekday run (rotation covers Mon–Fri only, cron
+fires daily). Re-pulled raw HTML (via direct curl, not the summarizing
+fetch tool, to get exact `<title>`/meta bytes and the live pricing JSON) for
+the homepage, `/games/fivem`, and `/games/minecraft`; re-fetched
+`youtube.com/@officiallumixsolutions` directly; re-pulled the Discord invite
+API; and re-checked all four "Coming Soon" slugs for stub pages. Nothing
+genuinely new turned up — every open item is exactly where Friday's report
+left it, now 1–3 days older. Also re-verified Wednesday's (08-19) two-SKU
+annual-pricing bug is still live, with the same numbers.
+
+### Findings (max 3)
+
+1. **Evergreen discount code gap is now 33 days unresolved** (baseline
+   07-20, escalated 07-27, flagged for a direct owner decision 08-03, still
+   undecided as of Monday's 08-17 entry). Raw HTML confirms today: no code,
+   voucher, or sale banner on the homepage or `/games/fivem`. This crosses
+   five full weeks unresolved at Monday's next pricing-track re-check
+   (08-24) if still unfixed then — no new analysis this run, carrying the
+   day count forward.
+   → *Action:* Unchanged from every prior entry — get a yes/no from the
+   pricing owner. Code name and placement have been proposed since 07-20;
+   nothing left to design.
+
+2. **YouTube footer link is still a hard 404, now 29 days unresolved and
+   the eighth consecutive ask with zero action.** Direct fetch of
+   `youtube.com/@officiallumixsolutions` today returns the same 404
+   confirmed on every check since 07-31 (07-31, 08-07, 08-14, 08-15, 08-16,
+   08-21, and this one have all asked for the identical one-line footer
+   edit). Homepage footer still links to it.
+   → *Action:* Same as the last seven runs — remove the YouTube icon/link
+   from the site footer. Zero dependencies, zero ambiguity.
+
+3. **Homepage meta description is unchanged, now 30 days unresolved.** Raw
+   `<meta name="description">` pull today confirms it is still
+   byte-for-byte "Infrastructure built by engineers. Node.js servers, game
+   services, voice infrastructure, and enterprise DDoS protection" —
+   unchanged since 07-23. The `<title>` tag is also unchanged since 08-02
+   ("Game Server & VPS Hosting | Lumix Solutions") — still missing any game
+   or "FiveM/Minecraft/Terraria" keyword, and still doesn't match the
+   ready-to-paste copy this log has carried since 07-23.
+   → *Action:* Unchanged from every prior SEO/copy entry — paste the
+   already-drafted meta description onto the homepage. One tag, no design
+   work.
+
+### Do this today (<1 hour)
+Remove the YouTube icon/link from the site footer (finding 2). Eighth
+consecutive ask, zero dependencies, and still the single cheapest fix on
+the board relative to how long it's been open.
+
+**Unchanged since Friday (not re-listed as findings):** The FiveM/Minecraft
+capacity fix (resolved 08-15) still holds — no "Sold Out" text on either
+page's raw HTML. Wednesday's (08-19) two-SKU annual-pricing bug is
+re-confirmed present at 3 days old (sub-threshold, not yet escalation-worthy):
+Advanced FiveM Server (pid 22) is still $311.99/yr ($26.00/mo) vs.
+$149.99/semi-annual ($25.00/mo); Minecraft Standard Plan (pid 26) is still
+$323.99/yr ($27.00/mo) vs. $155.99/semi-annual ($25.998/mo) — both annual
+rates remain worse than semi-annual, unchanged from Wednesday's numbers.
+Discord membership is flat-to-noisy (133 members / 21 online, vs. Friday's
+135/14) — no trend either direction. The four "Coming Soon" slugs
+(`/games/ark-survival-ascended`, `/rust`, `/arma-reforger`, `/squad`) are
+still all 404, now 21 days since first flagged (08-01). Bot/Application
+hosting listing gap, billing-cycle discount ceiling, FiveM scarcity claim,
+and the Product/Offer JSON-LD gap are all unchanged since their last
+check-ins on their respective tracks; not re-verified today since none is
+on this off-rotation day's checklist.
