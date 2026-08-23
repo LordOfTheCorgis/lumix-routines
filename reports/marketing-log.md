@@ -2629,3 +2629,76 @@ hosting listing gap, billing-cycle discount ceiling, FiveM scarcity claim,
 and the Product/Offer JSON-LD gap are all unchanged since their last
 check-ins on their respective tracks; not re-verified today since none is
 on this off-rotation day's checklist.
+
+---
+
+## 2026-08-23 (Sunday) — Off-Rotation Check-In
+
+**Note:** Tenth unassigned-weekday run (rotation covers Mon–Fri only, cron
+fires daily). Re-pulled raw HTML via direct curl for the homepage,
+`/games/fivem`, and `/games/minecraft` (including the embedded plan-pricing
+JSON, not just visible text); re-fetched `youtube.com/@officiallumixsolutions`
+directly; re-pulled the Discord invite API; re-checked all four "Coming
+Soon" slugs and four bot-hosting candidate URLs for stub pages; and
+re-checked for Product/Offer JSON-LD on the FiveM page. Nothing new
+surfaced — every open item is exactly where Saturday's report left it, now
+1 day older, with one item crossing a round milestone.
+
+### Findings (max 3)
+
+1. **ESCALATION — YouTube footer link hits 30 days (a full calendar month)
+   unresolved today, the ninth consecutive ask with zero action.** Direct
+   fetch of `youtube.com/@officiallumixsolutions` today returns the same
+   HTTP 404 confirmed on every check since the account went dormant on
+   07-24. This is the oldest unresolved item in the entire log and the
+   only one that has now stood open for a full month against a fix that
+   remains a single footer-link deletion with no dependencies.
+   → *Action:* This has passed the point where "log and ask again" is a
+   reasonable process — nine identical asks with zero movement means the
+   asking mechanism isn't reaching whoever has footer/CMS access. Escalate
+   out of band (not just another log line) to get a direct owner and ETA
+   this week.
+
+2. **Evergreen discount code gap is now 34 days unresolved**, five full
+   weeks as of Monday's next pricing check if still open then. Raw HTML
+   today confirms: no code, voucher, or sale banner on the homepage or
+   `/games/fivem` (the only related copy on either page is the unrelated
+   "Longer terms are a discount, not a lock-in" contract-terms line).
+   → *Action:* Unchanged from every prior entry — this needs a yes/no from
+   whoever owns pricing, not further research. Code name and placement have
+   been proposed since 07-20.
+
+3. **Homepage meta description is unchanged, now 31 days unresolved.** Raw
+   `<meta name="description">` pull today is still byte-for-byte
+   "Infrastructure built by engineers. Node.js servers, game services,
+   voice infrastructure, and enterprise DDoS protection" — unchanged since
+   07-23, with no FiveM/Minecraft/Terraria keyword anywhere in it.
+   → *Action:* Unchanged from every prior SEO/copy entry — paste the
+   already-drafted meta description onto the homepage. One tag, no design
+   work.
+
+### Do this today (<1 hour)
+Remove the YouTube icon/link from the site footer (finding 1). Ninth
+consecutive ask, now open a full month, and still the cheapest fix on the
+board relative to how long it has sat unaddressed.
+
+**Unchanged since Saturday (not re-listed as findings):** Wednesday's
+(08-19) two-SKU annual-pricing bug is re-confirmed present at 4 days old
+(sub-threshold): Advanced FiveM Server (pid 22) pricing JSON today shows
+annually $311.99 ($26.00/mo) vs. semiannually $149.99 ($25.00/mo); Standard
+Minecraft Plan (pid 26) shows annually $323.99 ($27.00/mo) vs. semiannually
+$155.99 ($26.00/mo) — both annual rates still price worse than semiannual.
+The Miami/location picker on both FiveM and Minecraft builders still shows
+Miami, FL as a selectable, pre-checked region (the ticker-vs-picker
+contradiction from 08-15 remains resolved, no regression). Discord invite
+API: 137 members / 20 online, in line with the recent flat-to-noisy range.
+The four "Coming Soon" slugs (`/games/ark-survival-ascended`, `/rust`,
+`/arma-reforger`, `/squad`) are still all 404, now 22 days since first
+flagged (08-01). Bot/Application hosting footprint is unchanged: the four
+re-checked candidate URLs (`/games/bot-hosting`, `/discord-bot`,
+`/python-bot`, `/nodejs-bot`) are all still 404 and absent from the
+sitemap. The FiveM page still carries no Product or Offer JSON-LD — only
+Organization and WebSite schema are present, same gap flagged on the SEO
+track. Billing-cycle discount ceiling and FiveM scarcity claim are
+unchanged since their last check-ins on their respective tracks; not
+re-verified today since neither is on this off-rotation day's checklist.
