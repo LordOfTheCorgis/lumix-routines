@@ -2702,3 +2702,86 @@ Organization and WebSite schema are present, same gap flagged on the SEO
 track. Billing-cycle discount ceiling and FiveM scarcity claim are
 unchanged since their last check-ins on their respective tracks; not
 re-verified today since neither is on this off-rotation day's checklist.
+
+---
+
+## 2026-08-24 (Monday) — Competitor Pricing & Plans (Week 6)
+
+**Note:** Re-fetched Lumix's `/games/fivem` and `/games/minecraft` via
+direct curl (raw HTML plus the embedded `data-builder-config` pricing
+JSON, not just rendered text) to re-verify 08-19's two-SKU annual-discount
+bug at the byte level. RocketNode fetched live and directly; BisectHosting
+partially (billing-cycle percentages visible, per-tier dollar pricing
+gated behind a "Choose a Plan" selector this run). ZAP-Hosting, Shockbyte,
+and Apex Hosting all blocked direct fetch again and were re-confirmed via
+search instead, consistent with every prior week. No structural change on
+the competitor side — same five providers, same tiers, same discount
+mechanics as every check since 07-20. The one genuinely new finding this
+run came from re-verifying our own site more carefully, not from a
+competitor move.
+
+### Findings (max 3)
+
+1. **CHANGED — 08-19's "Annually priced worse than Semi-Annually" bug on
+   the Minecraft Standard plan is not a buried JSON quirk, it's a badge
+   every visitor sees by default.** Standard Minecraft Plan (pid 26) is
+   the page's pre-selected "Most Popular" plan, and its billing-cycle
+   selector renders a `Save X%` badge directly under each cycle: Monthly
+   Save 0%, Quarterly Save 5%, **Semi-Annually Save 7%, Annually Save
+   4%**, before biennial/triennial climb again. That means anyone who
+   lands on `/games/minecraft` and does nothing else sees a lower savings
+   percentage on the 12-month option than the 6-month one, with no click
+   required. The underlying dollar figures are unchanged from 08-19
+   ($155.99 semi-annual = $26.00/mo vs. $323.99 annual = $27.00/mo, pid
+   26; Advanced FiveM Server pid 22 unchanged too: $149.99 semi-annual vs.
+   $311.99 annual), so this isn't a new bug — it's proof the existing one
+   is more exposed than logged five days ago.
+   → *Action:* Same fix as 08-19 (correct the Annually price on pid 22 and
+   pid 26 to land on the same curve as their neighbors, roughly $291 and
+   $312), but raise the priority: this isn't a number a customer would
+   have to dig for, it's the default view of the site's most-promoted
+   plan.
+
+2. **ESCALATION — evergreen discount code gap hits 35 days today, five
+   full weeks unresolved with no owner decision ever recorded.** Direct
+   fetch of the homepage and `/games/fivem` today: still no code, voucher,
+   or sale banner. All five competitors checked this run still run live
+   discount mechanisms: ZAP-Hosting's permanent 20%-off voucher
+   (`Keishin-a-8710`) reconfirmed; RocketNode's "Summer Sale — Up to 25%
+   Off" banner is still live; Shockbyte and Apex both still show active
+   promo codes per search (Shockbyte's `SHOCK10`/`LAUNCH`, Apex's
+   `APEX25`, both previously confirmed live via direct fetch and
+   unchanged since). This is the eleventh-plus consecutive weekly check-in
+   logging the identical gap with the identical requested action.
+   → *Action:* Unchanged from every prior entry — needs a yes/no from
+   whoever owns pricing, not another log line next Monday.
+
+3. **ESCALATION — billing-cycle discount ceiling hits 21 days today**
+   (three full weeks; first flagged 08-03, escalated 08-10 and 08-17).
+   Re-fetched `/games/fivem` today: still 5% quarterly, 5% semi-annual, 5%
+   annual, 10% biennial/triennial, byte-for-byte unchanged. RocketNode
+   still offers 20% annual; BisectHosting's billing selector still shows a
+   clean, monotonic 10%/15%/20% (quarterly/semi/annual). At the one-year
+   commitment point, Lumix still offers 5% against a 20% category norm
+   from two separate competitors.
+   → *Action:* Same ask as the last two weeks: confirm whether a 20%
+   annual discount is a real margin problem or just an unrevisited number.
+
+### Do this today (<1 hour)
+Flag finding 1 to whoever owns the WHMCS pricing config, specifically
+noting it's not buried data — it's the default badge shown on
+`/games/minecraft` to every visitor who changes nothing. It's a one-field
+price correction (pid 26's Annually price), and unlike the discount-code
+ask (finding 2), it's never been escalated as customer-visible before, so
+it hasn't had a fair chance at getting picked up yet.
+
+**Escalation status:** Evergreen discount code (pricing track) crosses 35
+days (five full weeks) unresolved today, still the oldest continuously-open
+item in the log measured from its 07-20 baseline. Billing-cycle discount
+ceiling (pricing track) crosses 21 days (three weeks) today. The two-SKU
+annual-pricing bug (pid 22, pid 26; first flagged 08-19) is 5 days old
+today — still under this log's 7-day repeat threshold, but see finding 1
+for why it's being surfaced again ahead of that mark. Off-track items not
+re-checked this run: YouTube 404 (social track) was at 30 days as of
+08-23; homepage meta description (SEO/copy track) was at 31 days as of
+08-23; bot/application hosting SEO footprint was at ~21 days as of 08-20.
