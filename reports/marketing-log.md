@@ -2785,3 +2785,82 @@ for why it's being surfaced again ahead of that mark. Off-track items not
 re-checked this run: YouTube 404 (social track) was at 30 days as of
 08-23; homepage meta description (SEO/copy track) was at 31 days as of
 08-23; bot/application hosting SEO footprint was at ~21 days as of 08-20.
+
+---
+
+## 2026-08-25 (Tuesday) — Website Copy (Week 6)
+
+**Note:** One week since the 08-18 entry. Re-pulled raw HTML via direct
+curl (not a summarizing fetch tool) for the homepage, `/games/`, and
+`/contact` to check the two 08-11-origin findings byte-for-byte, confirm
+whether the Bot Hosting listing gap moved, and look for anything genuinely
+new on the pages this track covers. Nothing new turned up — every open
+item on this track is exactly where 08-18 left it, one week older, so
+today's entry is escalations only, no new findings.
+
+**Confirmed unchanged since 08-18 (verified via raw HTML):** The five
+`/games/` product cards (FiveM, Minecraft, Palworld, BeamMP, Terraria) plus
+the four Coming Soon teasers (ARK: SA, Rust, Arma Reforger, Squad) are
+unchanged — no Bot Hosting card. The CTA-naming split noted 08-18 as
+"half-resolved" (only "Contact Sales" remained) has flipped back: today's
+fetch shows "Talk to an engineer" live again on `/games/` and "Contact
+Sales" live on the homepage — both variants exist simultaneously again,
+same underlying inconsistency as 07-28, not worth a separate finding slot
+this week since it's a reversion of an already-logged issue, not a new one.
+
+### Findings (max 3) — all escalated (7+ days unresolved)
+
+1. **ESCALATION — the "corporate overhead" claim hits 14 days unresolved
+   today, its second escalation.** Raw HTML confirms the homepage "What we
+   do" paragraph is still byte-for-byte unchanged: "...reliability without
+   the corporate overhead." No list, comparison, or stat anywhere on the
+   homepage, `/games/`, or `/contact` defines what this means or what Lumix
+   actually cuts that larger hosts don't.
+   → *Action:* Unchanged from 08-11/08-18 — replace with a concrete,
+   checkable fact (support response time, team size, a specific process
+   skipped) instead of the undefined contrast phrase.
+
+2. **ESCALATION — the ticker's "better than ever" claim hits 14 days
+   unresolved today, its second escalation, still the same one-line
+   zero-dependency edit flagged as "do this today" twice now (08-11,
+   08-18).** Raw HTML confirms the exact line is still live: "Production
+   and development are better than ever - faster builds, cleaner systems,
+   and improved stability." No baseline, no number, still sitting in the
+   same ticker rotation as operational claims that are backed by real
+   numbers (capacity, stock).
+   → *Action:* Unchanged from 08-11/08-18 — attach a real number/date or
+   delete the line. Two consecutive "do this today" asks haven't moved it;
+   worth a direct nudge rather than a third identical log line next week.
+
+3. **ESCALATION — Bot/Application hosting listing gap hits 28 days
+   unresolved (four full weeks), first flagged 07-28, now its fifth
+   consecutive copy-track escalation (08-04, 08-06, 08-11, 08-18, and
+   this one).** `/games/` re-confirmed today: same five priced product
+   cards, no Bot Hosting card, no price, no CTA — the only sitewide
+   mentions remain the ticker line ("Expanded bot hosting capacity...")
+   and the "Node.js application hosting" phrase in the hero paragraph.
+   → *Action:* Unchanged from 08-18 — this needs a recorded yes/no from
+   whoever owns the `/games/` catalog on whether the card is blocked or
+   simply unscheduled. A month of identical weekly log entries with no
+   answer either way is itself the finding at this point.
+
+### Do this today (<1 hour)
+Cut or fix the ticker line "Production and development are better than
+ever - faster builds, cleaner systems, and improved stability" (finding
+2). Same zero-dependency, no-decision-needed edit flagged as today's item
+on both 08-11 and 08-18 — the fastest way to clear one of today's three
+findings outright, and the one with the least excuse for still being open.
+
+**Escalation status:** Findings 1 and 2 above both cross 14 days (second
+escalation) today, first flagged 08-11. Bot/Application hosting listing
+gap (finding 3) crosses 28 days, fifth escalation, first flagged 07-28.
+Also still open, not re-listed as findings since unchanged and off today's
+specific checks: FiveM scarcity claim with no cap number (07-28, ~28 days)
+and the CTA-naming inconsistency (07-28, ~28 days, now confirmed reverted
+to its original two-variant state per the note above). Off-track items not
+re-checked here: evergreen discount code (pricing track) was at 35 days as
+of yesterday's Monday entry; homepage meta description and title (SEO
+track) were at 31/23 days as of 08-23 — both re-confirmed unchanged as a
+side effect of today's homepage fetch (title still "Game Server & VPS
+Hosting | Lumix Solutions," meta still "Infrastructure built by
+engineers...").
