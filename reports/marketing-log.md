@@ -2864,3 +2864,89 @@ track) were at 31/23 days as of 08-23 — both re-confirmed unchanged as a
 side effect of today's homepage fetch (title still "Game Server & VPS
 Hosting | Lumix Solutions," meta still "Infrastructure built by
 engineers...").
+
+---
+
+## 2026-08-26 (Wednesday) — Competitor UX Deep-Dive: RocketNode (Week 6)
+
+**Note:** Shockbyte was attempted first — `shockbyte.com/hosting/minecraft`
+returned HTTP 403 to fetch tools again today, a fifth consecutive blocked
+attempt (07-22, 08-05, 08-12, 08-19, and now 08-26). Rotated to RocketNode
+instead, the most stale UX-track subject after last week's Bisect revisit
+(RocketNode last checked 07-29, 28 days ago, vs. Apex's 21 and ZAP's 14).
+Re-fetched RocketNode's FiveM page live, plus raw fetches of Lumix's
+`/games/fivem`, `/games/minecraft`, and the billing-portal cart landing
+page. Most of RocketNode's own numbers are unchanged since 07-29 (still 6-7
+regions, still 20% annual discount, still the 1-Day Free Trial CTA) — the
+one genuinely new thing this run surfaced is a product-category change on
+RocketNode's page that Lumix's FiveM page has no answer to at all.
+
+### Findings (max 3)
+
+1. **NEW — RocketNode is actively marketing "FiveM Enhanced" support with a
+   "NEW!" banner; Lumix's FiveM page has zero mention of it.** FiveM
+   Enhanced is Cfx.re's server target for GTA V Enhanced — a genuinely
+   different server binary (`cfx-server`, not the Legacy `FXServer`), with
+   its own sync model and requirements; it isn't just a marketing label; a
+   host has to actually support the new binary. RocketNode presents it as a
+   free switch inside the existing plan ("switch the gamemode in the
+   startup tab of your Apollo panel"), and three other hosts found via
+   search (ServerPrism, CloudNord, Evolution Host, Revive Hosting) all
+   market Enhanced support as a named product/checkout option. A direct
+   text search of `lumixsolutions.org/games/fivem` today found no mention
+   of "Enhanced," "cfx-server," or "GTA V Enhanced" anywhere. For a
+   FiveM-focused host, this is a live, currently-relevant technical
+   question a prospect or existing customer could reasonably ask in
+   Discord this week, and right now Lumix's site gives no answer either
+   way.
+   → *Action:* Ask infra/panel ownership one question today: does Lumix's
+   current FXServer/artifact setup already support switching to the
+   Enhanced (`cfx-server`) binary? If yes, add one line to `/games/fivem`
+   saying so — a same-day copy fix, no new product needed. If no, that's
+   worth flagging as a roadmap gap before more competitors normalize it as
+   a standard feature.
+
+2. **ESCALATION — Lumix's location picker is still stuck at 2 regions,
+   unfixed since this was first flagged 07-22 (now 35 days, five weeks).**
+   RocketNode's FiveM page still lists 6 named regions across three
+   continents (Ashburn, Dallas, Salt Lake City, London, Singapore, Sydney);
+   Lumix's `/games/fivem` and `/games/minecraft` both still offer exactly
+   two (Miami, Ashburn), unchanged since 07-22, 07-29, and 08-19's repeated
+   checks of the same gap. 08-19's scoped-down fix (add the existing
+   location-card subtext directly into the picker's visible copy) was never
+   shipped.
+   → *Action:* This is the single oldest continuously-open UX-track finding
+   in the log. Needs a decision, not another log line: either commit to
+   adding regions (a real infra lift) or at minimum ship 08-19's one-line
+   copy fix so the 2-location reality reads as intentional rather than
+   unfinished.
+
+3. **ESCALATION — RocketNode's prominent "1 Day Free Trial" CTA next to its
+   deploy button is unchanged, and Lumix still has no trial or guarantee
+   anywhere in its flow, 28 days since this was first flagged 07-29.**
+   Checked homepage, `/games/fivem`, `/games/minecraft`, and the billing
+   portal cart landing page today — no trial period, refund window, or
+   money-back language on any of them.
+   → *Action:* Unchanged from 07-29 — a short trial or a "not satisfied in
+   24 hours, full refund" line next to the Deploy Server CTA is a policy
+   decision plus one line of copy, not a new product.
+
+### Do this today (<1 hour)
+Ask whoever owns the game panel/infra one question: does the current
+FXServer setup support switching to FiveM Enhanced's `cfx-server` binary?
+It's the one item today that's a single question with no research or
+design work on the requester's side, and it's the most time-sensitive of
+the three — Enhanced support is actively being marketed as a differentiator
+by name right now, not a long-standing gap like findings 2 and 3.
+
+**Escalation status:** Finding 2 (location-picker region count) crosses 35
+days today, first flagged 07-22 — now the oldest open item specific to the
+UX track. Finding 3 (no free trial/guarantee) crosses 28 days, first
+flagged 07-29. Shockbyte remains blocked to fetch tools for a fifth
+straight attempt (07-22, 08-05, 08-12, 08-19, 08-26) — still worth a manual
+check outside automated tooling next time it comes up. Off-track items not
+re-checked today: evergreen discount code and billing-cycle discount
+ceiling (pricing track) were at 35 and 21 days as of yesterday; homepage
+meta description (SEO/copy track) was at 31 days as of 08-23; bot/
+application hosting listing gap (copy track) was at 28 days as of
+yesterday.
