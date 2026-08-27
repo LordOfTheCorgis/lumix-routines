@@ -2950,3 +2950,87 @@ ceiling (pricing track) were at 35 and 21 days as of yesterday; homepage
 meta description (SEO/copy track) was at 31 days as of 08-23; bot/
 application hosting listing gap (copy track) was at 28 days as of
 yesterday.
+
+---
+
+## 2026-08-27 (Thursday) — SEO & Keywords (Week 7)
+
+**Note:** One week since 08-20. Re-pulled raw HTML via direct curl (not a
+summarizing fetch tool) for the homepage and `/games/fivem/` — title, meta
+description, H1, and JSON-LD `@type` blocks — plus `sitemap-0.xml` (still
+18 URLs, byte-identical list to every check since 08-13) and eight
+candidate URLs (four bot-hosting slugs, four "Coming Soon" slugs, all still
+404). Ran a fresh `site:lumixsolutions.org` search and a "qbcore server
+hosting" search to check for movement on competitor framework-targeted
+content. Nothing genuinely new turned up this run — every open SEO-track
+item is exactly where 08-20 left it, now one week older, with one item
+crossing its first escalation threshold. (One data point from the
+`site:lumixsolutions.org` search — an AI-generated summary claiming the
+homepage advertises "99.9% node uptime," a "100% money-back guarantee," and
+"<15 min average first ticket response time" — was checked directly against
+the raw homepage HTML and found nowhere in the markup; treating that as a
+search-summary hallucination, not a real site change, and not logging it as
+a finding.)
+
+### Findings (max 3)
+
+1. **ESCALATION — the FiveM page's framework-keyword gap (08-20's new
+   finding) hits 7 days unresolved today, first escalation.** Direct grep
+   of `/games/fivem/` raw HTML today: "QBCore" 0, "ESX" 0, "vRP" 0,
+   "roleplay" 0, "framework" 0 — identical to 08-20, "txAdmin" still the
+   only related term and still appearing exactly once. This was last week's
+   "do this today" item (zero dependencies, pure copy) and it didn't ship.
+   → *Action:* Unchanged from 08-20 — add one section to `/games/fivem/`
+   naming the frameworks Lumix supports (QBCore, ESX, vRP) and working
+   "roleplay" into the body copy. Still the single highest-intent keyword
+   gap on the page, still a same-day fix.
+
+2. **ESCALATION — homepage title/meta description mismatch is now over a
+   month old and the single most repeated ask in this log.** Raw HTML
+   confirms today: title is still "Game Server & VPS Hosting | Lumix
+   Solutions" (unchanged since 08-02, names no game or "FiveM/Minecraft/
+   Terraria"), and the meta description is still byte-for-byte
+   "Infrastructure built by engineers. Node.js servers, game services,
+   voice infrastructure, and enterprise DDoS protection" — unchanged since
+   07-23, now 35 days (five full weeks) with the exact same ready-to-paste
+   replacement sitting in this log since day one. This is the seventh
+   distinct log entry to flag the meta description specifically (07-23,
+   07-26, 07-30, 08-06, 08-13, 08-20, and this one).
+   → *Action:* Same two-line copy-paste as every prior entry — title →
+   "Lumix Solutions | FiveM, Minecraft, Terraria & Bot Hosting"; meta →
+   "FiveM, Minecraft, Terraria, and Discord bot hosting with DDoS
+   protection and sub-10ms latency. Deploy in under 60 seconds." At 35 days
+   with zero movement despite being logged as a one-line fix seven times,
+   this needs a direct answer from whoever holds CMS access on whether
+   there's a blocker (a CMS constraint, a branding decision) that hasn't
+   surfaced yet — not an eighth identical log line next Thursday.
+
+3. **ESCALATION — no `Product`/`Offer` JSON-LD on the FiveM page, now 28
+   days unresolved (fourth escalation).** Confirmed again today: `/games/
+   fivem/` ships only `Organization` and `WebSite` `@type` blocks, no
+   `Product` or `Offer`, despite the page rendering a clear $8.99 starting
+   price and full spec table. First flagged 07-30, escalated 08-06, 08-13,
+   and 08-20; unchanged at each check.
+   → *Action:* Unchanged from every prior entry — one shared template
+   change across all five game pages (they share a layout), pulling the
+   price already rendered on each page into an `Offer` block.
+
+### Do this today (<1 hour)
+Add the QBCore/ESX/vRP framework line to `/games/fivem/` (finding 1). It's
+the only item today that isn't already a month-plus-old stuck item needing
+an out-of-band owner decision — pure copy, zero dependencies, and it was
+already asked for once with no result, so shipping it this week stops it
+from becoming this track's next "seventh ask" item like finding 2.
+
+**Escalation status:** Finding 2 (homepage title/meta) crosses 35 days
+(five weeks) today on the meta description specifically, its fourth
+distinct escalation mention; the title mismatch (since 08-02) is 25 days.
+Finding 3 (Product/Offer JSON-LD) crosses 28 days today, fourth escalation.
+Finding 1 (FiveM framework keywords) crosses its first 7-day threshold
+today. Off-track items not re-checked this run: evergreen discount code and
+billing-cycle discount ceiling (pricing track) were at 35 and 21 days as of
+08-24; corporate-overhead and better-than-ever ticker claims plus the
+bot/application hosting listing gap (copy track) were at 14/14/28 days as
+of 08-25; location-picker region count and no-trial gap (UX track) were at
+35/28 days as of yesterday; YouTube 404 and Discord growth (social track)
+were last checked 08-21.
