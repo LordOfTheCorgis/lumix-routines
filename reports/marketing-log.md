@@ -3034,3 +3034,63 @@ bot/application hosting listing gap (copy track) were at 14/14/28 days as
 of 08-25; location-picker region count and no-trial gap (UX track) were at
 35/28 days as of yesterday; YouTube 404 and Discord growth (social track)
 were last checked 08-21.
+
+---
+
+## 2026-08-28 (Friday) — Social & Community (Week 6)
+
+**Note:** One week since 08-21. Re-fetched the homepage footer directly
+(`curl`, not a summarizing fetch tool) to confirm all five social hrefs,
+fetched `youtube.com/@officiallumixsolutions` directly, re-pulled the
+Discord invite API (`uaNYBJQtvn`), and searched fresh for any new
+BisectHosting/Shockbyte/RocketNode social content and for the outcome of
+Apex's Minecraft Scholarship (flagged 07-31 as a seasonal content format
+Lumix has no equivalent of). Nothing new turned up on the competitor side
+this run; the two developments worth logging are both on Lumix's own side.
+
+### Findings (max 2)
+
+1. **ESCALATION — YouTube footer link hits 35 days (five full weeks)
+   unresolved today, the tenth consecutive ask with zero action.** Direct
+   fetch of `youtube.com/@officiallumixsolutions` today returns the same
+   HTTP 404 confirmed on every check since 07-31 (07-31, 08-07, 08-14,
+   08-15, 08-16, 08-21, 08-22, 08-23, and this one). The homepage footer's
+   raw HTML still links to it, confirmed again via direct `curl` this run.
+   This is now the single oldest, most-repeated, lowest-effort open item in
+   the entire log — a one-line footer deletion that outlasted every other
+   track's findings, including items that need a pricing or infra decision.
+   → *Action:* This has already crossed the point (flagged 08-23) where
+   another log line stops being useful. Whoever has footer/CMS access needs
+   this as a direct, named to-do with an ETA — not an eleventh identical
+   Friday entry.
+
+2. **CHANGED — Discord membership resumed real growth this week after
+   08-21's "flat" reading, but there's still no confirmation any planned
+   community content has ever shipped.** Invite API today: 141 members / 22
+   online, up from 08-21's 135/14 (+6 members, +4.4%, the strongest
+   week-over-week gain since 08-14's since-stalled +3 spike). That's a
+   genuine positive data point, not noise. But it arrives with no visible
+   cause: the site's public footer, Discord invite description, and search
+   results show no evidence of the "share your server clip" call (first
+   recommended 07-24) or any other community post going out — the same gap
+   08-21's finding 2 flagged, now five weeks old with the growth trend
+   turning up despite it, not because of it.
+   → *Action:* Get a direct yes/no on whether anyone posted the standing
+   community-clips call this week. If this growth happened with zero
+   deliberate content, that's a case for how much upside is being left on
+   the table by not shipping the recommendation — worth surfacing as-is
+   rather than re-proposing the same idea an eleventh time.
+
+### Do this today (<1 hour)
+Remove the YouTube icon/link from the site footer (finding 1). Tenth
+consecutive ask, still zero dependencies, and now the single most overdue
+item of any kind in this log at 35 days.
+
+**Escalation status:** YouTube 404 (social track) crosses 35 days (five
+full weeks) unresolved today, its sixth consecutive Friday-or-off-rotation
+escalation since 07-31. Evergreen discount code (pricing track) was at 35
+days as of Monday's 08-24 entry, not re-checked here. Homepage meta
+description (SEO track) was at 35 days as of yesterday's 08-27 entry, not
+re-checked here since it's off today's track.
+
+---
