@@ -3094,3 +3094,75 @@ description (SEO track) was at 35 days as of yesterday's 08-27 entry, not
 re-checked here since it's off today's track.
 
 ---
+
+## 2026-08-29 (Saturday) — Off-Rotation Check-In
+
+**Note:** Re-pulled raw HTML via direct `curl` (not a summarizing fetch
+tool) for the homepage, `/games/fivem`, `/games/minecraft`, and `/games/`
+(including the embedded pricing JSON on the two game-builder pages, not
+just rendered text); checked `youtube.com/@officiallumixsolutions`
+directly; and re-pulled the Discord invite API. Nothing genuinely new
+turned up — every open item is exactly where Friday's report left it, one
+day older — except one item that quietly crossed this log's own 7-day
+repeat threshold for the first time today.
+
+### Findings (max 3)
+
+1. **ESCALATION — the two-SKU annual-pricing bug (Advanced FiveM Server,
+   Standard Minecraft Plan) crosses 7 days unresolved today, its first
+   formal escalation.** First flagged 08-19, called out again 08-24 as
+   "customer-visible by default" (both SKUs are the pre-selected "Most
+   Popular" plan on their respective pages) but still logged as
+   sub-threshold at the time (5 days). Today's raw pricing-JSON pull
+   confirms both are still unchanged at the byte level: Advanced FiveM
+   Server (pid 22) — semiannually $149.99 ($25.00/mo) vs. annually $311.99
+   ($26.00/mo); Standard Minecraft Plan (pid 26) — semiannually $155.99
+   ($26.00/mo) vs. annually $323.99 ($27.00/mo). Ten days since first
+   flagged with zero movement, and it's now old enough that it stops being
+   "a bug that hasn't been looked at yet" and starts being a recurring
+   log item like the rest of this list.
+   → *Action:* Same fix as 08-19/08-24 — correct the Annually price on pid
+   22 and pid 26 so it lands on the same discount curve as their
+   neighboring cycles (roughly $291 and $312 respectively). One-field
+   pricing-config correction on both SKUs.
+
+2. **ESCALATION — YouTube footer link hits 36 days unresolved today, the
+   eleventh consecutive ask with zero action.** Direct fetch of
+   `youtube.com/@officiallumixsolutions` today returns the same HTTP 404
+   confirmed on every check since 07-31, and the homepage footer's raw
+   HTML still links to it. This remains the single oldest, most-repeated,
+   lowest-effort open item in the entire log.
+   → *Action:* Unchanged from every prior ask — this needs a named owner
+   and ETA, not a twelfth identical log line next week.
+
+3. **Evergreen discount code gap is now 40 days unresolved.** Raw HTML of
+   the homepage and `/games/fivem` today: still no code, voucher, or sale
+   banner anywhere on either page — same as every check since the 07-20
+   baseline. This is the single oldest continuously-open item in the log
+   measured from its origin date, even though YouTube's finding above has
+   more consecutive weekly mentions.
+   → *Action:* Unchanged from every prior entry — needs a yes/no from
+   whoever owns pricing, not further research.
+
+### Do this today (<1 hour)
+Remove the YouTube icon/link from the site footer (finding 2). Eleventh
+consecutive ask, zero dependencies, and still the cheapest fix on the
+board relative to how long it has sat unaddressed.
+
+**Unchanged since Friday (not re-listed as findings):** Homepage `<title>`
+("Game Server & VPS Hosting | Lumix Solutions") and meta description
+("Infrastructure built by engineers...") are both re-confirmed unchanged
+today (meta description now 37 days unresolved, not re-listed as a
+standalone finding since it's off today's specific pricing/social checks
+and was already the headline of Thursday's 08-27 SEO entry). The
+"corporate overhead" and ticker "better than ever" claims (copy track,
+14+ days) are both still live verbatim. `/games/fivem` still has zero
+"QBCore"/"ESX"/"roleplay" mentions (SEO track, 2 days into its first
+escalation window). `/games/` still shows no Bot Hosting product card; the
+four "Coming Soon" slugs (`/games/ark-survival-ascended`, `/rust`,
+`/arma-reforger`, `/squad`) are all still 404. `/games/fivem` still ships
+only `Organization`/`WebSite` JSON-LD, no `Product`/`Offer` block. Discord
+invite API: 140 members / 26 online, essentially flat against yesterday's
+141/22 (-1 member, +4 online) — noise, not a trend change.
+
+---
