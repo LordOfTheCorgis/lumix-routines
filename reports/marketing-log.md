@@ -3166,3 +3166,79 @@ invite API: 140 members / 26 online, essentially flat against yesterday's
 141/22 (-1 member, +4 online) — noise, not a trend change.
 
 ---
+
+## 2026-08-30 (Sunday) — Off-Rotation Check-In
+
+**Note:** Fifth unassigned-weekday run (rotation covers Mon–Fri only, cron
+fires daily). Re-pulled raw HTML via direct `curl` (not a summarizing fetch
+tool) for the homepage, `/games/`, `/games/fivem`, and `/games/minecraft`
+(including the embedded pricing JSON on the two game-builder pages),
+checked `youtube.com/@officiallumixsolutions` directly, and re-pulled the
+Discord invite API. One small, genuinely new site change turned up (noted
+below, not counted as a finding since it needs no action); every other open
+item is exactly where yesterday's report left it, one day older.
+
+**NEW, not a finding:** The four "Coming Soon" game cards on `/games/`
+(ARK: Survival Ascended, Rust, Arma Reforger, Squad) now carry a "Get
+notified" CTA that links straight to the Discord invite, instead of being
+inert teaser tiles. The underlying `/games/<slug>` URLs (checked again
+today: `ark-survival-ascended`, `rust`, `arma-reforger`, `squad`) still all
+404, so this doesn't touch 08-01's SEO-stub recommendation, but it closes a
+smaller gap that was never explicitly logged — a prospect clicking a
+Coming Soon tile now lands somewhere useful instead of nowhere.
+
+### Findings (max 3)
+
+1. **ESCALATION — the two-SKU annual-pricing bug (Advanced FiveM Server,
+   Standard Minecraft Plan) is now 11 days unresolved.** Today's raw
+   pricing-JSON pull confirms both are still byte-identical to every prior
+   check: Advanced FiveM Server (pid 22) — semiannually $149.99 ($25.00/mo)
+   vs. annually $311.99 ($26.00/mo); Standard Minecraft Plan (pid 26) —
+   semiannually $155.99 ($26.00/mo) vs. annually $323.99 ($27.00/mo). Both
+   remain the pre-selected "Most Popular" plan on their respective pages,
+   so this is still the default view, not a buried number.
+   → *Action:* Unchanged from 08-19/08-24/08-29 — correct the Annually
+   price on pid 22 and pid 26 to land on the same discount curve as their
+   neighboring cycles (roughly $291 and $312 respectively). One-field
+   pricing-config correction on both SKUs.
+
+2. **YouTube footer link hits 37 days unresolved today, the twelfth
+   consecutive ask with zero action.** Direct fetch of
+   `youtube.com/@officiallumixsolutions` today returns the same HTTP 404
+   confirmed on every check since 07-31, and the homepage footer's raw HTML
+   still links to it.
+   → *Action:* Unchanged from every prior ask — remove the footer link or
+   fix the handle; this needs a named owner and ETA, not a thirteenth
+   identical log line next week.
+
+3. **Evergreen discount code gap is now 41 days unresolved.** Raw HTML of
+   the homepage and `/games/fivem` today: still no code, voucher, or sale
+   banner anywhere on either page — same as every check since the 07-20
+   baseline.
+   → *Action:* Unchanged from every prior entry — needs a yes/no from
+   whoever owns pricing, not further research.
+
+### Do this today (<1 hour)
+Fix the two-SKU annual-pricing bug (finding 1). Unlike the YouTube link and
+discount code — both of which need an owner decision before anything ships
+— this is a pure data-entry correction on two pricing-config fields, it's
+customer-visible on both pages' default "Most Popular" plan, and it's the
+newest of the three findings, so it hasn't had the same number of ignored
+asks yet.
+
+**Unchanged since yesterday (not re-listed as findings):** Homepage
+`<title>` ("Game Server & VPS Hosting | Lumix Solutions") and meta
+description ("Infrastructure built by engineers...") both re-confirmed
+unchanged today (meta description now 38 days unresolved). Billing-cycle
+discount ceiling (pricing track, first flagged 08-03) is 27 days unresolved
+— re-checked today via `/games/fivem`'s Save% badges (still 5%/5%/5%
+quarterly/semi/annual, 10% biennial/triennial), byte-identical to every
+prior check. `/games/fivem` still has zero "QBCore"/"ESX"/"vRP"/"roleplay"
+mentions and ships only `Organization`/`WebSite` JSON-LD (no `Product`/
+`Offer` block). `/games/` still shows no Bot Hosting product card. Location
+picker on `/games/fivem` still lists exactly two regions (Miami, Ashburn).
+No free trial or money-back guarantee appears anywhere in the flow. Discord
+invite API: 141 members / 28 online, up slightly from yesterday's 140/26
+(+1 member, +2 online) — noise, not a trend change.
+
+---
