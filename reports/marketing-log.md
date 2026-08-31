@@ -3242,3 +3242,83 @@ invite API: 141 members / 28 online, up slightly from yesterday's 140/26
 (+1 member, +2 online) — noise, not a trend change.
 
 ---
+
+## 2026-08-31 (Monday) — Competitor Pricing & Plans (Week 7)
+
+**Note:** Re-fetched Lumix's `/games/fivem` and `/games/minecraft` via direct
+`curl` (raw HTML plus the embedded `data-builder-config` pricing JSON) to
+re-verify all three open pricing-track items at the byte level. Ran a fresh
+competitor check across all five providers (BisectHosting, Shockbyte, Apex
+Hosting, ZAP-Hosting, RocketNode) looking specifically for anything new
+since 08-24 — a seasonal promo swap in particular, since US Labor Day
+(Sept 7) is now one week out. Nothing new turned up: no competitor has
+launched a Labor Day/back-to-school promo yet (RocketNode's "Summer Sale —
+Up to 25% Off" banner and 1-Day Free Trial CTA are both still running
+unchanged; Bisect's 10%/15%/20% ladder, Shockbyte's `SHOCK10`, Apex's
+`APEX25`, and ZAP's permanent voucher mechanic are all unchanged per search).
+One low-confidence data point — a general fetch of ZAP-Hosting's site
+surfaced a FiveM entry price of $9.24/mo vs. the $8.57 baseline — is not
+solid enough to log as a finding (could be a different plan/region being
+surfaced, not a real repricing) but is worth a manual spot-check next time
+ZAP comes up. All three findings below are escalations of already-open
+items, all still exactly where 08-24 left them at the byte level.
+
+### Findings (max 3)
+
+1. **ESCALATION — the two-SKU annual-pricing bug (Advanced FiveM Server,
+   Standard Minecraft Plan) is now 12 days unresolved.** Today's raw
+   pricing-JSON pull confirms both are still byte-identical to every prior
+   check since 08-19: Advanced FiveM Server (pid 22) — semiannually $149.99
+   ($25.00/mo) vs. annually $311.99 ($26.00/mo); Standard Minecraft Plan
+   (pid 26) — semiannually $155.99 ($26.00/mo) vs. annually $323.99
+   ($27.00/mo). Both remain the pre-selected "Most Popular" plan on their
+   respective pages (`data-pid="22"`/`data-pid="26"` confirmed inside the
+   ribboned card again today), so this is still the default view every
+   visitor sees, not a buried number.
+   → *Action:* Unchanged from 08-19/08-24/08-29/08-30 — correct the Annually
+   price on pid 22 and pid 26 to land on the same discount curve as their
+   neighboring cycles (roughly $291 and $312 respectively). One-field
+   pricing-config correction on both SKUs.
+
+2. **ESCALATION — evergreen discount code gap hits 42 days today, six full
+   weeks unresolved with no owner decision ever recorded.** Direct fetch of
+   the homepage, `/games/fivem`, and `/games/minecraft` today: still no
+   code, voucher, or sale banner anywhere (grepped for "promo," "coupon,"
+   "discount code," "voucher," "% off" across all three pages — zero hits).
+   All five competitors checked this run still run live discount mechanisms,
+   unchanged from every prior week's snapshot.
+   → *Action:* Unchanged from every prior entry — needs a yes/no from
+   whoever owns pricing, not another log line next Monday.
+
+3. **ESCALATION — billing-cycle discount ceiling hits 28 days today** (four
+   full weeks; first flagged 08-03, escalated 08-10, 08-17, 08-24). Re-fetched
+   `/games/fivem` today: Save-badge counts still 5%/5%/5% (quarterly/semi/
+   annual, three "Save 5%" badges) and 10%/10% (biennial/triennial),
+   byte-for-byte unchanged. RocketNode confirmed today at 5% quarterly / 12%
+   semi-annual / 20% annual; BisectHosting confirmed today at a clean
+   10%/15%/20% ladder. At the one-year commitment point, Lumix still offers
+   5% against a 20% category norm from two separate competitors.
+   → *Action:* Same ask as the last three weeks: confirm whether a 20%
+   annual discount is a real margin problem or just an unrevisited number.
+
+### Do this today (<1 hour)
+Fix the two-SKU annual-pricing bug (finding 1). It's the newest of the three
+open pricing items, it's a pure one-field data correction on each SKU (no
+policy decision needed like findings 2 and 3), and it's customer-visible by
+default on both pages' pre-selected "Most Popular" plan.
+
+**Escalation status:** Evergreen discount code (finding 2) crosses 42 days
+(six full weeks) today, still the oldest continuously-open item in the log
+measured from its 07-20 baseline. Billing-cycle discount ceiling (finding 3)
+crosses 28 days (four weeks) today. The two-SKU annual-pricing bug (finding
+1) crosses 12 days today, its second consecutive weekly mention since
+08-29's first escalation. Off-track items not re-checked this run: YouTube
+404 (social track) was at 37 days as of 08-30; homepage title/meta
+description (SEO track) was at 38 days as of 08-30; FiveM framework-keyword
+gap (SEO track) was at 4 days into its first escalation window as of 08-27;
+corporate-overhead and better-than-ever ticker claims plus bot/application
+hosting listing gap (copy track) were at 14/14/28 days as of 08-25;
+location-picker region count and no-trial gap (UX track) were at 35/28 days
+as of 08-26.
+
+---
