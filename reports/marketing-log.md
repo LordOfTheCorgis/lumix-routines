@@ -3322,3 +3322,85 @@ location-picker region count and no-trial gap (UX track) were at 35/28 days
 as of 08-26.
 
 ---
+
+## 2026-09-01 (Tuesday) — Website Copy (Week 7)
+
+**Note:** One week since 08-25. Re-pulled raw HTML via direct `curl` (not a
+summarizing fetch tool) for the homepage, `/games/`, `/spotlight/`,
+`/partners/`, and `/contact/`. All three of 08-25's open items (corporate
+overhead phrase, ticker "better than ever" line, Bot/Application hosting
+listing gap) are confirmed byte-for-byte unchanged. The CTA-naming split
+is also unchanged from 08-25's reverted state ("Contact Sales" on the
+homepage, "Talk to an engineer" on `/games/`). One genuinely new item
+turned up this run, on a page not scrutinized line-by-line before.
+
+### Findings (max 3)
+
+1. **NEW — `/games/` has a decorative "system status" readout that omits
+   Terraria, a real, purchasable product listed right below it.** The
+   `lumix catalog --available` terminal block lists exactly four rows —
+   `fivem`, `minecraft`, `palworld`, `beammp`, each "ONLINE / ACCEPTING" —
+   then the page's own live "5 live / 9 total" catalog directly underneath
+   lists five purchasable games including Terraria at $5.00/mo with a
+   working "Configure" CTA. This is the inverse of the scarcity-claim
+   problem already on this log (07-28): instead of an unproven claim, it's
+   a proof/trust element (a fake-terminal "status" readout meant to signal
+   real infrastructure) that's simply wrong — a prospect who reads the
+   status table before the catalog would conclude Terraria hosting doesn't
+   exist or isn't accepting signups, one scroll before the page proves
+   otherwise.
+   → *Action:* Add a `terraria ONLINE ACCEPTING` row to the status block
+   template on `/games/` so it matches the five live catalog entries.
+   One line in a shared template, no design or pricing decision needed.
+
+2. **ESCALATION — the ticker's "better than ever" claim hits 21 days
+   unresolved today, its third escalation, and the third consecutive
+   "do this today" ask (08-11, 08-18, 08-25) with zero movement.** Raw
+   HTML confirms the exact line is still live on the homepage, `/games/`,
+   `/spotlight/`, `/partners/`, and `/contact/`: "Production and
+   development are better than ever - faster builds, cleaner systems, and
+   improved stability." Still no baseline, number, or date attached.
+   → *Action:* Unchanged from every prior entry — attach a real number/date
+   or delete the line. Three identical "do this today" asks haven't moved
+   it; worth a direct nudge to whoever owns the ticker content rather than
+   a fourth ask next Tuesday.
+
+3. **ESCALATION — Bot/Application hosting listing gap hits 35 days
+   unresolved (five full weeks), first flagged 07-28, now its sixth
+   consecutive copy-track escalation.** `/games/` re-confirmed today: still
+   the same five priced product cards (plus four Coming Soon teasers), no
+   Bot Hosting card, no price, no CTA. The only sitewide mentions remain
+   the ticker line ("Expanded bot hosting capacity...") and "Node.js
+   application hosting" in the homepage hero paragraph.
+   → *Action:* Unchanged from every prior entry — this needs a recorded
+   yes/no from whoever owns the `/games/` catalog on whether the card is
+   blocked or simply unscheduled. Six identical weekly log entries with no
+   answer either way is itself the finding at this point.
+
+### Do this today (<1 hour)
+Add the missing `terraria ONLINE ACCEPTING` row to the `/games/` status
+readout (finding 1). It's the newest item on the board, hasn't had a
+single ignored ask yet (unlike findings 2 and 3), and is a pure one-line
+template fix with no pricing or scheduling decision behind it — the
+highest-leverage fix available today.
+
+**Escalation status:** Finding 2 (ticker "better than ever") crosses 21
+days today, third escalation, first flagged 08-11. Finding 3 (Bot/
+Application hosting listing gap) crosses 35 days today, sixth escalation,
+first flagged 07-28. Also still open, not re-listed as findings since
+unchanged and this week's slots went to a new item: the "corporate
+overhead" phrase (08-11 origin, 21 days, same status as finding 2), the
+FiveM scarcity claim with no cap number (07-28, ~35 days), and the
+CTA-naming inconsistency (07-28, ~35 days, confirmed still in its
+reverted two-variant state). Off-track items not re-checked this run
+beyond what a homepage/`/games/` fetch surfaced incidentally: homepage
+title ("Game Server & VPS Hosting | Lumix Solutions") and meta description
+("Infrastructure built by engineers...") both directly re-confirmed
+unchanged today via this run's own fetch — SEO track, ~39/40 days per
+08-30's count. Evergreen discount code, two-SKU annual-pricing bug, and
+billing-cycle discount ceiling (pricing track) were at 42/12/28 days as of
+08-31. Location-picker region count and no-trial gap (UX track) were at
+35/28 days as of 08-26. YouTube 404 and Discord growth (social track) were
+last checked 08-30 (141/28 members/online).
+
+---
