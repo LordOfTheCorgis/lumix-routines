@@ -3404,3 +3404,102 @@ billing-cycle discount ceiling (pricing track) were at 42/12/28 days as of
 last checked 08-30 (141/28 members/online).
 
 ---
+
+## 2026-09-02 (Wednesday) — Competitor UX Deep-Dive: Apex Hosting (Week 2)
+
+**Note:** Second Apex entry (first was 08-05, method-limited to search/review
+sources since Apex's own pages 403 fetch tools — same block hit again today
+across `apexminecrafthosting.com/`, `/order`, `/games/minecraft-server-hosting/`,
+and `billing.apexminecrafthosting.com`, so today's Apex data is again
+reconstructed from independent review sites, not a live render). Lumix's
+`/games/fivem` and `/games/minecraft` were fetched live via direct `curl`
+for the comparison side. **One genuine improvement turned up first:** Miami,
+FL is no longer marked "Sold Out" on either Lumix builder — it's now a
+selectable, pre-checked default location with the same descriptive-note
+treatment as Ashburn ("Best for the Southeast US, Caribbean, and Latin
+America"). This resolves the dead-looking-option half of 07-29's finding
+(the specific "sold out card next to a live one" symptom); it does not
+resolve the underlying 2-locations-vs-"12 PoPs" gap, which this run's
+Apex comparison sharpens rather than closes (see finding 2).
+
+### Findings (max 3)
+
+1. **NEW — Apex puts modpack/version selection inside the purchase flow
+   itself; Lumix's wizard has no equivalent step, pushing that choice to
+   after checkout.** Per independent reviews of Apex's order flow: step 2
+   ("configure your version — Java or Bedrock, vanilla or a specific
+   modpack") is where a buyer picks from a "one-click installer for over
+   200+ modpacks" (e.g. SkyFactory, All the Mods) before payment — the
+   server that comes out the other end is already running the requested
+   modpack. Lumix's `/games/minecraft` builder (re-confirmed today via raw
+   HTML) is a 3-step wizard — Plan → Location → Billing cycle — with no
+   version or modpack step anywhere; the page's own copy places that
+   entirely post-purchase: "Modpack and plugin installs from the panel."
+   A Lumix buyer finishes checkout with a blank server and still has to
+   go configure it themselves; an Apex buyer's server is already the
+   modpack they asked for.
+   → *Action:* Add a lightweight 4th wizard step (or a sub-choice inside
+   the existing Plan step) — "Java or Bedrock" plus a short list of
+   common modpacks/loaders (Vanilla, Paper, Forge, Fabric) — that gets
+   passed to provisioning, so at least the base server type is right at
+   first boot instead of requiring a panel trip immediately after
+   purchase.
+
+2. **ESCALATION — the 2-location wizard vs. "12 PoPs" homepage claim hits
+   42 days unresolved today, and this run completes a second full lap of
+   the competitor rotation with the same gap confirmed against all four
+   (Bisect 07-22/08-19, RocketNode 07-29/08-26, Apex 08-05/today, ZAP
+   08-12) — six consecutive Wednesday UX reviews, zero movement.** Today's
+   Apex figure is unchanged from 08-05's confirmed count: 18 real
+   datacenters across 6 continents (US x6, Canada, Brazil, UK, France,
+   Poland, Germany, Israel, Russia, China, Singapore, Australia, Turkey).
+   Lumix's `/games/fivem` and `/games/minecraft` (re-fetched live today)
+   both still list exactly two: Miami and Ashburn. The homepage/`/games`
+   stats block still reads "12 PoPs Locations," unchanged.
+   → *Action:* This has now outlasted a full rotation of this routine's own
+   comparison set — worth treating as a standing decision request rather
+   than a recurring finding: either commit an infra timeline for opening
+   more of the claimed 12 PoPs, or change the homepage stat to something
+   accurate today (e.g. "2 Locations — more rolling out") until it does.
+
+3. **ESCALATION — the FiveM Enhanced (`cfx-server`) support question first
+   asked 08-26 crosses 7 days unresolved today, its first escalation.**
+   `/games/fivem` (re-checked today via direct text search of the raw
+   HTML) still has zero mentions of "Enhanced," "cfx-server," or "GTA V
+   Enhanced." This was last week's zero-dependency "do this today" item
+   (a single yes/no question to infra/panel ownership, no research or
+   design work needed) and it didn't get answered.
+   → *Action:* Unchanged from 08-26 — get a yes/no from whoever owns the
+   game panel on whether the current FXServer/artifact setup supports
+   switching to the Enhanced binary, then add one line to `/games/fivem`
+   either way (support confirmed, or "Enhanced support coming soon").
+
+### Do this today (<1 hour)
+Get the FiveM Enhanced yes/no answer (finding 3). It's the only one of the
+three with zero research, design, or infra-timeline decision attached —
+just a question that's been sitting unanswered for a full week.
+
+**Escalation status:** Finding 2 (2-location wizard vs. "12 PoPs" claim)
+crosses 42 days today, its most-repeated UX-track finding — sixth
+consecutive weekly mention across all four rotation competitors. Finding 3
+(FiveM Enhanced) crosses its first 7-day threshold today. Not re-listed as
+a full finding but still open: no free trial or money-back guarantee
+anywhere in Lumix's flow (07-29 origin, 35 days) — Apex's own risk-reversal
+mechanism is a 7-day money-back guarantee rather than RocketNode's 1-day
+trial, a second distinct pattern (trial vs. guarantee) neither of which
+Lumix offers either version of; this is the same underlying gap already
+covered in depth on 08-05 and 08-26, not re-analyzed today to avoid a
+fourth near-identical writeup. Off-track items incidentally re-confirmed
+today via this run's own fetch, not re-listed as findings since off-track:
+homepage title/meta description (SEO/copy track) unchanged — still "Game
+Server & VPS Hosting | Lumix Solutions" / "Infrastructure built by
+engineers..."; two-SKU annual-pricing bug (pid 22, pid 26 — pricing track)
+unchanged at the byte level; billing-cycle discount ladder (pricing track)
+unchanged at 5%/5%/5%/10%/10%; no promo/coupon/discount code anywhere on
+homepage, `/games/fivem`, or `/games/minecraft` (pricing track); `/games/`
+status readout still omits Terraria despite it being a live catalog entry
+(copy track, flagged yesterday 09-01, 1 day old — too new to escalate).
+Social-track items (YouTube 404, Discord count) not re-checked this run;
+last confirmed 08-30 (141/28 members/online).
+
+---
