@@ -3589,3 +3589,58 @@ Enhanced support (UX track) were at 42/7 days as of 09-02; YouTube 404 and
 Discord growth (social track) last confirmed 08-30.
 
 ---
+
+## 2026-09-04 (Friday) — Social & Community (Week 7)
+
+**Note:** One week since 08-28. Re-fetched the homepage directly (`curl`) to
+confirm all five footer social hrefs unchanged, checked
+`youtube.com/@officiallumixsolutions` and `tiktok.com/@lumix.solutions`
+directly, and re-pulled the Discord invite API (`uaNYBJQtvn`). Also
+searched fresh for any new BisectHosting/Shockbyte/RocketNode TikTok/
+YouTube content and for any indexed Lumix social activity. Nothing
+genuinely new turned up on either side this run — every open item is
+exactly where 08-28 left it, one week older.
+
+### Findings (max 2)
+
+1. **ESCALATION — YouTube footer link hits 42 days (six full weeks)
+   unresolved today, the twelfth consecutive ask with zero action.** Direct
+   fetch of `youtube.com/@officiallumixsolutions` today returns the same
+   HTTP 404 confirmed on every check since 07-31 (07-31, 08-07, 08-14,
+   08-15, 08-16, 08-21, 08-22, 08-23, 08-28, 08-29, and this one). The
+   homepage footer's raw HTML (re-pulled today) still links to it. TikTok's
+   `@lumix.solutions` still loads (HTTP 200) but remains unindexed with no
+   discoverable posts, same as every prior check — not re-analyzed as a
+   separate item since its status hasn't changed since 07-24.
+   → *Action:* Unchanged from every prior ask, now six weeks old: whoever
+   has footer/CMS access should either delete the dead YouTube link or
+   replace it with the correct handle today. This is the single most
+   overdue item in the entire log across all five tracks, and the fix is a
+   one-line footer edit with zero dependencies.
+
+2. **Discord growth stalled again this week, and no evidence the
+   community-content plan has ever shipped.** Invite API today: 141
+   members / 21 online — flat against 08-28's 141/22 and within noise of
+   08-29's 140/26. Last week's +6 member gain (08-21→08-28) did not
+   continue; this week reads as a return to the earlier flat baseline, not
+   a trend. The site footer, Discord invite description, and fresh
+   searches this run again show no evidence the "share your server clip"
+   call (first recommended 07-24, now 42 days open) or any other
+   community-sourced content has ever gone out.
+   → *Action:* Same ask as every prior Friday — get a direct yes/no on
+   whether the community-clips call has been posted. Six weeks of flat-to-
+   noisy membership with zero confirmed content output is itself now the
+   finding: there's no data yet on whether the idea works, because it's
+   never been tried.
+
+### Do this today (<1 hour)
+Delete the dead YouTube icon/link from the site footer (finding 1). Twelfth
+consecutive ask, zero dependencies, now 42 days overdue — the cheapest,
+most repeated, and most ignored fix on the entire board.
+
+**Escalation status:** YouTube 404 (social track) crosses 42 days (six full
+weeks) unresolved today, its seventh consecutive Friday-or-off-rotation
+escalation since 07-31. No other tracks re-checked this run beyond the
+homepage footer fetch used for finding 1.
+
+---
