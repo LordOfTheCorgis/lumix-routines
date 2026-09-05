@@ -3644,3 +3644,74 @@ escalation since 07-31. No other tracks re-checked this run beyond the
 homepage footer fetch used for finding 1.
 
 ---
+
+## 2026-09-05 (Saturday) — Off-Rotation Check-In
+
+**Note:** Rotation covers Mon–Fri only; this is the routine's regular
+unassigned-weekday check. Re-pulled raw HTML via direct `curl` for the
+homepage, `/games/`, `/games/fivem`, `/games/minecraft`, `/spotlight/`, and
+`/partners/` (including the embedded pricing JSON on both game-builder
+pages), fetched `youtube.com/@officiallumixsolutions` directly, and re-
+pulled the Discord invite API. Nothing genuinely new turned up this run —
+every open item across all five tracks is exactly where its last check
+left it, confirmed byte-for-byte unchanged (pricing JSON, ticker copy,
+title/meta tags, JSON-LD blocks, status readout, CTA labels). Tuesday's
+newest open item (missing `terraria ONLINE ACCEPTING` row in the `/games/`
+status readout, flagged 09-01) is still unfixed today — 4 days old, not
+yet at the 7-day threshold, so not escalated here, just noted.
+
+### Findings (max 3)
+
+1. **The dead YouTube footer link is now 44 days unresolved, the
+   thirteenth consecutive ask with zero action.** Direct fetch of
+   `youtube.com/@officiallumixsolutions` today returns the same HTTP 404
+   confirmed on every check since 07-31; the homepage footer's raw HTML
+   still links to it.
+   → *Action:* Unchanged from every prior ask — delete the dead link or
+   swap in the correct handle. Zero dependencies, one line in the footer
+   template, still the cheapest and most-repeated fix on the entire board.
+
+2. **The two-SKU annual-pricing bug (Advanced FiveM Server / pid 22,
+   Standard Minecraft Plan / pid 26) is now 17 days unresolved.** Today's
+   pricing-JSON pull confirms both are still byte-identical to every prior
+   check: pid 22 — semiannually $149.99 ($25.00/mo) vs. annually $311.99
+   ($25.99/mo); pid 26 — semiannually $155.99 ($26.00/mo) vs. annually
+   $323.99 ($27.00/mo). In both cases committing to the longer annual term
+   costs *more* per month than the shorter semiannual term — this is a
+   real customer-facing pricing defect, not a copy gap, and it's still
+   the default "Most Popular" plan on both builder pages.
+   → *Action:* Unchanged from 08-19 onward — correct the Annually price on
+   pid 22 and pid 26 to land on the same discount curve as the neighboring
+   cycles (roughly $291 and $312 respectively). One-field pricing-config
+   correction on both SKUs.
+
+3. **Evergreen discount code gap is now 47 days unresolved, approaching
+   seven full weeks.** Re-checked homepage, `/games/`, `/games/fivem`, and
+   `/games/minecraft` today: no code, voucher, or sale banner anywhere on
+   any of them, same as every check since the 07-20 baseline.
+   → *Action:* Unchanged from every prior entry — needs a yes/no from
+   whoever owns pricing, not further research.
+
+### Do this today (<1 hour)
+Delete or fix the dead YouTube footer link (finding 1). Of the three, it's
+the only one that's pure template editing with zero pricing or business
+decision behind it — the pricing bug needs a numbers sign-off and the
+discount code needs a strategy call, but the footer link just needs
+someone with CMS access to click delete.
+
+**Unchanged since last check (not re-listed as findings):** Homepage
+`<title>` ("Game Server & VPS Hosting | Lumix Solutions") and meta
+description ("Infrastructure built by engineers...") both re-confirmed
+unchanged today. Ticker's "better than ever" claim and the "reliability
+without the corporate overhead" hero line both still unproven, unchanged.
+`/games/fivem` still has zero "QBCore"/"ESX"/"vRP"/"roleplay"/"Enhanced"
+mentions and ships only `Organization`/`WebSite` JSON-LD. `/games/` still
+shows no Bot Hosting product card and is still missing the Terraria row in
+its status readout (09-01, 4 days). Location picker still lists exactly
+two regions (Miami, Ashburn) against the homepage's "12 PoPs" stat. CTA
+labels still split ("Contact Sales" on homepage, "Talk to an engineer" on
+`/games/`). Discord invite API: 141 members / 26 online, flat against
+09-04's 141/21 — consistent with the stalled-growth finding, not a new
+trend.
+
+---
