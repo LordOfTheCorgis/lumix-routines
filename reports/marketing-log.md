@@ -3715,3 +3715,83 @@ labels still split ("Contact Sales" on homepage, "Talk to an engineer" on
 trend.
 
 ---
+
+## 2026-09-06 (Sunday) — Off-Rotation Check-In
+
+**Note:** Rotation covers Mon–Fri only; this is the routine's regular
+unassigned-weekday check. Re-pulled raw HTML via direct `curl` for the
+homepage, `/games/`, `/games/fivem`, and `/games/minecraft` (including
+both game-builder pages' embedded pricing JSON), fetched
+`youtube.com/@officiallumixsolutions` and `tiktok.com/@lumix.solutions`
+directly, and re-pulled the Discord invite API. Nothing genuinely new
+turned up this run — every open item across all five tracks is exactly
+where yesterday's check left it, confirmed byte-for-byte unchanged
+(pricing JSON, title/meta tags, JSON-LD blocks, framework-keyword count,
+footer social hrefs, location-picker/PoPs mismatch, CTA labels).
+
+### Findings (max 3)
+
+1. **The dead YouTube footer link is now 45 days unresolved, the
+   fourteenth consecutive ask with zero action.** Direct fetch of
+   `youtube.com/@officiallumixsolutions` today returns the same HTTP 404
+   confirmed on every check since 07-31; the homepage footer's raw HTML
+   still links to it. TikTok's `@lumix.solutions` still resolves (HTTP
+   200) but remains unindexed, same status as every prior check.
+   → *Action:* Unchanged from every prior ask — delete the dead link or
+   swap in the correct handle. Zero dependencies, one line in the footer
+   template, still the cheapest and most-repeated fix on the entire board.
+
+2. **The two-SKU annual-pricing bug (Advanced FiveM Server / pid 22,
+   Standard Minecraft Plan / pid 26) is now 18 days unresolved, second
+   week running.** Today's pricing-JSON pull confirms both are still
+   byte-identical: pid 22 — semiannually $149.99 ($25.00/mo) vs. annually
+   $311.99 ($25.99/mo); pid 26 — semiannually $155.99 ($26.00/mo) vs.
+   annually $323.99 ($27.00/mo). Committing to the longer annual term
+   still costs *more* per month than the shorter semiannual term on both
+   SKUs, and both remain the default "Most Popular" plan on their builder
+   pages — this is a live customer-facing pricing defect, not a copy gap.
+   → *Action:* Unchanged from 08-19 onward — correct the Annually price on
+   pid 22 and pid 26 to land on the same discount curve as the neighboring
+   cycles (roughly $291 and $312 respectively). One-field pricing-config
+   correction on both SKUs.
+
+3. **Homepage title/meta description is now tied with the YouTube link as
+   the most overdue item on the board — 45 days on the meta description,
+   35 days on the title, ninth distinct log mention.** Raw HTML confirms
+   both are still byte-identical to every prior check: title "Game Server
+   & VPS Hosting | Lumix Solutions" (no game name), meta "Infrastructure
+   built by engineers. Node.js servers, game services, voice
+   infrastructure, and enterprise DDoS protection" (no product terms, no
+   CTA). Per 08-27/09-03's notes, this log has stopped re-proposing the
+   copy fix itself and is instead flagging the process gap.
+   → *Action:* Same ask as last week — get one explicit answer from
+   whoever holds CMS access (yes / no / blocked-by-X) on the ready-to-ship
+   title/meta copy, logged here so this stops being a recurring
+   "unchanged" line.
+
+### Do this today (<1 hour)
+Delete or fix the dead YouTube footer link (finding 1). Of the three,
+it's the only one that's pure template editing with zero pricing or
+business decision behind it — the pricing bug needs a numbers sign-off
+and the title/meta needs a CMS-owner answer, but the footer link just
+needs someone with access to click delete.
+
+**Escalation status:** YouTube 404 (social track) crosses 45 days
+unresolved today. Annual-pricing bug (pricing track) crosses 18 days,
+second week. Homepage title/meta (SEO/copy track) crosses 45/35 days,
+ninth mention. Off-track items not re-checked this run: FiveM
+framework-keyword gap (SEO track) was at 14 days as of 09-03, now 3 days
+older; Product/Offer JSON-LD gap on `/games/fivem` (SEO track) was at 35
+days as of 09-03, now 3 days older — both re-confirmed present today via
+the same raw-HTML pulls used above (zero QBCore/ESX/vRP/roleplay/
+framework mentions; only `Organization`/`WebSite` JSON-LD). Evergreen
+discount code gap (pricing track) was at 47 days as of 09-05, now 48.
+Two-location vs. "12 PoPs" mismatch and split CTA labels ("Contact Sales"
+vs. "Talk to an engineer") both re-confirmed unchanged today, not yet at
+a new escalation threshold. `/games/` status readout is still missing its
+Terraria row (flagged 09-01, now 5 days old, not yet at the 7-day
+threshold). Discord invite API: 141 members / 25 online, flat against
+09-05's 141/26 — consistent with the stalled-growth finding, not a new
+trend.
+
+---
