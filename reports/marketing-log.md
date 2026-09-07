@@ -3795,3 +3795,93 @@ threshold). Discord invite API: 141 members / 25 online, flat against
 trend.
 
 ---
+
+## 2026-09-07 (Monday) — Competitor Pricing & Plans (Week 8)
+
+**Note:** One week since 08-31, and this run lands on US Labor Day itself —
+last week's entry specifically flagged Labor Day as "one week out" and
+worth a promo-swap check. Re-fetched Lumix's `/games/fivem/` and
+`/games/minecraft/` via direct `curl` (raw HTML plus embedded per-cycle
+pricing) to re-verify all open pricing-track items at the byte level, and
+fetched RocketNode's FiveM page directly plus fresh searches across all
+five baseline competitors (BisectHosting, Shockbyte, Apex Hosting,
+ZAP-Hosting, RocketNode) specifically for a Labor Day sale. None of the
+five has swapped in a dedicated Labor Day promo — RocketNode's FiveM page
+(direct fetch) still reads "Summer Sale" with no "Labor Day" string
+anywhere in the raw HTML; Bisect/Shockbyte/Apex/ZAP searches return only
+the same standing codes tracked since 07-20 (rotating `BISECT25`-type
+codes, `SHOCK10`/`TWITTER25`, `APEX25`, ZAP's ~20% voucher). Last week's
+prediction ("no competitor has launched a Labor Day/back-to-school promo
+yet") holds through the holiday itself — this reads as these providers
+treating their evergreen codes as sufficient rather than running
+holiday-specific banners, not as a gap on their side.
+
+### Findings (max 3) — all escalations of already-open items
+
+1. **ESCALATION — evergreen discount code gap hits 49 days (7 full weeks)
+   today, and the timing sharpens the finding rather than repeating it.**
+   Direct fetch of the homepage, `/games/fivem/`, and `/games/minecraft/`
+   today: still zero hits for "promo," "coupon," "discount code," or
+   "voucher." The specific new data point this run: today is the one day
+   of the year every competitor's aggregator/review coverage (confirmed via
+   this run's searches — SimplyCodes, WeThrift, Forbes Vetted's "Best Labor
+   Day Sales 2026" roundup, etc.) is actively indexing hosting-provider promo
+   codes for holiday-shopping searches. A prospect comparison-shopping today
+   via any of those channels will find a code for all five competitors and
+   none for Lumix — the gap isn't just "no code," it's "invisible on the one
+   day this category gets extra search volume."
+   → *Action:* Unchanged ask, sharper timing — get a yes/no from whoever owns
+   pricing on shipping one evergreen code (e.g. `LUMIX10`). Seven weeks with
+   no decision recorded either way.
+
+2. **ESCALATION — the two-SKU annual-pricing bug (Advanced FiveM Server
+   pid 22, Standard Minecraft Plan pid 26) hits 19 days unresolved today,
+   third consecutive weekly mention.** Today's raw-HTML pull confirms both
+   still byte-identical: pid 22 — semiannually $149.99 ($25.00/mo) vs.
+   annually $311.99 ($25.99/mo); pid 26 — semiannually $155.99 ($26.00/mo)
+   vs. annually $323.99 ($27.00/mo). Both remain the pre-selected "Most
+   Popular" plan on their pages. New this run: pulled pid 26's full cycle
+   ladder (not just the two flagged points) — Quarterly $79.99 (~5% off),
+   Semiannually $155.99 (~7% off), **Annually $323.99 (~4% off — a dip
+   below both neighbors)**, Biennially $623.99 (~7% off), Triennially
+   $899.99 (~11% off). The bug isn't an isolated annually-vs-semiannually
+   comparison — it's a dip in an otherwise-rising discount curve, all six
+   points on one plan, which makes it easier to explain to whoever owns the
+   pricing config as "the Annually multiplier is wrong," not "two prices
+   happen to compare badly."
+   → *Action:* Unchanged from 08-19 onward — correct the Annually price on
+   pid 22 and pid 26 to land back on the rising curve (roughly $291 and
+   $312 respectively, in line with the neighboring cycles).
+
+3. **ESCALATION — billing-cycle discount ceiling hits 35 days (five full
+   weeks) today.** Re-fetched `/games/fivem/`: Save-badge counts still
+   5%/5%/5% (quarterly/semi/annual) and 10%/10% (biennial/triennial),
+   byte-for-byte unchanged since 08-03. RocketNode (direct fetch today) and
+   BisectHosting both still publish a ~20% ceiling at the one-year
+   commitment point against Lumix's 5%. No competitor has moved this
+   number either, so the gap size is unchanged — only the unresolved
+   duration is new.
+   → *Action:* Same ask as the last four weeks: confirm whether a 20%
+   annual discount is a real margin problem or just an unrevisited number.
+
+### Do this today (<1 hour)
+Fix the two-SKU annual-pricing bug (finding 2). Of the three, it's the only
+pure one-field data correction with no pricing-strategy decision attached —
+and today's fuller pid 26 ladder makes the fix easier to specify precisely
+(reset Annually to sit between Semiannually's 7% and Biennially's 7%,
+around 6-8% off monthly, instead of dipping to 4%).
+
+**Escalation status:** Evergreen discount code (finding 1) crosses 49 days
+(seven full weeks) today, still the oldest continuously-open item in the
+log from its 07-20 baseline. Two-SKU annual-pricing bug (finding 2) crosses
+19 days, third consecutive weekly mention. Billing-cycle discount ceiling
+(finding 3) crosses 35 days (five weeks). Off-track items not re-checked
+this run: YouTube 404 (social track) was at 45 days as of 09-06; homepage
+title/meta description (SEO/copy track) was at 45/35 days as of 09-06;
+FiveM framework-keyword gap and Product/Offer JSON-LD gap (SEO track) were
+at 14/35 days as of 09-03; two-location vs. "12 PoPs" mismatch and FiveM
+Enhanced support question (UX track) were at 42/7 days as of 09-02;
+Terraria-row gap in the `/games/` status readout (copy track) was 5 days
+old as of 09-06, not yet at the 7-day threshold.
+
+---
