@@ -3885,3 +3885,90 @@ Terraria-row gap in the `/games/` status readout (copy track) was 5 days
 old as of 09-06, not yet at the 7-day threshold.
 
 ---
+
+## 2026-09-08 (Tuesday) — Website Copy (Week 8)
+
+**Note:** One week since 09-01. Re-pulled raw HTML via direct `curl` for the
+homepage, `/games/`, `/spotlight/`, `/partners/`, and `/contact/`, plus two
+pages not previously reviewed line-by-line for copy: `/staff/`,
+`/status/`, and `/changelog/` (all reached via the site's own nav, all
+200s, no fetch-blocking this run). All three of 09-01's open items — ticker
+"better than ever" line, Bot/Application hosting listing gap, corporate
+overhead phrase — are confirmed byte-for-byte unchanged. The Terraria-row
+gap (flagged 09-01) crosses the 7-day threshold today. One genuinely new
+item turned up on `/changelog/`.
+
+### Findings (max 3)
+
+1. **NEW — `/changelog/` (linked from every page's footer as "What's New")
+   hasn't recorded an entry since January 30, 2026 — over 7 months of
+   silence — while the same sitewide ticker banner running on every page
+   right now claims live, ongoing progress.** The changelog's newest entry
+   is `v2026.01.4 "Dallas Datacenter Launch"` dated Jan 30; nothing newer
+   exists under it. Meanwhile the ticker banner (unchanged since at least
+   08-11, confirmed live today) reads "Miami datacenters are now live,"
+   "Expanded bot hosting capacity," and "Production and development are
+   better than ever" — all present-tense claims of recent change, none of
+   them reflected as a dated changelog entry. This is the "claims with no
+   proof" pattern this review looks for, but structural: the one page
+   built specifically to prove the ticker's claims with dates undercuts
+   them instead by showing nothing has shipped in 7+ months.
+   → *Action:* Either publish real changelog entries for whatever has
+   actually shipped since January (the ticker itself names candidates —
+   "Miami datacenters," "bot hosting capacity" — so start there), or if
+   nothing changelog-worthy has happened, that's a separate flag worth
+   raising to whoever owns the ticker copy directly. Not a one-line fix —
+   needs someone who knows what's actually shipped.
+
+2. **ESCALATION — the `/games/` status-readout Terraria-row gap hits 7
+   days today, its first escalation, first flagged 09-01.** Today's raw
+   HTML confirms the `lumix catalog --available` terminal block still
+   lists exactly four rows (`fivem`, `minecraft`, `palworld`, `beammp`,
+   each "ONLINE / ACCEPTING") while the live catalog directly below it
+   still lists five purchasable games including Terraria at $5.00/mo with
+   a working "Configure" CTA.
+   → *Action:* Unchanged from 09-01 — add a `terraria ONLINE ACCEPTING`
+   row to the status block template on `/games/`. One line, no design or
+   pricing decision needed.
+
+3. **ESCALATION — Bot/Application hosting listing gap hits 42 days (six
+   full weeks) today, first flagged 07-28, now its seventh consecutive
+   copy-track mention.** `/games/` re-confirmed today: still the same five
+   priced product cards (plus Coming Soon teasers), no Bot Hosting card,
+   no price, no CTA — only the ticker line and "Node.js application
+   hosting" in the homepage hero paragraph.
+   → *Action:* Unchanged from every prior entry — this still needs a
+   recorded yes/no from whoever owns the `/games/` catalog on whether the
+   card is blocked or simply unscheduled. Seven identical weekly log
+   entries with no answer either way is itself the finding at this point.
+
+### Do this today (<1 hour)
+Add the missing `terraria ONLINE ACCEPTING` row to the `/games/` status
+readout (finding 2). It's the only one of the three that's a pure
+one-line template fix with no content research or business decision
+behind it — finding 1 needs someone to confirm what's actually shipped,
+and finding 3 needs a scheduling answer.
+
+**Escalation status:** Finding 2 (Terraria-row gap) crosses 7 days today,
+its first escalation. Finding 3 (Bot/Application hosting listing gap)
+crosses 42 days today, seventh escalation, first flagged 07-28. Also
+still open, not re-listed as findings since unchanged and this week's
+slots went to a new item plus the two above: the ticker "better than
+ever" line and the "corporate overhead" phrase (both 08-11 origin, 28
+days today, same unresolved status as every prior week) and the
+CTA-naming inconsistency (07-28 origin, ~42 days, confirmed still in its
+two-variant state: "Contact Sales" on the homepage, "Talk to an engineer"
+on `/games/`). Incidental cross-reference, not a new copy-track finding:
+`/changelog/`'s own dated history (Miami as founding location, Dallas as
+"our second location" per the Jan 30 entry, nothing since) lines up with
+and adds dated, first-party confirmation to the already-tracked
+two-location-vs-"12 PoPs" mismatch on the UX track — no new action beyond
+what's already logged there. Off-track items not re-checked this run:
+homepage title/meta description (SEO/copy track) was at 45/35 days as of
+09-06; FiveM framework-keyword gap and Product/Offer JSON-LD gap (SEO
+track) were at 14/35 days as of 09-03; two-location vs. "12 PoPs"
+mismatch and FiveM Enhanced support question (UX track) were at 42/7 days
+as of 09-02; YouTube 404 and the two-SKU annual-pricing bug (social/
+pricing tracks) were at 45/19 days as of 09-07.
+
+---
