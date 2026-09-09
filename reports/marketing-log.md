@@ -3972,3 +3972,105 @@ as of 09-02; YouTube 404 and the two-SKU annual-pricing bug (social/
 pricing tracks) were at 45/19 days as of 09-07.
 
 ---
+
+## 2026-09-09 (Wednesday) — Competitor UX Deep-Dive: ZAP-Hosting (Week 2)
+
+**Note:** Third full lap of the UX-track rotation, back to ZAP-Hosting
+(first reviewed 08-12). Direct `curl` fetch of ZAP's `rent-a-fivem-server`
+and `minecraft-server-hosting` pages (both 200, both rendered live, no
+fetch-blocking this run) plus Lumix's own `/games/fivem/`,
+`/games/minecraft/`, `/games/`, and homepage for the comparison side.
+**One capacity update confirmed first:** the "Sold Out" state on both
+Lumix builders that 08-12 found and 09-02 reported as partially resolved
+is now fully resolved — today's raw HTML shows zero "sold out" or "out of
+capacity" strings on either `/games/fivem/` or `/games/minecraft/`; both
+Miami and Ashburn are live, selectable, pre-checked-default locations.
+Not re-logged as a finding since it's a positive resolution already noted
+09-02, but worth confirming it held.
+
+**Flows observed:**
+- **ZAP-Hosting:** FiveM page still lists the same 8 regions found 08-12
+  (Dallas, Los Angeles, Ashburn, Frankfurt/Eygelshoven, Montreal,
+  Singapore, Sydney, London) starting at $9.16/mo (was $9.08 on 08-12 —
+  currency-fluctuation-sized move, not a repricing), still headlined
+  "Online in 5 minutes." The Minecraft page's meta description leads with
+  "Thousand of modpacks included," and its FAQ JSON-LD spells out the
+  purchase-time options directly: order vanilla or choose from "several
+  hundred different mod servers" with modpacks (RLCraft, Feed the Beast
+  packs, etc.) pre-installed at checkout, or switch post-purchase via a
+  "Gameswitch" panel feature.
+- **Lumix (`/games/minecraft/`, re-fetched live today):** Still the same
+  3-step wizard (Plan → Location → Billing Cycle) confirmed 09-02 — no
+  modpack, loader, or Java/Bedrock-variant step. The page's own copy still
+  frames this as entirely post-purchase: "Modpack and plugin installs from
+  the panel."
+
+### Findings (max 3)
+
+1. **ESCALATION — the pre-purchase modpack/version-selection gap first
+   flagged 09-02 against Apex hits 7 days today, its first escalation, and
+   ZAP is now the second consecutive rotation competitor confirmed to have
+   it.** This stops looking like one competitor's unusual feature and
+   starts looking like a category norm Lumix's wizard doesn't meet: Apex
+   sells the modpack as part of checkout (200+ one-click packs), and ZAP's
+   FAQ schema goes further, explicitly offering pre-installed modpack
+   servers as an alternative to vanilla at order time. Lumix's Minecraft
+   buyer still finishes checkout with a blank server regardless of what
+   they actually wanted to run.
+   → *Action:* Unchanged from 09-02 — add a lightweight step (or sub-choice
+   inside the existing Plan step) for Java/Bedrock plus a short common-pack
+   list (Vanilla, Paper, Forge, Fabric, one or two popular modpacks), passed
+   to provisioning so the server boots as the thing the buyer asked for.
+
+2. **NEW — ZAP's own Minecraft page ships unfiltered third-party review
+   data (schema.org `Review`/`AggregateRating` JSON-LD, 4.4/5 from 19,341
+   reviews) including at least one 1-star review describing a refund-policy
+   loophole: "the website states that refunds can be made... [but] that
+   little box you ticked at checkout... totally negates what their policy
+   writes."** This is a live, public data point on how a competitor's
+   *stated* guarantee can still read as a bait-and-switch to a real buyer —
+   directly relevant to the standing 42-day-old open item on this log (no
+   free trial or money-back guarantee anywhere in Lumix's flow, first
+   flagged 07-29) since it shows the failure mode to avoid, not just the
+   feature to copy.
+   → *Action:* When a guarantee/trial policy for Lumix finally gets a
+   decision (see the 07-29 ask, still open), keep it checkbox-free — no
+   opt-out clause buried in checkout — and it becomes a real differentiator
+   ("no fine print" refund) rather than just matching the category.
+
+3. **ESCALATION — the FiveM Enhanced (`cfx-server`) support question hits
+   14 days today, second consecutive escalation, first asked 08-26.**
+   Direct text search of `/games/fivem/`'s raw HTML today: still zero
+   mentions of "Enhanced," "cfx-server," or "GTA V Enhanced." Two
+   consecutive weekly "do this today" asks (09-02, and implicitly since)
+   for a single yes/no answer have gone unanswered.
+   → *Action:* Unchanged — get a yes/no from whoever owns the game panel on
+   Enhanced-binary support, then add one line to `/games/fivem/` either way.
+
+### Do this today (<1 hour)
+Get the FiveM Enhanced yes/no answer (finding 3). It's the only one of the
+three that's a single question with no research, copy-drafting, or
+infra-timeline decision attached — and it's now been asked twice with no
+answer.
+
+**Escalation status:** Finding 1 (modpack/version-selection gap) crosses 7
+days today, first escalation, now confirmed against two of four rotation
+competitors. Finding 3 (FiveM Enhanced) crosses 14 days today, second
+escalation. Also still open, not re-listed as a full finding since
+unchanged and today's ZAP comparison didn't add new information beyond
+what 08-12/09-02 already established: the "12 PoPs" homepage claim vs.
+Lumix's 2-location wizard reality is unchanged at 49 days since first
+observed 07-22 — ZAP itself re-confirms 8 live regions today, same as
+08-12, against Lumix's still-unchanged two. No free trial or money-back
+guarantee anywhere in Lumix's flow (07-29 origin) is unchanged at 42 days,
+folded into finding 2 above rather than re-logged separately. Off-track
+items not re-checked this run: evergreen discount code, two-SKU
+annual-pricing bug, and billing-cycle ceiling (pricing track) were at
+49/19/35 days as of 09-07; changelog silence, Terraria-row gap, and
+Bot/Application hosting listing gap (copy track) were at new/7/42 days as
+of 09-08; FiveM framework-keyword gap, homepage title/meta description,
+and Product/Offer JSON-LD gap (SEO track) were at 14/45/38 days as of
+09-03; YouTube 404 (social track) was at 45 days and Discord membership
+141/26 as of 09-06.
+
+---
