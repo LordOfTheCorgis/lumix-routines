@@ -4074,3 +4074,79 @@ and Product/Offer JSON-LD gap (SEO track) were at 14/45/38 days as of
 141/26 as of 09-06.
 
 ---
+
+## 2026-09-10 (Thursday) — SEO & Keywords (Week 9)
+
+**Note:** One week since 09-03. Re-pulled raw HTML via direct `curl` for the
+homepage and `/games/fivem/` (title, meta description, JSON-LD `@type`
+blocks, framework-keyword grep). Ran fresh unbranded searches ("fivem
+server hosting" best providers 2026, "cheap minecraft server hosting"
+2026) plus a branded search ("Lumix Solutions" fivem OR minecraft hosting
+review) and a `site:lumixsolutions.org` search. All three open SEO-track
+items are byte-for-byte unchanged from 09-03 — no new items this run.
+Confirmed again: `lumixsolutions.org` does not appear in any of the nine
+independent "best FiveM hosting" listicles returned this run (Geekflare,
+Guru99, HostAdvice, TrustyHosts' 18-host ranking, etc.) — consistent with
+the already-logged root cause (generic title/meta, no page-level schema),
+not a new finding. The branded search's AI summary again produces numbers
+that don't match the live site ("99.99% network uptime SLA," "40+ games
+and apps supported" — vs. the homepage's own 99.9%/2-location claims);
+same non-issue pattern first noted 08-27, not re-logged as its own item.
+
+### Findings (max 3)
+
+1. **ESCALATION — homepage title/meta description mismatch is now 49 days
+   old on the meta description and 39 days on the title; this is the
+   ninth distinct log entry to flag it (07-23, 07-26, 07-30, 08-06, 08-13,
+   08-20, 08-27, 09-03, and today).** Raw HTML confirms both are still
+   byte-identical: title "Game Server & VPS Hosting | Lumix Solutions" (no
+   game name), meta "Infrastructure built by engineers. Node.js servers,
+   game services, voice infrastructure, and enterprise DDoS protection"
+   (no product terms, no CTA). Last week's entry said this shouldn't be a
+   ninth identical line — it is, and no yes/no/blocked answer from CMS
+   ownership has been recorded anywhere in this log in the interim.
+   → *Action:* Not a content problem anymore — it's an eight-week-old
+   decision that has never been surfaced to a person who can act on it.
+   The routine can't escalate further than logging; the concrete next
+   step is for whoever reads this log to hand the copy-paste fix (still
+   sitting ready since 07-23) directly to CMS ownership as a named task
+   with a deadline, rather than relying on another weekly log line to
+   surface it.
+
+2. **ESCALATION — the FiveM page's framework-keyword gap crosses 21 days
+   unresolved today, third escalation.** Direct grep of `/games/fivem/`
+   raw HTML: "QBCore" 0, "ESX" 0, "vRP" 0, "roleplay" 0, "framework" 0,
+   identical to 08-20, 08-27, and 09-03 — "txAdmin" still the only related
+   term, still appearing exactly once. Third consecutive week as the "do
+   this today" item with no ship.
+   → *Action:* Unchanged — add one section to `/games/fivem/` naming the
+   supported frameworks (QBCore, ESX, vRP) and working "roleplay" into
+   body copy. Still a same-day, zero-dependency fix.
+
+3. **ESCALATION — no `Product`/`Offer` JSON-LD on `/games/fivem/`, now 42
+   days unresolved, sixth escalation.** Confirmed again today: the page
+   ships only `Organization` and `WebSite` `@type` blocks despite
+   rendering a clear $8.99 starting price and full spec table. First
+   flagged 07-30, escalated every week since with no change.
+   → *Action:* Unchanged — one shared template change across the five game
+   pages (they share a layout), pulling each page's already-rendered price
+   into an `Offer` block.
+
+### Do this today (<1 hour)
+Add the QBCore/ESX/vRP/roleplay line to `/games/fivem/` (finding 2). Same
+zero-dependency copy fix asked for three weeks running — the only item
+today that doesn't require an out-of-band owner decision first.
+
+**Escalation status:** Finding 1 (homepage title/meta) crosses 49 days
+(meta) / 39 days (title) today, its ninth distinct mention. Finding 3
+(Product/Offer JSON-LD) crosses 42 days today, sixth escalation. Finding 2
+(FiveM framework keywords) crosses 21 days today, third escalation.
+Off-track items not re-checked this run: evergreen discount code, two-SKU
+annual-pricing bug, and billing-cycle ceiling (pricing track) were at
+49/19/35 days as of 09-07; changelog silence, Terraria-row gap, and
+Bot/Application hosting listing gap (copy track) were at new/7/42 days as
+of 09-08; pre-purchase modpack/version-selection gap and FiveM Enhanced
+support question (UX track) were at 7/14 days as of 09-09; YouTube 404
+(social track) was at 45 days and Discord membership 141/26 as of 09-06.
+
+---
